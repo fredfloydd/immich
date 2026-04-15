@@ -123,6 +123,8 @@ services:
       - 24678:24678
     volumes:
       - pnpm_store_web:/buildcache/pnpm-store
+      # Uncomment if using a local copy of @immich/ui (see https://docs.immich.app/developer/setup#immichui)
+      # - ../../ui/packages/ui:/usr/ui
     restart: unless-stopped
     depends_on:
       immich-init:

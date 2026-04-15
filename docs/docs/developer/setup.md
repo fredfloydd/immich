@@ -76,15 +76,20 @@ pnpm run dev
 
 #### `@immich/ui`
 
-To see local changes to `@immich/ui` in Immich, do the following:
+To develop with a local copy of `@immich/ui`:
 
-1. Install `@immich/ui` as a sibling to `immich/`, for example `/home/user/immich` and `/home/user/ui`
-2. Build the `@immich/ui` project via `pnpm run build`
-3. Uncomment the corresponding volume in web service of the `docker/docker-compose.dev.yaml` file (`../../ui:/usr/ui`)
-4. Uncomment the corresponding alias in the `web/vite.config.js` file (`'@immich/ui': path.resolve(\_\_dirname, '../../ui')`)
-5. Uncomment the import statement in `web/src/app.css` file `@import '/usr/ui/dist/theme/default.css';` and comment out `@import '@immich/ui/theme/default.css';`
-6. Start up the stack via `make dev`
-7. After making changes in `@immich/ui`, rebuild it (`pnpm run build`)
+1. Clone the UI repo as a sibling to `immich/`:
+   ```bash
+   git clone https://github.com/immich-app/ui.git
+   ```
+   You should end up with e.g. `/home/user/immich` and `/home/user/ui`
+2. Build the UI library: run `pnpm install && pnpm run build` from `ui/packages/ui`
+3. In `docker/docker-compose.dev.yml`, uncomment the `@immich/ui` volume in the web service
+4. Start the stack with `make dev`
+
+When the volume is mounted, the web container's Vite config automatically detects the local build and redirects all `@immich/ui` imports to it. You should see `@immich/ui: using local build from /usr/ui/dist` in the web container logs.
+
+To iterate on changes, rebuild the library (`pnpm run build` in `ui/packages/ui`) and restart the web container.
 
 ### Mobile app
 
