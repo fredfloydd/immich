@@ -1,7 +1,9 @@
-import mockfs from 'mock-fs';
 import { readFileSync } from 'node:fs';
-import { Batcher, CrawlOptions, crawl } from 'src/utils';
+
+import mockfs from 'mock-fs';
 import { Mock } from 'vitest';
+
+import { Batcher, crawl, CrawlOptions } from 'src/utils';
 
 interface Test {
   test: string;

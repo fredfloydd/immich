@@ -1,27 +1,30 @@
-import {
-  AssetBulkUploadCheckItem,
-  AssetBulkUploadCheckResult,
-  AssetMediaResponseDto,
-  AssetMediaStatus,
-  AssetUploadAction,
-  Permission,
-  addAssetsToAlbum,
-  checkBulkUpload,
-  createAlbum,
-  defaults,
-  getAllAlbums,
-  getSupportedMediaTypes,
-} from '@immich/sdk';
+import { createReadStream, existsSync, Stats } from 'node:fs';
+import { stat, unlink } from 'node:fs/promises';
+import path, { basename } from 'node:path';
+
 import byteSize from 'byte-size';
 import { Matcher, watch as watchFs } from 'chokidar';
 import { MultiBar, Presets, SingleBar } from 'cli-progress';
 import { chunk } from 'lodash-es';
 import micromatch from 'micromatch';
-import { Stats, createReadStream, existsSync } from 'node:fs';
-import { stat, unlink } from 'node:fs/promises';
-import path, { basename } from 'node:path';
+
+import {
+  addAssetsToAlbum,
+  AssetBulkUploadCheckItem,
+  AssetBulkUploadCheckResult,
+  AssetMediaResponseDto,
+  AssetMediaStatus,
+  AssetUploadAction,
+  checkBulkUpload,
+  createAlbum,
+  defaults,
+  getAllAlbums,
+  getSupportedMediaTypes,
+  Permission,
+} from '@immich/sdk';
+
 import { Queue } from 'src/queue';
-import { BaseOptions, Batcher, authenticate, crawl, requirePermissions, s, sha1 } from 'src/utils';
+import { authenticate, BaseOptions, Batcher, crawl, requirePermissions, s, sha1 } from 'src/utils';
 
 const UPLOAD_WATCH_BATCH_SIZE = 100;
 const UPLOAD_WATCH_DEBOUNCE_TIME_MS = 10_000;

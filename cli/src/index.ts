@@ -1,10 +1,13 @@
 #! /usr/bin/env node
-import { Command, Option } from 'commander';
 import os from 'node:os';
 import path from 'node:path';
+
+import { Command, Option } from 'commander';
+
 import { upload } from 'src/commands/asset';
 import { login, logout } from 'src/commands/auth';
 import { serverInfo } from 'src/commands/server-info';
+
 import { version } from '../package.json';
 
 const defaultConfigDirectory = path.join(os.homedir(), '.config/immich/');

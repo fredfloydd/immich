@@ -1,11 +1,13 @@
-import { ApiKeyResponseDto, getMyApiKey, getMyUser, init, isHttpError, Permission } from '@immich/sdk';
-import { convertPathToPattern, glob } from 'fast-glob';
 import { createHash } from 'node:crypto';
 import { createReadStream } from 'node:fs';
 import { readFile, stat, writeFile } from 'node:fs/promises';
 import { platform } from 'node:os';
 import { join, resolve } from 'node:path';
+
+import { convertPathToPattern, glob } from 'fast-glob';
 import yaml from 'yaml';
+
+import { ApiKeyResponseDto, getMyApiKey, getMyUser, init, isHttpError, Permission } from '@immich/sdk';
 
 export interface BaseOptions {
   configDirectory: string;

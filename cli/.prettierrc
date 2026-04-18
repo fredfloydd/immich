@@ -1,8 +1,8 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all",
+  "importOrder": ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^@immich/(.*)$", "", "^src/(.*)$", "", "^[.]"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
   "printWidth": 120,
   "semi": true,
-  "plugins": ["prettier-plugin-organize-imports"],
-  "organizeImportsSkipDestructiveCodeActions": true
+  "singleQuote": true,
+  "trailingComma": "all"
 }
