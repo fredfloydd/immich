@@ -1,8 +1,9 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { PluginAction, PluginFilter } from 'src/database';
 import { PluginContextSchema, PluginTriggerTypeSchema } from 'src/enum';
 import { JSONSchemaSchema } from 'src/types/plugin-schema.types';
-import z from 'zod';
 
 const PluginTriggerResponseSchema = z
   .object({

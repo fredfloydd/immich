@@ -8,6 +8,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AssetMetadataKey } from 'src/enum';
 import { asset_metadata_audit } from 'src/schema/functions';

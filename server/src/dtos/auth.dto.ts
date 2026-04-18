@@ -1,9 +1,10 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { AuthApiKey, AuthSession, AuthSharedLink, AuthUser, UserAdmin } from 'src/database';
 import { ImmichCookie, UserMetadataKey } from 'src/enum';
 import { UserMetadataItem } from 'src/types';
 import { toEmail } from 'src/validation';
-import z from 'zod';
 
 export type CookieResponse = {
   isSecure: boolean;

@@ -1,10 +1,11 @@
-import { PartnerController } from 'src/controllers/partner.controller';
-import { LoggingRepository } from 'src/repositories/logging.repository';
-import { PartnerService } from 'src/services/partner.service';
 import request from 'supertest';
 import { errorDto } from 'test/medium/responses';
 import { factory } from 'test/small.factory';
 import { automock, ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { PartnerController } from 'src/controllers/partner.controller';
+import { LoggingRepository } from 'src/repositories/logging.repository';
+import { PartnerService } from 'src/services/partner.service';
 
 describe(PartnerController.name, () => {
   let ctx: ControllerContext;

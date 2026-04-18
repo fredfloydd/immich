@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { SystemConfig } from 'src/config';
 import { JOBS_ASSET_PAGINATION_SIZE } from 'src/constants';
 import { OnEvent, OnJob } from 'src/decorators';

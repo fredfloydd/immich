@@ -1,9 +1,10 @@
-import { SharedLinkController } from 'src/controllers/shared-link.controller';
-import { Permission, SharedLinkType } from 'src/enum';
-import { SharedLinkService } from 'src/services/shared-link.service';
 import request from 'supertest';
 import { factory } from 'test/small.factory';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { SharedLinkController } from 'src/controllers/shared-link.controller';
+import { Permission, SharedLinkType } from 'src/enum';
+import { SharedLinkService } from 'src/services/shared-link.service';
 
 describe(SharedLinkController.name, () => {
   let ctx: ControllerContext;

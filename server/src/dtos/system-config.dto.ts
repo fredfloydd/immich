@@ -1,4 +1,6 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { SystemConfig } from 'src/config';
 import {
   CLIPConfigSchema,
@@ -21,7 +23,6 @@ import {
   VideoContainerSchema,
 } from 'src/enum';
 import { isValidTime } from 'src/validation';
-import z from 'zod';
 
 /** Coerces 'true'/'false' strings to boolean, but also allows booleans. */
 const configBool = z

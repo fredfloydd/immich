@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Insertable, Kysely, sql } from 'kysely';
 import { InjectKysely } from 'nestjs-kysely';
+
 import { DummyValue, GenerateSql } from 'src/decorators';
 import { AssetOcrResponseDto } from 'src/dtos/ocr.dto';
 import { DB } from 'src/schema';

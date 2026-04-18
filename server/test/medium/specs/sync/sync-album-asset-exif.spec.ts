@@ -1,11 +1,12 @@
 import { Kysely } from 'kysely';
+import { SyncTestContext } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB, wait } from 'test/utils';
+
 import { AlbumUserRole, SyncEntityType, SyncRequestType } from 'src/enum';
 import { AssetRepository } from 'src/repositories/asset.repository';
 import { DB } from 'src/schema';
 import { updateLockedColumns } from 'src/utils/database';
-import { SyncTestContext } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB, wait } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

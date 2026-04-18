@@ -1,7 +1,4 @@
 import { BadRequestException } from '@nestjs/common';
-import { BulkIdErrorReason } from 'src/dtos/asset-ids.response.dto';
-import { AlbumUserRole, AssetOrder, UserMetadataKey } from 'src/enum';
-import { AlbumService } from 'src/services/album.service';
 import { AlbumUserFactory } from 'test/factories/album-user.factory';
 import { AlbumFactory } from 'test/factories/album.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
@@ -11,6 +8,10 @@ import { authStub } from 'test/fixtures/auth.stub';
 import { getForAlbum } from 'test/mappers';
 import { newUuid } from 'test/small.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { BulkIdErrorReason } from 'src/dtos/asset-ids.response.dto';
+import { AlbumUserRole, AssetOrder, UserMetadataKey } from 'src/enum';
+import { AlbumService } from 'src/services/album.service';
 
 describe(AlbumService.name, () => {
   let sut: AlbumService;

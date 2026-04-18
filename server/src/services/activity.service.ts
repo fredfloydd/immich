@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { Activity } from 'src/database';
 import {
   ActivityCreateDto,

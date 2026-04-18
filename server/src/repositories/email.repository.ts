@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { render } from '@react-email/render';
 import { createTransport } from 'nodemailer';
 import React from 'react';
+
 import { AlbumInviteEmail } from 'src/emails/album-invite.email';
 import { AlbumUpdateEmail } from 'src/emails/album-update.email';
 import { TestEmail } from 'src/emails/test.email';

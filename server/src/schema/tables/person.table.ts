@@ -11,6 +11,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { person_delete_audit } from 'src/schema/functions';
 import { AssetFaceTable } from 'src/schema/tables/asset-face.table';

@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+
 import { SystemConfig } from 'src/config';
 import { StorageCore } from 'src/cores/storage.core';
 import { StorageFolder } from 'src/enum';

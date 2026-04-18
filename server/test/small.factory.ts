@@ -1,8 +1,9 @@
+import { v4, v7 } from 'uuid';
+
 import { AuthApiKey, AuthSharedLink, AuthUser, Exif, Library, UserAdmin } from 'src/database';
 import { AuthDto } from 'src/dtos/auth.dto';
 import { QueueStatisticsDto } from 'src/dtos/queue.dto';
 import { AssetFileType, Permission, UserStatus } from 'src/enum';
-import { v4, v7 } from 'uuid';
 
 export const newUuid = () => v4();
 export const newUuids = () =>

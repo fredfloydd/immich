@@ -1,9 +1,11 @@
+import { resolve } from 'node:path';
+
 import { Kysely } from 'kysely';
 import { DateTime } from 'luxon';
-import { resolve } from 'node:path';
-import { DB } from 'src/schema';
 import { ExifTestContext, testAssetsDir } from 'test/medium.factory';
 import { getKyselyDB } from 'test/utils';
+
+import { DB } from 'src/schema';
 
 let database: Kysely<DB>;
 

@@ -1,8 +1,10 @@
+import { setTimeout } from 'node:timers/promises';
+
 import { getQueueToken } from '@nestjs/bullmq';
 import { Injectable } from '@nestjs/common';
 import { ModuleRef, Reflector } from '@nestjs/core';
 import { JobsOptions, Queue, Worker } from 'bullmq';
-import { setTimeout } from 'node:timers/promises';
+
 import { JobConfig } from 'src/decorators';
 import { QueueJobResponseDto, QueueJobSearchDto } from 'src/dtos/queue.dto';
 import { JobName, JobStatus, MetadataKey, QueueCleanType, QueueJobStatus, QueueName } from 'src/enum';

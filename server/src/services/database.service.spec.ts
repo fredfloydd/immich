@@ -1,9 +1,10 @@
+import { mockEnvData } from 'test/repositories/config.repository.mock';
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { EXTENSION_NAMES } from 'src/constants';
 import { DatabaseExtension, VectorIndex } from 'src/enum';
 import { DatabaseService } from 'src/services/database.service';
 import { VectorExtension } from 'src/types';
-import { mockEnvData } from 'test/repositories/config.repository.mock';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 describe(DatabaseService.name, () => {
   let sut: DatabaseService;

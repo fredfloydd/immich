@@ -1,6 +1,7 @@
 import { createZodDto } from 'nestjs-zod';
-import { AssetIdsSchema } from 'src/dtos/asset.dto';
 import z from 'zod';
+
+import { AssetIdsSchema } from 'src/dtos/asset.dto';
 
 const DownloadInfoSchema = z
   .object({

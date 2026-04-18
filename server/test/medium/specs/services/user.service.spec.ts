@@ -1,5 +1,9 @@
 import { Kysely } from 'kysely';
 import { DateTime } from 'luxon';
+import { mediumFactory, newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { ImmichEnvironment, JobName, JobStatus } from 'src/enum';
 import { ConfigRepository } from 'src/repositories/config.repository';
 import { CryptoRepository } from 'src/repositories/crypto.repository';
@@ -10,9 +14,6 @@ import { SystemMetadataRepository } from 'src/repositories/system-metadata.repos
 import { UserRepository } from 'src/repositories/user.repository';
 import { DB } from 'src/schema';
 import { UserService } from 'src/services/user.service';
-import { mediumFactory, newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

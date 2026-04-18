@@ -1,9 +1,10 @@
 import { Kysely } from 'kysely';
+import { SyncTestContext } from 'test/medium.factory';
+import { getKyselyDB, wait } from 'test/utils';
+
 import { AlbumUserRole, SyncEntityType, SyncRequestType } from 'src/enum';
 import { AlbumUserRepository } from 'src/repositories/album-user.repository';
 import { DB } from 'src/schema';
-import { SyncTestContext } from 'test/medium.factory';
-import { getKyselyDB, wait } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

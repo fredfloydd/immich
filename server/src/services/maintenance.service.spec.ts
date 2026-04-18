@@ -1,6 +1,7 @@
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { MaintenanceAction, SystemMetadataKey } from 'src/enum';
 import { MaintenanceService } from 'src/services/maintenance.service';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 describe(MaintenanceService.name, () => {
   let sut: MaintenanceService;

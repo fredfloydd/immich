@@ -2,9 +2,10 @@ import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/co
 import { Response } from 'express';
 import { ClsService } from 'nestjs-cls';
 import { ZodSerializationException, ZodValidationException } from 'nestjs-zod';
+import { ZodError } from 'zod';
+
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { logGlobalError } from 'src/utils/logger';
-import { ZodError } from 'zod';
 
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter<Error> {

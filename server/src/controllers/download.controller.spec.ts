@@ -1,9 +1,11 @@
 import { Readable } from 'node:stream';
-import { DownloadController } from 'src/controllers/download.controller';
-import { DownloadService } from 'src/services/download.service';
+
 import request from 'supertest';
 import { factory } from 'test/small.factory';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { DownloadController } from 'src/controllers/download.controller';
+import { DownloadService } from 'src/services/download.service';
 
 describe(DownloadController.name, () => {
   let ctx: ControllerContext;

@@ -1,8 +1,9 @@
 import { ChokidarOptions } from 'chokidar';
+import { Mocked, vitest } from 'vitest';
+
 import { StorageCore } from 'src/cores/storage.core';
 import { StorageRepository, WatchEvents } from 'src/repositories/storage.repository';
 import { RepositoryInterface } from 'src/types';
-import { Mocked, vitest } from 'vitest';
 
 interface MockWatcherOptions {
   items?: Array<{ event: 'change' | 'add' | 'unlink' | 'error'; value: string }>;

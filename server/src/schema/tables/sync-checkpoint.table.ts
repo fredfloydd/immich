@@ -8,6 +8,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { SyncEntityType } from 'src/enum';
 import { SessionTable } from 'src/schema/tables/session.table';

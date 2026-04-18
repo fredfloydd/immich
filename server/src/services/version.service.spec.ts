@@ -1,11 +1,12 @@
 import { DateTime } from 'luxon';
 import { SemVer } from 'semver';
+import { factory } from 'test/small.factory';
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { defaults } from 'src/config';
 import { serverVersion } from 'src/constants';
 import { CronJob, JobName, JobStatus, SystemMetadataKey } from 'src/enum';
 import { VersionService } from 'src/services/version.service';
-import { factory } from 'test/small.factory';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 const mockVersionResponse = (version: string) => ({
   version,

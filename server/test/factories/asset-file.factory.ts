@@ -1,10 +1,11 @@
 import { Selectable } from 'kysely';
-import { AssetFileType } from 'src/enum';
-import { AssetFileTable } from 'src/schema/tables/asset-file.table';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { build } from 'test/factories/builder.factory';
 import { AssetFileLike, AssetLike, FactoryBuilder } from 'test/factories/types';
 import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { AssetFileType } from 'src/enum';
+import { AssetFileTable } from 'src/schema/tables/asset-file.table';
 
 export class AssetFileFactory {
   private constructor(private readonly value: Selectable<AssetFileTable>) {}

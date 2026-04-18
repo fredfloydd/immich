@@ -8,6 +8,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { Permission } from 'src/enum';
 import { UserTable } from 'src/schema/tables/user.table';

@@ -1,4 +1,7 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { AssetFileType, JobStatus } from 'src/enum';
 import { AssetJobRepository } from 'src/repositories/asset-job.repository';
 import { AssetRepository } from 'src/repositories/asset.repository';
@@ -10,8 +13,6 @@ import { OcrRepository } from 'src/repositories/ocr.repository';
 import { SystemMetadataRepository } from 'src/repositories/system-metadata.repository';
 import { DB } from 'src/schema';
 import { OcrService } from 'src/services/ocr.service';
-import { newMediumService } from 'test/medium.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

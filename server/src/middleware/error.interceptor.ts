@@ -6,7 +6,8 @@ import {
   InternalServerErrorException,
   NestInterceptor,
 } from '@nestjs/common';
-import { Observable, catchError, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { logGlobalError } from 'src/utils/logger';
 import { routeToErrorMessage } from 'src/utils/misc';

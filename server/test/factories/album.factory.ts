@@ -1,13 +1,14 @@
 import { Selectable } from 'kysely';
-import { AssetOrder } from 'src/enum';
-import { AlbumTable } from 'src/schema/tables/album.table';
-import { SharedLinkTable } from 'src/schema/tables/shared-link.table';
 import { AlbumUserFactory } from 'test/factories/album-user.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { build } from 'test/factories/builder.factory';
 import { AlbumLike, AlbumUserLike, AssetLike, FactoryBuilder, UserLike } from 'test/factories/types';
 import { UserFactory } from 'test/factories/user.factory';
 import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { AssetOrder } from 'src/enum';
+import { AlbumTable } from 'src/schema/tables/album.table';
+import { SharedLinkTable } from 'src/schema/tables/shared-link.table';
 
 export class AlbumFactory {
   #owner: UserFactory;

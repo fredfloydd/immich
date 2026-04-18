@@ -1,4 +1,8 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { SearchSuggestionType } from 'src/dtos/search.dto';
 import { AccessRepository } from 'src/repositories/access.repository';
 import { AssetRepository } from 'src/repositories/asset.repository';
@@ -9,9 +13,6 @@ import { PersonRepository } from 'src/repositories/person.repository';
 import { SearchRepository } from 'src/repositories/search.repository';
 import { DB } from 'src/schema';
 import { SearchService } from 'src/services/search.service';
-import { newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

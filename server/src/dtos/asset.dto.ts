@@ -1,10 +1,11 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { HistoryBuilder } from 'src/decorators';
 import { BulkIdsSchema } from 'src/dtos/asset-ids.response.dto';
 import { AssetType, AssetVisibilitySchema } from 'src/enum';
 import { AssetStats } from 'src/repositories/asset.repository';
 import { IsNotSiblingOf, isoDatetimeToDate, latitudeSchema, longitudeSchema, stringToBool } from 'src/validation';
-import z from 'zod';
 
 const UpdateAssetBaseSchema = z
   .object({

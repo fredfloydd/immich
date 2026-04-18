@@ -1,8 +1,9 @@
+import { describe, expect, it } from 'vitest';
+
 import { AssetFace } from 'src/database';
 import { AssetOcrResponseDto } from 'src/dtos/ocr.dto';
 import { SourceType } from 'src/enum';
 import { boundingBoxOverlap, checkFaceVisibility, checkOcrVisibility } from 'src/utils/editor';
-import { describe, expect, it } from 'vitest';
 
 describe('boundingBoxOverlap', () => {
   it('should return 1 for identical boxes', () => {

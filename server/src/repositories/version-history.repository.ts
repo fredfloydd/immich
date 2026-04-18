@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Insertable, Kysely } from 'kysely';
 import { InjectKysely } from 'nestjs-kysely';
+
 import { GenerateSql } from 'src/decorators';
 import { DB } from 'src/schema';
 import { VersionHistoryTable } from 'src/schema/tables/version-history.table';

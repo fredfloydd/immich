@@ -1,5 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+
 import { Endpoint, HistoryBuilder } from 'src/decorators';
 import { PluginResponseDto, PluginTriggerResponseDto } from 'src/dtos/plugin.dto';
 import { Permission } from 'src/enum';

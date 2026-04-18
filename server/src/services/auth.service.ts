@@ -1,7 +1,9 @@
+import { IncomingHttpHeaders } from 'node:http';
+
 import { BadRequestException, ForbiddenException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { parse } from 'cookie';
 import { DateTime } from 'luxon';
-import { IncomingHttpHeaders } from 'node:http';
+
 import { LOGIN_URL, MOBILE_REDIRECT, SALT_ROUNDS } from 'src/constants';
 import { AuthSharedLink, AuthUser, UserAdmin } from 'src/database';
 import {
@@ -10,6 +12,7 @@ import {
   ChangePasswordDto,
   LoginCredentialDto,
   LogoutResponseDto,
+  mapLoginResponse,
   OAuthBackchannelLogoutDto,
   OAuthCallbackDto,
   OAuthConfigDto,
@@ -18,9 +21,8 @@ import {
   PinCodeSetupDto,
   SessionUnlockDto,
   SignUpDto,
-  mapLoginResponse,
 } from 'src/dtos/auth.dto';
-import { UserAdminResponseDto, mapUserAdmin } from 'src/dtos/user.dto';
+import { mapUserAdmin, UserAdminResponseDto } from 'src/dtos/user.dto';
 import { AuthType, ImmichCookie, ImmichHeader, ImmichQuery, JobName, Permission } from 'src/enum';
 import { OAuthProfile } from 'src/repositories/oauth.repository';
 import { BaseService } from 'src/services/base.service';
@@ -28,6 +30,7 @@ import { isGranted } from 'src/utils/access';
 import { HumanReadableSize } from 'src/utils/bytes';
 import { generateProfileImage } from 'src/utils/profile-image';
 import { getUserAgentDetails } from 'src/utils/request';
+
 export interface LoginDetails {
   isSecure: boolean;
   clientIp: string;

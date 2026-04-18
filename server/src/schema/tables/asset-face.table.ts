@@ -10,6 +10,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { SourceType } from 'src/enum';
 import { asset_face_source_type } from 'src/schema/enums';

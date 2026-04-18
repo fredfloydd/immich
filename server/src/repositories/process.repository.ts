@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
 import { ChildProcessWithoutNullStreams, fork, spawn, SpawnOptionsWithoutStdio } from 'node:child_process';
 import { Duplex } from 'node:stream';
+
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class ProcessRepository {

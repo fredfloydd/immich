@@ -1,5 +1,7 @@
-import { NestFactory } from '@nestjs/core';
 import { isMainThread } from 'node:worker_threads';
+
+import { NestFactory } from '@nestjs/core';
+
 import { MicroservicesModule } from 'src/app.module';
 import { serverVersion } from 'src/constants';
 import { WebSocketAdapter } from 'src/middleware/websocket.adapter';

@@ -1,4 +1,5 @@
 import { Column, ForeignKeyColumn, Generated, PrimaryGeneratedColumn, Table } from '@immich/sql-tools';
+
 import { AssetTable } from 'src/schema/tables/asset.table';
 
 @Table('asset_ocr')

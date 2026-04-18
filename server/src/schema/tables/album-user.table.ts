@@ -9,6 +9,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { CreateIdColumn, UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AlbumUserRole } from 'src/enum';
 import { album_user_after_insert, album_user_delete_audit } from 'src/schema/functions';

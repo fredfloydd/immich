@@ -1,4 +1,5 @@
 import { Column, PrimaryColumn, Table } from '@immich/sql-tools';
+
 import { SystemMetadataKey } from 'src/enum';
 import { SystemMetadata } from 'src/types';
 

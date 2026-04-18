@@ -10,6 +10,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AssetOrder } from 'src/enum';
 import { album_delete_audit } from 'src/schema/functions';

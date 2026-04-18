@@ -1,4 +1,5 @@
 import { HttpException } from '@nestjs/common';
+
 import { LoggingRepository } from 'src/repositories/logging.repository';
 
 export const logGlobalError = (logger: LoggingRepository, error: Error) => {

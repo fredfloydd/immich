@@ -1,11 +1,6 @@
-import { BadRequestException } from '@nestjs/common';
 import { Stats } from 'node:fs';
-import { defaults, SystemConfig } from 'src/config';
-import { JOBS_LIBRARY_PAGINATION_SIZE } from 'src/constants';
-import { mapLibrary } from 'src/dtos/library.dto';
-import { AssetType, CronJob, ImmichWorker, JobName, JobStatus } from 'src/enum';
-import { LibraryService } from 'src/services/library.service';
-import { ILibraryBulkIdsJob, ILibraryFileJob } from 'src/types';
+
+import { BadRequestException } from '@nestjs/common';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { authStub } from 'test/fixtures/auth.stub';
 import { systemConfigStub } from 'test/fixtures/system-config.stub';
@@ -13,6 +8,13 @@ import { makeMockWatcher } from 'test/repositories/storage.repository.mock';
 import { factory, newDate, newUuid } from 'test/small.factory';
 import { makeStream, newTestService, ServiceMocks } from 'test/utils';
 import { vitest } from 'vitest';
+
+import { defaults, SystemConfig } from 'src/config';
+import { JOBS_LIBRARY_PAGINATION_SIZE } from 'src/constants';
+import { mapLibrary } from 'src/dtos/library.dto';
+import { AssetType, CronJob, ImmichWorker, JobName, JobStatus } from 'src/enum';
+import { LibraryService } from 'src/services/library.service';
+import { ILibraryBulkIdsJob, ILibraryFileJob } from 'src/types';
 
 async function* mockWalk() {
   yield await Promise.resolve(['/data/user1/photo.jpg']);

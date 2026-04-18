@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { JOBS_ASSET_PAGINATION_SIZE } from 'src/constants';
 import { OnEvent, OnJob } from 'src/decorators';
 import { BulkIdsDto } from 'src/dtos/asset-ids.response.dto';

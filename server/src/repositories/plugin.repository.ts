@@ -1,8 +1,10 @@
+import { readdir } from 'node:fs/promises';
+
 import { Injectable } from '@nestjs/common';
 import { Kysely } from 'kysely';
 import { jsonArrayFrom } from 'kysely/helpers/postgres';
 import { InjectKysely } from 'nestjs-kysely';
-import { readdir } from 'node:fs/promises';
+
 import { columns } from 'src/database';
 import { DummyValue, GenerateSql } from 'src/decorators';
 import { PluginManifestDto } from 'src/dtos/plugin-manifest.dto';

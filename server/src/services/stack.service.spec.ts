@@ -1,5 +1,4 @@
 import { BadRequestException } from '@nestjs/common';
-import { StackService } from 'src/services/stack.service';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { AuthFactory } from 'test/factories/auth.factory';
 import { StackFactory } from 'test/factories/stack.factory';
@@ -7,6 +6,8 @@ import { authStub } from 'test/fixtures/auth.stub';
 import { getForStack } from 'test/mappers';
 import { newUuid } from 'test/small.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { StackService } from 'src/services/stack.service';
 
 describe(StackService.name, () => {
   let sut: StackService;

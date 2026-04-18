@@ -1,8 +1,17 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all",
+  "importOrder": ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^@immich/(.*)$", "", "^src/(.*)$", "", "^[.]"],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "overrides": [
+    {
+      "files": "*.tsx",
+      "options": {
+        "importOrderParserPlugins": ["typescript", "jsx"]
+      }
+    }
+  ],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
   "printWidth": 120,
   "semi": true,
-  "organizeImportsSkipDestructiveCodeActions": true,
-  "plugins": ["prettier-plugin-organize-imports"]
+  "singleQuote": true,
+  "trailingComma": "all"
 }

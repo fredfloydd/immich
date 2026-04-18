@@ -1,9 +1,10 @@
+import request from 'supertest';
+import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
 import { ServerController } from 'src/controllers/server.controller';
 import { ServerService } from 'src/services/server.service';
 import { SystemMetadataService } from 'src/services/system-metadata.service';
 import { VersionService } from 'src/services/version.service';
-import request from 'supertest';
-import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
 
 describe(ServerController.name, () => {
   let ctx: ControllerContext;

@@ -1,6 +1,7 @@
+import z from 'zod';
+
 import { ImmichEnvironmentSchema, LogFormatSchema, LogLevelSchema } from 'src/enum';
 import { IsIPRange } from 'src/validation';
-import z from 'zod';
 
 // TODO import from sql-tools once the swagger plugin supports external enums
 enum DatabaseSslMode {

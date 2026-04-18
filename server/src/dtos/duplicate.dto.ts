@@ -1,6 +1,7 @@
 import { createZodDto } from 'nestjs-zod';
-import { AssetResponseSchema } from 'src/dtos/asset-response.dto';
 import z from 'zod';
+
+import { AssetResponseSchema } from 'src/dtos/asset-response.dto';
 
 const DuplicateResponseSchema = z
   .object({

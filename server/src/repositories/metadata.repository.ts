@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { BinaryField, DefaultReadTaskOptions, ExifTool, Tags } from 'exiftool-vendored';
 import geotz from 'geo-tz';
+
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { mimeTypes } from 'src/utils/mime-types';
 

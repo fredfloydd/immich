@@ -1,12 +1,13 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { PluginContext } from 'src/enum';
 import { AccessRepository } from 'src/repositories/access.repository';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { PluginRepository } from 'src/repositories/plugin.repository';
 import { DB } from 'src/schema';
 import { PluginService } from 'src/services/plugin.service';
-import { newMediumService } from 'test/medium.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 let pluginRepo: PluginRepository;

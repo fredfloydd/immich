@@ -1,10 +1,4 @@
 import { BadRequestException, NotFoundException } from '@nestjs/common';
-import { BulkIdErrorReason } from 'src/dtos/asset-ids.response.dto';
-import { mapFaces, mapPerson } from 'src/dtos/person.dto';
-import { AssetFileType, CacheControl, JobName, JobStatus, SourceType, SystemMetadataKey } from 'src/enum';
-import { FaceSearchResult } from 'src/repositories/search.repository';
-import { PersonService } from 'src/services/person.service';
-import { ImmichFileResponse } from 'src/utils/file';
 import { AssetFaceFactory } from 'test/factories/asset-face.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { AuthFactory } from 'test/factories/auth.factory';
@@ -21,6 +15,13 @@ import {
 } from 'test/mappers';
 import { newDate, newUuid } from 'test/small.factory';
 import { makeStream, newTestService, ServiceMocks } from 'test/utils';
+
+import { BulkIdErrorReason } from 'src/dtos/asset-ids.response.dto';
+import { mapFaces, mapPerson } from 'src/dtos/person.dto';
+import { AssetFileType, CacheControl, JobName, JobStatus, SourceType, SystemMetadataKey } from 'src/enum';
+import { FaceSearchResult } from 'src/repositories/search.repository';
+import { PersonService } from 'src/services/person.service';
+import { ImmichFileResponse } from 'src/utils/file';
 
 describe(PersonService.name, () => {
   let sut: PersonService;

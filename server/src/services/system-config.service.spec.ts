@@ -1,4 +1,7 @@
 import { BadRequestException } from '@nestjs/common';
+import { mockEnvData } from 'test/repositories/config.repository.mock';
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { defaults, SystemConfig } from 'src/config';
 import {
   AudioCodec,
@@ -16,8 +19,6 @@ import {
 } from 'src/enum';
 import { SystemConfigService } from 'src/services/system-config.service';
 import { DeepPartial } from 'src/types';
-import { mockEnvData } from 'test/repositories/config.repository.mock';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 const partialConfig = {
   ffmpeg: { crf: 30 },

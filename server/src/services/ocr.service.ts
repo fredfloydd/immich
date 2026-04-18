@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { JOBS_ASSET_PAGINATION_SIZE } from 'src/constants';
 import { OnJob } from 'src/decorators';
 import { AssetVisibility, JobName, JobStatus, QueueName } from 'src/enum';

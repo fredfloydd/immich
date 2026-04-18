@@ -1,7 +1,8 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { QueueResponseDto, QueueStatisticsSchema } from 'src/dtos/queue.dto';
 import { QueueName } from 'src/enum';
-import z from 'zod';
 
 const QueueStatusLegacySchema = z
   .object({

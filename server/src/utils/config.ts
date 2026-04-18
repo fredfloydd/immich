@@ -1,7 +1,8 @@
 import AsyncLock from 'async-lock';
 import { load as loadYaml } from 'js-yaml';
 import * as _ from 'lodash';
-import { SystemConfig, defaults } from 'src/config';
+
+import { defaults, SystemConfig } from 'src/config';
 import { SystemConfigSchema } from 'src/dtos/system-config.dto';
 import { DatabaseLock, SystemMetadataKey } from 'src/enum';
 import { ConfigRepository } from 'src/repositories/config.repository';

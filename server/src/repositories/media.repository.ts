@@ -1,10 +1,12 @@
+import fs from 'node:fs/promises';
+import { Writable } from 'node:stream';
+
 import { Injectable } from '@nestjs/common';
 import { ExifDateTime, exiftool, WriteTags } from 'exiftool-vendored';
 import ffmpeg, { FfprobeData } from 'fluent-ffmpeg';
 import { Duration } from 'luxon';
-import fs from 'node:fs/promises';
-import { Writable } from 'node:stream';
 import sharp from 'sharp';
+
 import { ORIENTATION_TO_SHARP_ROTATION } from 'src/constants';
 import { Exif } from 'src/database';
 import { AssetEditActionItem } from 'src/dtos/editing.dto';

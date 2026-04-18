@@ -1,10 +1,11 @@
 import { Kysely } from 'kysely';
+import { GenericContainer, Wait } from 'testcontainers';
+
 import { ConfigRepository } from 'src/repositories/config.repository';
 import { DatabaseRepository } from 'src/repositories/database.repository';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { DB } from 'src/schema';
 import { getKyselyConfig } from 'src/utils/database';
-import { GenericContainer, Wait } from 'testcontainers';
 
 const globalSetup = async () => {
   const templateName = 'mich';

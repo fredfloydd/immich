@@ -1,11 +1,12 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { UserRepository } from 'src/repositories/user.repository';
 import { DB } from 'src/schema';
 import { AuthAdminService } from 'src/services/auth-admin.service';
-import { newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

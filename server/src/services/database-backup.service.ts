@@ -1,10 +1,12 @@
-import { BadRequestException, Injectable, Optional } from '@nestjs/common';
-import { debounce } from 'lodash';
-import { DateTime } from 'luxon';
 import path, { basename } from 'node:path';
 import { PassThrough, Readable, Writable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
+
+import { BadRequestException, Injectable, Optional } from '@nestjs/common';
+import { debounce } from 'lodash';
+import { DateTime } from 'luxon';
 import semver from 'semver';
+
 import { serverVersion } from 'src/constants';
 import { StorageCore } from 'src/cores/storage.core';
 import { OnEvent, OnJob } from 'src/decorators';

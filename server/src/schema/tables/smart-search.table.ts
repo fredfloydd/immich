@@ -1,4 +1,5 @@
 import { Column, ForeignKeyColumn, Index, Table } from '@immich/sql-tools';
+
 import { AssetTable } from 'src/schema/tables/asset.table';
 
 @Table({ name: 'smart_search' })

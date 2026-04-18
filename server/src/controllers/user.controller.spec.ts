@@ -1,10 +1,11 @@
-import { UserController } from 'src/controllers/user.controller';
-import { LoggingRepository } from 'src/repositories/logging.repository';
-import { UserService } from 'src/services/user.service';
 import request from 'supertest';
 import { errorDto } from 'test/medium/responses';
 import { factory } from 'test/small.factory';
 import { automock, ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { UserController } from 'src/controllers/user.controller';
+import { LoggingRepository } from 'src/repositories/logging.repository';
+import { UserService } from 'src/services/user.service';
 
 describe(UserController.name, () => {
   let ctx: ControllerContext;

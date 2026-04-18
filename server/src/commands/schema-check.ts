@@ -1,5 +1,7 @@
-import { asHuman } from '@immich/sql-tools';
 import { Command, CommandRunner } from 'nest-commander';
+
+import { asHuman } from '@immich/sql-tools';
+
 import { ErrorMessages } from 'src/constants';
 import { CliService } from 'src/services/cli.service';
 

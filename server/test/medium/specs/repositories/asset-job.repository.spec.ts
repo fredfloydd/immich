@@ -1,11 +1,12 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { AssetFileType } from 'src/enum';
 import { AssetJobRepository } from 'src/repositories/asset-job.repository';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { DB } from 'src/schema';
 import { BaseService } from 'src/services/base.service';
-import { newMediumService } from 'test/medium.factory';
-import { getKyselyDB } from 'test/utils';
 
 const consume = async <T>(generator: AsyncIterableIterator<T>) => {
   const values: T[] = [];

@@ -15,6 +15,7 @@ import {
   skipSubjectCheck,
   type UserInfoResponse,
 } from 'openid-client';
+
 import { OAuthTokenEndpointAuthMethod } from 'src/enum';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 

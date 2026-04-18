@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import { UserPreferencesUpdateDto } from 'src/dtos/user-preferences.dto';
 import { AssetOrder, UserMetadataKey } from 'src/enum';
 import { DeepPartial, UserMetadataItem, UserPreferences } from 'src/types';

@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+
 import { AuthDto } from 'src/dtos/auth.dto';
 import { mapNotification, NotificationCreateDto } from 'src/dtos/notification.dto';
 import { SystemConfigSmtpDto } from 'src/dtos/system-config.dto';

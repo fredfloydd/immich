@@ -1,7 +1,8 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { HistoryBuilder } from 'src/decorators';
 import { JobNameSchema, QueueCommandSchema, QueueJobStatusSchema, QueueNameSchema } from 'src/enum';
-import z from 'zod';
 
 const QueueNameParamSchema = z
   .object({

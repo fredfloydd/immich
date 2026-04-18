@@ -1,7 +1,4 @@
 import { Selectable } from 'kysely';
-import { AssetFileType, AssetStatus, AssetType, AssetVisibility, ChecksumAlgorithm } from 'src/enum';
-import { AssetTable } from 'src/schema/tables/asset.table';
-import { StackTable } from 'src/schema/tables/stack.table';
 import { AssetEditFactory } from 'test/factories/asset-edit.factory';
 import { AssetExifFactory } from 'test/factories/asset-exif.factory';
 import { AssetFaceFactory } from 'test/factories/asset-face.factory';
@@ -20,6 +17,10 @@ import {
 } from 'test/factories/types';
 import { UserFactory } from 'test/factories/user.factory';
 import { newSha1, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { AssetFileType, AssetStatus, AssetType, AssetVisibility, ChecksumAlgorithm } from 'src/enum';
+import { AssetTable } from 'src/schema/tables/asset.table';
+import { StackTable } from 'src/schema/tables/stack.table';
 
 export class AssetFactory {
   #owner!: UserFactory;

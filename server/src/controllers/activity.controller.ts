@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Query, Res } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
+
 import { Endpoint, HistoryBuilder } from 'src/decorators';
 import {
   ActivityCreateDto,

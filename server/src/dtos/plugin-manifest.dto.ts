@@ -1,7 +1,8 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { PluginContextSchema } from 'src/enum';
 import { JSONSchemaSchema } from 'src/types/plugin-schema.types';
-import z from 'zod';
 
 const pluginNameRegex = /^[a-z0-9-]+[a-z0-9]$/;
 const semverRegex =

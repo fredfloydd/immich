@@ -1,8 +1,9 @@
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import type { WorkflowAction, WorkflowFilter } from 'src/database';
 import { PluginTriggerTypeSchema } from 'src/enum';
 import { ActionConfigSchema, FilterConfigSchema } from 'src/types/plugin-schema.types';
-import z from 'zod';
 
 const WorkflowFilterItemSchema = z
   .object({

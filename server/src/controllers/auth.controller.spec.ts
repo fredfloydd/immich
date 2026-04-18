@@ -1,10 +1,11 @@
-import { AuthController } from 'src/controllers/auth.controller';
-import { LoginResponseDto } from 'src/dtos/auth.dto';
-import { AuthService } from 'src/services/auth.service';
 import request from 'supertest';
 import { mediumFactory } from 'test/medium.factory';
 import { errorDto } from 'test/medium/responses';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { AuthController } from 'src/controllers/auth.controller';
+import { LoginResponseDto } from 'src/dtos/auth.dto';
+import { AuthService } from 'src/services/auth.service';
 
 describe(AuthController.name, () => {
   let ctx: ControllerContext;

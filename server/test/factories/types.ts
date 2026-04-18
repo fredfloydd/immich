@@ -1,4 +1,5 @@
 import { Selectable } from 'kysely';
+
 import { OAuthProfile } from 'src/repositories/oauth.repository';
 import { ActivityTable } from 'src/schema/tables/activity.table';
 import { AlbumUserTable } from 'src/schema/tables/album-user.table';

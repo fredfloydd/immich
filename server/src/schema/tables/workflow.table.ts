@@ -8,6 +8,7 @@ import {
   Table,
   Timestamp,
 } from '@immich/sql-tools';
+
 import { PluginTriggerType } from 'src/enum';
 import { PluginActionTable, PluginFilterTable } from 'src/schema/tables/plugin.table';
 import { UserTable } from 'src/schema/tables/user.table';

@@ -1,4 +1,5 @@
 import { createZodDto } from 'nestjs-zod';
+
 import { UserLicenseSchema } from 'src/dtos/user.dto';
 
 const LicenseKeySchema = UserLicenseSchema.pick({

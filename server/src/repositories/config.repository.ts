@@ -1,4 +1,6 @@
-import { DatabaseConnectionParams } from '@immich/sql-tools';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { RegisterQueueOptions } from '@nestjs/bullmq';
 import { Inject, Injectable, Optional } from '@nestjs/common';
 import { QueueOptions } from 'bullmq';
@@ -7,8 +9,9 @@ import { HelmetOptions } from 'helmet';
 import { RedisOptions } from 'ioredis';
 import { CLS_ID, ClsModuleOptions } from 'nestjs-cls';
 import { OpenTelemetryModuleOptions } from 'nestjs-otel/lib/interfaces';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+
+import { DatabaseConnectionParams } from '@immich/sql-tools';
+
 import { citiesFile, excludePaths, IWorker } from 'src/constants';
 import { Telemetry } from 'src/decorators';
 import { EnvSchema } from 'src/dtos/env.dto';

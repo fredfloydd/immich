@@ -1,10 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
-import { Insertable, Kysely } from 'kysely';
-import { DateTime } from 'luxon';
 import { createHash, randomBytes } from 'node:crypto';
 import { Stats } from 'node:fs';
 import { resolve } from 'node:path';
 import { Writable } from 'node:stream';
+
+import { Insertable, Kysely } from 'kysely';
+import { DateTime } from 'luxon';
+import { mockEnvData } from 'test/repositories/config.repository.mock';
+import { newTelemetryRepositoryMock } from 'test/repositories/telemetry.repository.mock';
+import { factory, newDate, newEmbedding, newUuid } from 'test/small.factory';
+import { automock, wait } from 'test/utils';
+import { Mocked } from 'vitest';
+
 import { AssetFace } from 'src/database';
 import { AuthDto, LoginResponseDto } from 'src/dtos/auth.dto';
 import { AssetEditActionItem, AssetEditsCreateDto } from 'src/dtos/editing.dto';
@@ -75,11 +82,6 @@ import { BASE_SERVICE_DEPENDENCIES, BaseService } from 'src/services/base.servic
 import { MetadataService } from 'src/services/metadata.service';
 import { SyncService } from 'src/services/sync.service';
 import { UploadFile } from 'src/types';
-import { mockEnvData } from 'test/repositories/config.repository.mock';
-import { newTelemetryRepositoryMock } from 'test/repositories/telemetry.repository.mock';
-import { factory, newDate, newEmbedding, newUuid } from 'test/small.factory';
-import { automock, wait } from 'test/utils';
-import { Mocked } from 'vitest';
 
 // eslint-disable-next-line unicorn/prefer-module
 export const testAssetsDir = resolve(__dirname, '../../e2e/test-assets');

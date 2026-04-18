@@ -1,4 +1,5 @@
 import { Column, Generated, PrimaryGeneratedColumn, Table, Unique } from '@immich/sql-tools';
+
 import { PathType } from 'src/enum';
 
 @Table('move_history')

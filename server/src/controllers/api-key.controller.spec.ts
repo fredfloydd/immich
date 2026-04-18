@@ -1,9 +1,10 @@
-import { ApiKeyController } from 'src/controllers/api-key.controller';
-import { Permission } from 'src/enum';
-import { ApiKeyService } from 'src/services/api-key.service';
 import request from 'supertest';
 import { factory } from 'test/small.factory';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { ApiKeyController } from 'src/controllers/api-key.controller';
+import { Permission } from 'src/enum';
+import { ApiKeyService } from 'src/services/api-key.service';
 
 describe(ApiKeyController.name, () => {
   let ctx: ControllerContext;

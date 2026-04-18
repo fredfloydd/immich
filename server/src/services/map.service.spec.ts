@@ -1,4 +1,3 @@
-import { MapService } from 'src/services/map.service';
 import { AlbumFactory } from 'test/factories/album.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { AuthFactory } from 'test/factories/auth.factory';
@@ -6,6 +5,8 @@ import { PartnerFactory } from 'test/factories/partner.factory';
 import { userStub } from 'test/fixtures/user.stub';
 import { getForAlbum, getForPartner } from 'test/mappers';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { MapService } from 'src/services/map.service';
 
 describe(MapService.name, () => {
   let sut: MapService;

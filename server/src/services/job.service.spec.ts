@@ -1,9 +1,10 @@
-import { AssetType, ImmichWorker, JobName, JobStatus, QueueName } from 'src/enum';
-import { JobService } from 'src/services/job.service';
-import { JobItem } from 'src/types';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { newUuid } from 'test/small.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { AssetType, ImmichWorker, JobName, JobStatus, QueueName } from 'src/enum';
+import { JobService } from 'src/services/job.service';
+import { JobItem } from 'src/types';
 
 describe(JobService.name, () => {
   let sut: JobService;

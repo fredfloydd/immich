@@ -1,5 +1,10 @@
-import { Kysely } from 'kysely';
 import { randomBytes } from 'node:crypto';
+
+import { Kysely } from 'kysely';
+import { mediumFactory, newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { AssetMediaStatus } from 'src/dtos/asset-media-response.dto';
 import { AssetMediaSize } from 'src/dtos/asset-media.dto';
 import { AssetFileType, SharedLinkType } from 'src/enum';
@@ -16,9 +21,6 @@ import { DB } from 'src/schema';
 import { AssetMediaService } from 'src/services/asset-media.service';
 import { AssetService } from 'src/services/asset.service';
 import { ImmichFileResponse } from 'src/utils/file';
-import { mediumFactory, newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

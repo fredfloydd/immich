@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { dirname, join, resolve } from 'node:path';
+
 import { StorageAsset } from 'src/database';
 import {
   AssetFileType,

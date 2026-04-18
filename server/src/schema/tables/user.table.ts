@@ -1,3 +1,5 @@
+import { ColumnType } from 'kysely';
+
 import {
   AfterDeleteTrigger,
   Column,
@@ -10,7 +12,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
-import { ColumnType } from 'kysely';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { UserAvatarColor, UserStatus } from 'src/enum';
 import { user_delete_audit } from 'src/schema/functions';

@@ -1,4 +1,3 @@
-import { createPostgres, DatabaseConnectionParams } from '@immich/sql-tools';
 import {
   AliasedRawBuilder,
   DeduplicateJoinsPlugin,
@@ -15,6 +14,9 @@ import {
 import { PostgresJSDialect } from 'kysely-postgres-js';
 import { jsonArrayFrom, jsonObjectFrom } from 'kysely/helpers/postgres';
 import { Notice, PostgresError } from 'postgres';
+
+import { createPostgres, DatabaseConnectionParams } from '@immich/sql-tools';
+
 import { columns, lockableProperties, LockableProperty, Person } from 'src/database';
 import { AssetEditActionItem } from 'src/dtos/editing.dto';
 import { AssetFileType, AssetVisibility, DatabaseExtension } from 'src/enum';

@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+
 import { Workflow } from 'src/database';
 import { AuthDto } from 'src/dtos/auth.dto';
 import {
@@ -10,7 +11,6 @@ import {
 } from 'src/dtos/workflow.dto';
 import { Permission, PluginContext, PluginTriggerType } from 'src/enum';
 import { pluginTriggers } from 'src/plugins';
-
 import { BaseService } from 'src/services/base.service';
 
 @Injectable()

@@ -1,7 +1,9 @@
+import { readFileSync } from 'node:fs';
+
 import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
 import { escape } from 'lodash';
-import { readFileSync } from 'node:fs';
+
 import { ConfigRepository } from 'src/repositories/config.repository';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { AuthService } from 'src/services/auth.service';

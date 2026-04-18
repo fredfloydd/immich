@@ -13,6 +13,10 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { NextFunction, Request, Response } from 'express';
+
+import type { DatabaseBackupController as _DatabaseBackupController } from 'src/controllers/database-backup.controller';
+import type { ServerController as _ServerController } from 'src/controllers/server.controller';
+import { DatabaseBackupDeleteDto, DatabaseBackupListResponseDto } from 'src/dtos/database-backup.dto';
 import {
   MaintenanceAuthDto,
   MaintenanceDetectInstallResponseDto,
@@ -27,14 +31,10 @@ import { MaintenanceWorkerService } from 'src/maintenance/maintenance-worker.ser
 import { GetLoginDetails } from 'src/middleware/auth.guard';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { LoginDetails } from 'src/services/auth.service';
+import { DatabaseBackupService } from 'src/services/database-backup.service';
 import { sendFile } from 'src/utils/file';
 import { respondWithCookie } from 'src/utils/response';
 import { FilenameParamDto } from 'src/validation';
-
-import type { DatabaseBackupController as _DatabaseBackupController } from 'src/controllers/database-backup.controller';
-import type { ServerController as _ServerController } from 'src/controllers/server.controller';
-import { DatabaseBackupDeleteDto, DatabaseBackupListResponseDto } from 'src/dtos/database-backup.dto';
-import { DatabaseBackupService } from 'src/services/database-backup.service';
 
 @Controller()
 export class MaintenanceWorkerController {

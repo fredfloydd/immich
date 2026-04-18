@@ -1,11 +1,13 @@
-import { BadRequestException } from '@nestjs/common';
 import { Readable } from 'node:stream';
-import { DownloadResponseDto } from 'src/dtos/download.dto';
-import { DownloadService } from 'src/services/download.service';
+
+import { BadRequestException } from '@nestjs/common';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { authStub } from 'test/fixtures/auth.stub';
 import { makeStream, newTestService, ServiceMocks } from 'test/utils';
 import { vitest } from 'vitest';
+
+import { DownloadResponseDto } from 'src/dtos/download.dto';
+import { DownloadService } from 'src/services/download.service';
 
 const downloadResponse: DownloadResponseDto = {
   totalSize: 105_000,

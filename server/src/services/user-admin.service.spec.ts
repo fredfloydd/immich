@@ -1,13 +1,14 @@
 import { BadRequestException, ForbiddenException } from '@nestjs/common';
-import { mapUserAdmin } from 'src/dtos/user.dto';
-import { JobName, UserStatus } from 'src/enum';
-import { UserAdminService } from 'src/services/user-admin.service';
 import { AuthFactory } from 'test/factories/auth.factory';
 import { UserFactory } from 'test/factories/user.factory';
 import { authStub } from 'test/fixtures/auth.stub';
 import { userStub } from 'test/fixtures/user.stub';
 import { newTestService, ServiceMocks } from 'test/utils';
 import { describe } from 'vitest';
+
+import { mapUserAdmin } from 'src/dtos/user.dto';
+import { JobName, UserStatus } from 'src/enum';
+import { UserAdminService } from 'src/services/user-admin.service';
 
 describe(UserAdminService.name, () => {
   let sut: UserAdminService;

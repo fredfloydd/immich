@@ -1,10 +1,11 @@
 import { Selectable } from 'kysely';
-import { MemoryType } from 'src/enum';
-import { MemoryTable } from 'src/schema/tables/memory.table';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { build } from 'test/factories/builder.factory';
 import { AssetLike, FactoryBuilder, MemoryLike } from 'test/factories/types';
 import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { MemoryType } from 'src/enum';
+import { MemoryTable } from 'src/schema/tables/memory.table';
 
 export class MemoryFactory {
   #assets: AssetFactory[] = [];

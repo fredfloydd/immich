@@ -1,6 +1,7 @@
-import { AssetFileType, AssetType } from 'src/enum';
 import { AssetFileFactory } from 'test/factories/asset-file.factory';
 import { userStub } from 'test/fixtures/user.stub';
+
+import { AssetFileType, AssetType } from 'src/enum';
 
 export const personThumbnailStub = {
   newThumbnailStart: Object.freeze({

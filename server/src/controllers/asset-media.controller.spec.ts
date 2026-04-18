@@ -1,11 +1,12 @@
+import request from 'supertest';
+import { factory } from 'test/small.factory';
+import { automock, ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
 import { AssetMediaController } from 'src/controllers/asset-media.controller';
 import { AssetMediaStatus } from 'src/dtos/asset-media-response.dto';
 import { AssetMetadataKey } from 'src/enum';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { AssetMediaService } from 'src/services/asset-media.service';
-import request from 'supertest';
-import { factory } from 'test/small.factory';
-import { automock, ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
 
 const makeUploadDto = (options?: { omit: string }): Record<string, any> => {
   const dto: Record<string, any> = {

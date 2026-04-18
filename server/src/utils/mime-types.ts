@@ -1,4 +1,5 @@
 import { extname } from 'node:path';
+
 import { AssetType } from 'src/enum';
 
 const raw = {

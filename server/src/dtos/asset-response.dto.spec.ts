@@ -1,9 +1,10 @@
-import { mapAsset } from 'src/dtos/asset-response.dto';
-import { AssetEditAction } from 'src/dtos/editing.dto';
 import { AssetFaceFactory } from 'test/factories/asset-face.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { PersonFactory } from 'test/factories/person.factory';
 import { getForAsset } from 'test/mappers';
+
+import { mapAsset } from 'src/dtos/asset-response.dto';
+import { AssetEditAction } from 'src/dtos/editing.dto';
 
 describe('mapAsset', () => {
   describe('peopleWithFaces', () => {

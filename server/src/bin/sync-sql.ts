@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
 import { INestApplication } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { SchedulerRegistry } from '@nestjs/schedule';
@@ -6,9 +9,8 @@ import { Test } from '@nestjs/testing';
 import { ClsModule } from 'nestjs-cls';
 import { KyselyModule } from 'nestjs-kysely';
 import { OpenTelemetryModule } from 'nestjs-otel';
-import { mkdir, rm, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
 import { format } from 'sql-formatter';
+
 import { GENERATE_SQL_KEY, GenerateSqlQueries } from 'src/decorators';
 import { repositories } from 'src/repositories';
 import { AccessRepository } from 'src/repositories/access.repository';

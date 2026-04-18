@@ -1,9 +1,10 @@
-import { TagController } from 'src/controllers/tag.controller';
-import { TagService } from 'src/services/tag.service';
 import request from 'supertest';
 import { errorDto } from 'test/medium/responses';
 import { factory } from 'test/small.factory';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { TagController } from 'src/controllers/tag.controller';
+import { TagService } from 'src/services/tag.service';
 
 describe(TagController.name, () => {
   let ctx: ControllerContext;

@@ -1,10 +1,11 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import _ from 'lodash';
 import { DateTime, Duration } from 'luxon';
+
 import { JOBS_ASSET_PAGINATION_SIZE } from 'src/constants';
 import { AssetFile } from 'src/database';
 import { OnJob } from 'src/decorators';
-import { AssetResponseDto, SanitizedAssetResponseDto, mapAsset } from 'src/dtos/asset-response.dto';
+import { AssetResponseDto, mapAsset, SanitizedAssetResponseDto } from 'src/dtos/asset-response.dto';
 import {
   AssetBulkDeleteDto,
   AssetBulkUpdateDto,
@@ -17,8 +18,8 @@ import {
   AssetMetadataResponseDto,
   AssetMetadataUpsertDto,
   AssetStatsDto,
-  UpdateAssetDto,
   mapStats,
+  UpdateAssetDto,
 } from 'src/dtos/asset.dto';
 import { AuthDto } from 'src/dtos/auth.dto';
 import { AssetEditAction, AssetEditActionItem, AssetEditsCreateDto, AssetEditsResponseDto } from 'src/dtos/editing.dto';

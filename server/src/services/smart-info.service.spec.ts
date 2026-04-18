@@ -1,10 +1,11 @@
+import { AssetFactory } from 'test/factories/asset.factory';
+import { systemConfigStub } from 'test/fixtures/system-config.stub';
+import { makeStream, newTestService, ServiceMocks } from 'test/utils';
+
 import { SystemConfig } from 'src/config';
 import { AssetFileType, AssetVisibility, ImmichWorker, JobName, JobStatus } from 'src/enum';
 import { SmartInfoService } from 'src/services/smart-info.service';
 import { getCLIPModelInfo } from 'src/utils/misc';
-import { AssetFactory } from 'test/factories/asset.factory';
-import { systemConfigStub } from 'test/fixtures/system-config.stub';
-import { makeStream, newTestService, ServiceMocks } from 'test/utils';
 
 describe(SmartInfoService.name, () => {
   let sut: SmartInfoService;

@@ -1,8 +1,10 @@
+import path from 'node:path';
+
 import { Injectable } from '@nestjs/common';
 import handlebar from 'handlebars';
 import { DateTime } from 'luxon';
-import path from 'node:path';
 import sanitize from 'sanitize-filename';
+
 import { StorageCore } from 'src/cores/storage.core';
 import { OnEvent, OnJob } from 'src/decorators';
 import { SystemConfigTemplateStorageOptionDto } from 'src/dtos/system-config.dto';

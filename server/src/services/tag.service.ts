@@ -1,16 +1,17 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { Insertable } from 'kysely';
+
 import { OnJob } from 'src/decorators';
 import { BulkIdResponseDto, BulkIdsDto } from 'src/dtos/asset-ids.response.dto';
 import { AuthDto } from 'src/dtos/auth.dto';
 import {
+  mapTag,
   TagBulkAssetsDto,
   TagBulkAssetsResponseDto,
   TagCreateDto,
   TagResponseDto,
   TagUpdateDto,
   TagUpsertDto,
-  mapTag,
 } from 'src/dtos/tag.dto';
 import { JobName, JobStatus, Permission, QueueName } from 'src/enum';
 import { TagAssetTable } from 'src/schema/tables/tag-asset.table';

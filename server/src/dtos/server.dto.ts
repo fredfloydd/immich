@@ -1,7 +1,8 @@
 import { createZodDto } from 'nestjs-zod';
 import type { SemVer } from 'semver';
-import { isoDatetimeToDate } from 'src/validation';
 import z from 'zod';
+
+import { isoDatetimeToDate } from 'src/validation';
 
 const ServerPingResponseSchema = z
   .object({

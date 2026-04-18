@@ -1,4 +1,8 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { JobStatus } from 'src/enum';
 import { AccessRepository } from 'src/repositories/access.repository';
 import { AssetRepository } from 'src/repositories/asset.repository';
@@ -8,9 +12,6 @@ import { TagRepository } from 'src/repositories/tag.repository';
 import { DB } from 'src/schema';
 import { TagService } from 'src/services/tag.service';
 import { upsertTags } from 'src/utils/tag';
-import { newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

@@ -1,9 +1,4 @@
 import { Selectable, ShallowDehydrateObject } from 'kysely';
-import { MapAsset } from 'src/dtos/asset-response.dto';
-import { AssetEditActionItem } from 'src/dtos/editing.dto';
-import { ActivityTable } from 'src/schema/tables/activity.table';
-import { AssetTable } from 'src/schema/tables/asset.table';
-import { PartnerTable } from 'src/schema/tables/partner.table';
 import { AlbumFactory } from 'test/factories/album.factory';
 import { AssetFaceFactory } from 'test/factories/asset-face.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
@@ -11,6 +6,12 @@ import { MemoryFactory } from 'test/factories/memory.factory';
 import { SharedLinkFactory } from 'test/factories/shared-link.factory';
 import { StackFactory } from 'test/factories/stack.factory';
 import { UserFactory } from 'test/factories/user.factory';
+
+import { MapAsset } from 'src/dtos/asset-response.dto';
+import { AssetEditActionItem } from 'src/dtos/editing.dto';
+import { ActivityTable } from 'src/schema/tables/activity.table';
+import { AssetTable } from 'src/schema/tables/asset.table';
+import { PartnerTable } from 'src/schema/tables/partner.table';
 
 export const getForStorageTemplate = (asset: ReturnType<AssetFactory['build']>) => {
   return {

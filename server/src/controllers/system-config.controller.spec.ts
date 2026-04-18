@@ -1,11 +1,12 @@
 import _ from 'lodash';
+import request from 'supertest';
+import { errorDto } from 'test/medium/responses';
+import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
 import { defaults } from 'src/config';
 import { SystemConfigController } from 'src/controllers/system-config.controller';
 import { StorageTemplateService } from 'src/services/storage-template.service';
 import { SystemConfigService } from 'src/services/system-config.service';
-import request from 'supertest';
-import { errorDto } from 'test/medium/responses';
-import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
 
 /** Returns a full config that passes Zod validation (required URLs and min lengths). */
 function validConfig() {

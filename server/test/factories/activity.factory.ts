@@ -1,9 +1,10 @@
 import { Selectable } from 'kysely';
-import { ActivityTable } from 'src/schema/tables/activity.table';
 import { build } from 'test/factories/builder.factory';
 import { ActivityLike, FactoryBuilder, UserLike } from 'test/factories/types';
 import { UserFactory } from 'test/factories/user.factory';
 import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { ActivityTable } from 'src/schema/tables/activity.table';
 
 export class ActivityFactory {
   #user!: UserFactory;

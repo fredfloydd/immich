@@ -1,9 +1,10 @@
-import { JobStatus } from 'src/enum';
-import { SessionService } from 'src/services/session.service';
 import { AuthFactory } from 'test/factories/auth.factory';
 import { SessionFactory } from 'test/factories/session.factory';
 import { authStub } from 'test/fixtures/auth.stub';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { JobStatus } from 'src/enum';
+import { SessionService } from 'src/services/session.service';
 
 describe('SessionService', () => {
   let sut: SessionService;

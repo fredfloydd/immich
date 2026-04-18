@@ -1,5 +1,6 @@
-import { getKeysDeep, globToSqlPattern, unsetDeep } from 'src/utils/misc';
 import { describe, expect, it } from 'vitest';
+
+import { getKeysDeep, globToSqlPattern, unsetDeep } from 'src/utils/misc';
 
 describe('getKeysDeep', () => {
   it('should handle an empty object', () => {

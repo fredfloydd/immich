@@ -1,6 +1,7 @@
-import { IsNotSiblingOf } from 'src/validation';
 import { describe, expect, it } from 'vitest';
 import z from 'zod';
+
+import { IsNotSiblingOf } from 'src/validation';
 
 describe('Validation', () => {
   describe('IsNotSiblingOf', () => {

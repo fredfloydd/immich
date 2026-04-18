@@ -1,9 +1,10 @@
 import { Selectable } from 'kysely';
-import { StackTable } from 'src/schema/tables/stack.table';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { build } from 'test/factories/builder.factory';
 import { AssetLike, FactoryBuilder, StackLike } from 'test/factories/types';
 import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { StackTable } from 'src/schema/tables/stack.table';
 
 export class StackFactory {
   #assets: AssetFactory[] = [];

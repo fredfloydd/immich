@@ -1,9 +1,11 @@
-import { Kysely, sql } from 'kysely';
-import { CommandFactory } from 'nest-commander';
 import { ChildProcess, fork } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { Worker } from 'node:worker_threads';
+
+import { Kysely, sql } from 'kysely';
+import { CommandFactory } from 'nest-commander';
 import { PostgresError } from 'postgres';
+
 import { ImmichAdminModule } from 'src/app.module';
 import { DatabaseLock, ExitCode, ImmichWorker, LogLevel, SystemMetadataKey } from 'src/enum';
 import { ConfigRepository } from 'src/repositories/config.repository';

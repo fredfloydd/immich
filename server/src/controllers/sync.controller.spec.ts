@@ -1,9 +1,10 @@
-import { SyncController } from 'src/controllers/sync.controller';
-import { GlobalExceptionFilter } from 'src/middleware/global-exception.filter';
-import { SyncService } from 'src/services/sync.service';
 import request from 'supertest';
 import { errorDto } from 'test/medium/responses';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { SyncController } from 'src/controllers/sync.controller';
+import { GlobalExceptionFilter } from 'src/middleware/global-exception.filter';
+import { SyncService } from 'src/services/sync.service';
 
 describe(SyncController.name, () => {
   let ctx: ControllerContext;

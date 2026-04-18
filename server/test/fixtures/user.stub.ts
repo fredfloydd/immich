@@ -1,6 +1,7 @@
+import { authStub } from 'test/fixtures/auth.stub';
+
 import { UserAdmin } from 'src/database';
 import { UserStatus } from 'src/enum';
-import { authStub } from 'test/fixtures/auth.stub';
 
 export const userStub = {
   admin: <UserAdmin>{

@@ -8,6 +8,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { LockableProperty } from 'src/database';
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AssetTable } from 'src/schema/tables/asset.table';

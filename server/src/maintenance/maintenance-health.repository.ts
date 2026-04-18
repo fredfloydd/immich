@@ -1,6 +1,8 @@
-import { Injectable } from '@nestjs/common';
 import { fork } from 'node:child_process';
 import { dirname, join } from 'node:path';
+
+import { Injectable } from '@nestjs/common';
+
 import { IMMICH_SERVER_START } from 'src/constants';
 
 @Injectable()

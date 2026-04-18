@@ -1,12 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { createZodDto } from 'nestjs-zod';
-import { UploadFieldName } from 'src/dtos/asset-media.dto';
-import { isoDatetimeToDate } from 'src/validation';
 import z from 'zod';
+
+import { isoDatetimeToDate } from 'src/validation';
 
 export class CreateProfileImageDto {
   @ApiProperty({ type: 'string', format: 'binary', description: 'Profile image file' })
-  [UploadFieldName.PROFILE_DATA]!: Express.Multer.File;
+  file!: Express.Multer.File;
 }
 
 const CreateProfileImageResponseSchema = z

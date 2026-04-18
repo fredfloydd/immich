@@ -1,3 +1,6 @@
+import { writeFileSync } from 'node:fs';
+import path from 'node:path';
+
 import { INestApplication } from '@nestjs/common';
 import {
   DocumentBuilder,
@@ -13,10 +16,9 @@ import {
 } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
 import _ from 'lodash';
 import { cleanupOpenApiDoc } from 'nestjs-zod';
-import { writeFileSync } from 'node:fs';
-import path from 'node:path';
 import picomatch from 'picomatch';
 import parse from 'picomatch/lib/parse';
+
 import { SystemConfig } from 'src/config';
 import { CLIP_MODEL_INFO, endpointTags, serverVersion } from 'src/constants';
 import { extraSyncModels } from 'src/dtos/sync.dto';

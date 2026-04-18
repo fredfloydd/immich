@@ -1,4 +1,5 @@
 import { Column, ForeignKeyColumn, Table, Timestamp } from '@immich/sql-tools';
+
 import { AssetTable } from 'src/schema/tables/asset.table';
 
 @Table('asset_job_status')

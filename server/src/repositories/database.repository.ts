@@ -1,11 +1,14 @@
-import { schemaDiff, schemaFromCode, schemaFromDatabase } from '@immich/sql-tools';
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
+
 import { Injectable } from '@nestjs/common';
 import AsyncLock from 'async-lock';
 import { FileMigrationProvider, Kysely, Migrator, sql, Transaction } from 'kysely';
 import { InjectKysely } from 'nestjs-kysely';
-import { readdir } from 'node:fs/promises';
-import { join } from 'node:path';
 import semver from 'semver';
+
+import { schemaDiff, schemaFromCode, schemaFromDatabase } from '@immich/sql-tools';
+
 import {
   EXTENSION_NAMES,
   POSTGRES_VERSION_RANGE,
@@ -20,7 +23,9 @@ import { GenerateSql } from 'src/decorators';
 import { DatabaseExtension, DatabaseLock, VectorIndex } from 'src/enum';
 import { ConfigRepository } from 'src/repositories/config.repository';
 import { LoggingRepository } from 'src/repositories/logging.repository';
+
 import 'src/schema'; // make sure all schema definitions are imported for schemaFromCode
+
 import { DB } from 'src/schema';
 import { immich_uuid_v7 } from 'src/schema/functions';
 import { ExtensionVersion, VectorExtension, VectorUpdateResult } from 'src/types';

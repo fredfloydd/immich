@@ -1,8 +1,3 @@
-import { defaults, SystemConfig } from 'src/config';
-import { SystemConfigDto } from 'src/dtos/system-config.dto';
-import { AssetFileType, JobName, JobStatus, UserMetadataKey } from 'src/enum';
-import { NotificationService } from 'src/services/notification.service';
-import { INotifyAlbumUpdateJob } from 'src/types';
 import { AlbumFactory } from 'test/factories/album.factory';
 import { AssetFileFactory } from 'test/factories/asset-file.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
@@ -12,6 +7,12 @@ import { userStub } from 'test/fixtures/user.stub';
 import { getForAlbum } from 'test/mappers';
 import { newUuid } from 'test/small.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { defaults, SystemConfig } from 'src/config';
+import { SystemConfigDto } from 'src/dtos/system-config.dto';
+import { AssetFileType, JobName, JobStatus, UserMetadataKey } from 'src/enum';
+import { NotificationService } from 'src/services/notification.service';
+import { INotifyAlbumUpdateJob } from 'src/types';
 
 const configs = {
   smtpDisabled: Object.freeze<SystemConfig>({

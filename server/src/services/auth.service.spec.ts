@@ -1,11 +1,5 @@
 import { BadRequestException, ForbiddenException, UnauthorizedException } from '@nestjs/common';
 import { DateTime } from 'luxon';
-import { SALT_ROUNDS } from 'src/constants';
-import { UserAdmin } from 'src/database';
-import { AuthDto, SignUpDto } from 'src/dtos/auth.dto';
-import { AuthType, Permission } from 'src/enum';
-import { AuthService } from 'src/services/auth.service';
-import { UserMetadataItem } from 'src/types';
 import { ApiKeyFactory } from 'test/factories/api-key.factory';
 import { AuthFactory } from 'test/factories/auth.factory';
 import { OAuthProfileFactory } from 'test/factories/oauth-profile.factory';
@@ -16,6 +10,13 @@ import { systemConfigStub } from 'test/fixtures/system-config.stub';
 import { userStub } from 'test/fixtures/user.stub';
 import { newUuid } from 'test/small.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { SALT_ROUNDS } from 'src/constants';
+import { UserAdmin } from 'src/database';
+import { AuthDto, SignUpDto } from 'src/dtos/auth.dto';
+import { AuthType, Permission } from 'src/enum';
+import { AuthService } from 'src/services/auth.service';
+import { UserMetadataItem } from 'src/types';
 
 const email = 'test@immich.com';
 const loginDetails = {

@@ -1,9 +1,10 @@
-import { MaintenanceController } from 'src/controllers/maintenance.controller';
-import { MaintenanceAction } from 'src/enum';
-import { MaintenanceService } from 'src/services/maintenance.service';
 import request from 'supertest';
 import { errorDto } from 'test/medium/responses';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { MaintenanceController } from 'src/controllers/maintenance.controller';
+import { MaintenanceAction } from 'src/enum';
+import { MaintenanceService } from 'src/services/maintenance.service';
 
 describe(MaintenanceController.name, () => {
   let ctx: ControllerContext;

@@ -1,8 +1,9 @@
-import { AssetFileType, AssetVisibility, ImmichWorker, JobName, JobStatus } from 'src/enum';
-import { OcrService } from 'src/services/ocr.service';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { systemConfigStub } from 'test/fixtures/system-config.stub';
 import { makeStream, newTestService, ServiceMocks } from 'test/utils';
+
+import { AssetFileType, AssetVisibility, ImmichWorker, JobName, JobStatus } from 'src/enum';
+import { OcrService } from 'src/services/ocr.service';
 
 describe(OcrService.name, () => {
   let sut: OcrService;

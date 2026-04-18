@@ -1,5 +1,7 @@
 import { Selectable } from 'kysely';
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { AssetFace, Person } from 'src/database';
 import { HistoryBuilder } from 'src/decorators';
 import { AuthDto } from 'src/dtos/auth.dto';
@@ -10,7 +12,6 @@ import { ImageDimensions, MaybeDehydrated } from 'src/types';
 import { asBirthDateString, asDateString } from 'src/utils/date';
 import { transformFaceBoundingBox } from 'src/utils/transform';
 import { emptyStringToNull, hexColor, stringToBool } from 'src/validation';
-import z from 'zod';
 
 const PersonCreateSchema = z
   .object({

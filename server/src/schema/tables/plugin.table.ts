@@ -9,6 +9,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { PluginContext } from 'src/enum';
 import type { JSONSchema } from 'src/types/plugin-schema.types';
 

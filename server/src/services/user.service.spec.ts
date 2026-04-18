@@ -1,14 +1,15 @@
 import { BadRequestException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
-import { UserAdmin } from 'src/database';
-import { CacheControl, JobName, UserMetadataKey } from 'src/enum';
-import { UserService } from 'src/services/user.service';
-import { ImmichFileResponse } from 'src/utils/file';
 import { AuthFactory } from 'test/factories/auth.factory';
 import { UserFactory } from 'test/factories/user.factory';
 import { authStub } from 'test/fixtures/auth.stub';
 import { systemConfigStub } from 'test/fixtures/system-config.stub';
 import { userStub } from 'test/fixtures/user.stub';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { UserAdmin } from 'src/database';
+import { CacheControl, JobName, UserMetadataKey } from 'src/enum';
+import { UserService } from 'src/services/user.service';
+import { ImmichFileResponse } from 'src/utils/file';
 
 const makeDeletedAt = (daysAgo: number) => {
   const deletedAt = new Date();

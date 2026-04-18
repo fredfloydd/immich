@@ -1,9 +1,10 @@
 import { Selectable } from 'kysely';
+import { UserLike } from 'test/factories/types';
+import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
 import { UserStatus } from 'src/enum';
 import { UserMetadataTable } from 'src/schema/tables/user-metadata.table';
 import { UserTable } from 'src/schema/tables/user.table';
-import { UserLike } from 'test/factories/types';
-import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
 
 export class UserFactory {
   #metadata: Selectable<UserMetadataTable>[] = [];

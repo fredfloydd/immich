@@ -9,6 +9,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { NotificationLevel, NotificationType } from 'src/enum';
 import { UserTable } from 'src/schema/tables/user.table';

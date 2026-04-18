@@ -1,4 +1,5 @@
 import { snakeCase } from 'lodash';
+
 import { OnEvent } from 'src/decorators';
 import { ImmichWorker, JobStatus } from 'src/enum';
 import { ArgOf, ArgsOf } from 'src/repositories/event.repository';

@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+
 import { Partner } from 'src/database';
 import { AuthDto } from 'src/dtos/auth.dto';
 import { PartnerCreateDto, PartnerResponseDto, PartnerSearchDto, PartnerUpdateDto } from 'src/dtos/partner.dto';

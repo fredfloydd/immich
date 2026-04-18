@@ -1,6 +1,10 @@
 import { BadRequestException } from '@nestjs/common';
 import { hash } from 'bcrypt';
 import { Kysely } from 'kysely';
+import { mediumFactory, newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { AuthType } from 'src/enum';
 import { AccessRepository } from 'src/repositories/access.repository';
 import { ConfigRepository } from 'src/repositories/config.repository';
@@ -15,9 +19,6 @@ import { TelemetryRepository } from 'src/repositories/telemetry.repository';
 import { UserRepository } from 'src/repositories/user.repository';
 import { DB } from 'src/schema';
 import { AuthService } from 'src/services/auth.service';
-import { mediumFactory, newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

@@ -1,9 +1,10 @@
 import { jwtVerify } from 'jose';
-import { MaintenanceAction, SystemMetadataKey } from 'src/enum';
-import { CliService } from 'src/services/cli.service';
 import { UserFactory } from 'test/factories/user.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
 import { describe, it } from 'vitest';
+
+import { MaintenanceAction, SystemMetadataKey } from 'src/enum';
+import { CliService } from 'src/services/cli.service';
 
 describe(CliService.name, () => {
   let sut: CliService;

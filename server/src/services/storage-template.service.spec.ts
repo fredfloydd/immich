@@ -1,13 +1,15 @@
 import { Stats } from 'node:fs';
-import { defaults, SystemConfig } from 'src/config';
-import { AssetPathType, AssetType, JobStatus } from 'src/enum';
-import { StorageTemplateService } from 'src/services/storage-template.service';
+
 import { AlbumFactory } from 'test/factories/album.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { UserFactory } from 'test/factories/user.factory';
 import { userStub } from 'test/fixtures/user.stub';
 import { getForAlbum, getForStorageTemplate } from 'test/mappers';
 import { makeStream, newTestService, ServiceMocks } from 'test/utils';
+
+import { defaults, SystemConfig } from 'src/config';
+import { AssetPathType, AssetType, JobStatus } from 'src/enum';
+import { StorageTemplateService } from 'src/services/storage-template.service';
 
 const motionAsset = AssetFactory.from({ type: AssetType.Video }).exif().build();
 const stillAsset = AssetFactory.from({ livePhotoVideoId: motionAsset.id }).exif().build();

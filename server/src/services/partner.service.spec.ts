@@ -1,11 +1,12 @@
 import { BadRequestException } from '@nestjs/common';
-import { PartnerDirection } from 'src/repositories/partner.repository';
-import { PartnerService } from 'src/services/partner.service';
 import { AuthFactory } from 'test/factories/auth.factory';
 import { PartnerFactory } from 'test/factories/partner.factory';
 import { UserFactory } from 'test/factories/user.factory';
 import { getForPartner } from 'test/mappers';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { PartnerDirection } from 'src/repositories/partner.repository';
+import { PartnerService } from 'src/services/partner.service';
 
 describe(PartnerService.name, () => {
   let sut: PartnerService;

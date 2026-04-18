@@ -1,14 +1,15 @@
 import {
+  applyDecorators,
   CanActivate,
+  createParamDecorator,
   ExecutionContext,
   Injectable,
   SetMetadata,
-  applyDecorators,
-  createParamDecorator,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { ApiBearerAuth, ApiCookieAuth, ApiExtension, ApiOkResponse, ApiQuery, ApiSecurity } from '@nestjs/swagger';
 import { Request } from 'express';
+
 import { AuthDto } from 'src/dtos/auth.dto';
 import { ApiCustomExtension, ImmichQuery, MetadataKey, Permission } from 'src/enum';
 import { LoggingRepository } from 'src/repositories/logging.repository';

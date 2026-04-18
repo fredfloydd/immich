@@ -1,4 +1,7 @@
 import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { serverVersion } from 'src/constants';
 import { JobName } from 'src/enum';
 import { CronRepository } from 'src/repositories/cron.repository';
@@ -8,8 +11,6 @@ import { LoggingRepository } from 'src/repositories/logging.repository';
 import { VersionHistoryRepository } from 'src/repositories/version-history.repository';
 import { DB } from 'src/schema';
 import { VersionService } from 'src/services/version.service';
-import { newMediumService } from 'test/medium.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

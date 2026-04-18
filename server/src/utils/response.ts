@@ -1,5 +1,6 @@
 import { CookieOptions, Response } from 'express';
 import { Duration } from 'luxon';
+
 import { CookieResponse } from 'src/dtos/auth.dto';
 import { ImmichCookie } from 'src/enum';
 

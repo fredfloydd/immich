@@ -1,11 +1,13 @@
+import { existsSync } from 'node:fs';
+
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { json, urlencoded } from 'body-parser';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import helmetMiddleware from 'helmet';
-import { existsSync } from 'node:fs';
 import sirv from 'sirv';
-import { IMMICH_SERVER_START, excludePaths, serverVersion } from 'src/constants';
+
+import { excludePaths, IMMICH_SERVER_START, serverVersion } from 'src/constants';
 import { MaintenanceWorkerService } from 'src/maintenance/maintenance-worker.service';
 import { WebSocketAdapter } from 'src/middleware/websocket.adapter';
 import { ConfigRepository } from 'src/repositories/config.repository';

@@ -1,4 +1,6 @@
-import { createPostgres, DatabaseConnectionParams } from '@immich/sql-tools';
+import { ChildProcessWithoutNullStreams } from 'node:child_process';
+import { Duplex, Readable, Writable } from 'node:stream';
+
 import { CallHandler, ExecutionContext, Provider } from '@nestjs/common';
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { transformException } from '@nestjs/platform-express/multer/multer/multer.utils';
@@ -8,9 +10,21 @@ import { Kysely } from 'kysely';
 import multer from 'multer';
 import { ClsService } from 'nestjs-cls';
 import { ZodSerializerInterceptor, ZodValidationPipe } from 'nestjs-zod';
-import { ChildProcessWithoutNullStreams } from 'node:child_process';
-import { Duplex, Readable, Writable } from 'node:stream';
 import { PNG } from 'pngjs';
+import { IAccessRepositoryMock, newAccessRepositoryMock } from 'test/repositories/access.repository.mock';
+import { newAssetRepositoryMock } from 'test/repositories/asset.repository.mock';
+import { newConfigRepositoryMock } from 'test/repositories/config.repository.mock';
+import { newCryptoRepositoryMock } from 'test/repositories/crypto.repository.mock';
+import { newJobRepositoryMock } from 'test/repositories/job.repository.mock';
+import { newMediaRepositoryMock } from 'test/repositories/media.repository.mock';
+import { newMetadataRepositoryMock } from 'test/repositories/metadata.repository.mock';
+import { newStorageRepositoryMock } from 'test/repositories/storage.repository.mock';
+import { newSystemMetadataRepositoryMock } from 'test/repositories/system-metadata.repository.mock';
+import { ITelemetryRepositoryMock, newTelemetryRepositoryMock } from 'test/repositories/telemetry.repository.mock';
+import { assert, Mock, Mocked, vitest } from 'vitest';
+
+import { createPostgres, DatabaseConnectionParams } from '@immich/sql-tools';
+
 import { UploadFieldName } from 'src/dtos/asset-media.dto';
 import { AssetUploadInterceptor } from 'src/middleware/asset-upload.interceptor';
 import { AuthGuard } from 'src/middleware/auth.guard';
@@ -72,17 +86,6 @@ import { AuthService } from 'src/services/auth.service';
 import { BaseService } from 'src/services/base.service';
 import { RepositoryInterface } from 'src/types';
 import { getKyselyConfig } from 'src/utils/database';
-import { IAccessRepositoryMock, newAccessRepositoryMock } from 'test/repositories/access.repository.mock';
-import { newAssetRepositoryMock } from 'test/repositories/asset.repository.mock';
-import { newConfigRepositoryMock } from 'test/repositories/config.repository.mock';
-import { newCryptoRepositoryMock } from 'test/repositories/crypto.repository.mock';
-import { newJobRepositoryMock } from 'test/repositories/job.repository.mock';
-import { newMediaRepositoryMock } from 'test/repositories/media.repository.mock';
-import { newMetadataRepositoryMock } from 'test/repositories/metadata.repository.mock';
-import { newStorageRepositoryMock } from 'test/repositories/storage.repository.mock';
-import { newSystemMetadataRepositoryMock } from 'test/repositories/system-metadata.repository.mock';
-import { ITelemetryRepositoryMock, newTelemetryRepositoryMock } from 'test/repositories/telemetry.repository.mock';
-import { assert, Mock, Mocked, vitest } from 'vitest';
 
 export type ControllerContext = {
   authenticate: Mock;

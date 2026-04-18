@@ -9,11 +9,12 @@ import { NestInstrumentation } from '@opentelemetry/instrumentation-nestjs-core'
 import { PgInstrumentation } from '@opentelemetry/instrumentation-pg';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { AggregationType } from '@opentelemetry/sdk-metrics';
-import { NodeSDK, contextBase } from '@opentelemetry/sdk-node';
+import { contextBase, NodeSDK } from '@opentelemetry/sdk-node';
 import { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } from '@opentelemetry/semantic-conventions';
 import { snakeCase, startCase } from 'lodash';
 import { MetricService } from 'nestjs-otel';
 import { copyMetadataFromFunctionToFunction } from 'nestjs-otel/lib/opentelemetry.utils';
+
 import { serverVersion } from 'src/constants';
 import { ImmichTelemetry, MetadataKey } from 'src/enum';
 import { ConfigRepository } from 'src/repositories/config.repository';

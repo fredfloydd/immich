@@ -1,6 +1,7 @@
 import { CurrentPlugin } from '@extism/extism';
 import { UnauthorizedException } from '@nestjs/common';
 import { Updateable } from 'kysely';
+
 import { Permission } from 'src/enum';
 import { AccessRepository } from 'src/repositories/access.repository';
 import { AlbumRepository } from 'src/repositories/album.repository';

@@ -11,6 +11,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AlbumAssetTable } from 'src/schema/tables/album-asset.table';
 import { AlbumTable } from 'src/schema/tables/album.table';

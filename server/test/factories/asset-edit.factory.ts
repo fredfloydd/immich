@@ -1,10 +1,11 @@
 import { Selectable } from 'kysely';
-import { AssetEditAction, AssetEditActionItem } from 'src/dtos/editing.dto';
-import { AssetEditTable } from 'src/schema/tables/asset-edit.table';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { build } from 'test/factories/builder.factory';
 import { AssetEditLike, AssetLike, FactoryBuilder } from 'test/factories/types';
 import { newDate, newUuid } from 'test/small.factory';
+
+import { AssetEditAction, AssetEditActionItem } from 'src/dtos/editing.dto';
+import { AssetEditTable } from 'src/schema/tables/asset-edit.table';
 
 export class AssetEditFactory {
   private constructor(private readonly value: Selectable<AssetEditTable>) {}

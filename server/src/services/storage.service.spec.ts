@@ -1,8 +1,9 @@
+import { mockEnvData } from 'test/repositories/config.repository.mock';
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { SystemMetadataKey } from 'src/enum';
 import { StorageService } from 'src/services/storage.service';
 import { ImmichStartupError } from 'src/utils/misc';
-import { mockEnvData } from 'test/repositories/config.repository.mock';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 describe(StorageService.name, () => {
   let sut: StorageService;

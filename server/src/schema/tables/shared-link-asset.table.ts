@@ -1,4 +1,5 @@
 import { ForeignKeyColumn, Table } from '@immich/sql-tools';
+
 import { AssetTable } from 'src/schema/tables/asset.table';
 import { SharedLinkTable } from 'src/schema/tables/shared-link.table';
 

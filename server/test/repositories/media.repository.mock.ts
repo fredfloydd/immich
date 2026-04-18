@@ -1,6 +1,7 @@
+import { Mocked, vitest } from 'vitest';
+
 import { MediaRepository } from 'src/repositories/media.repository';
 import { RepositoryInterface } from 'src/types';
-import { Mocked, vitest } from 'vitest';
 
 export const newMediaRepositoryMock = (): Mocked<RepositoryInterface<MediaRepository>> => {
   return {

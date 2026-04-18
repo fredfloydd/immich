@@ -1,4 +1,5 @@
 import { ShallowDehydrateObject } from 'kysely';
+
 import { SystemConfig } from 'src/config';
 import { VECTOR_EXTENSIONS } from 'src/constants';
 import { Asset, AssetFile } from 'src/database';

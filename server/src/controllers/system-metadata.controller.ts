@@ -1,5 +1,6 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+
 import { Endpoint, HistoryBuilder } from 'src/decorators';
 import {
   AdminOnboardingUpdateDto,

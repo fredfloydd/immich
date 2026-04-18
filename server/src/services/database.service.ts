@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import semver from 'semver';
+
 import { ErrorMessages, EXTENSION_NAMES, VECTOR_EXTENSIONS } from 'src/constants';
 import { OnEvent } from 'src/decorators';
 import { BootstrapEventPriority, DatabaseExtension, DatabaseLock, VectorIndex } from 'src/enum';

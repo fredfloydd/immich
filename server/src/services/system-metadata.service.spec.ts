@@ -1,6 +1,7 @@
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { SystemMetadataKey } from 'src/enum';
 import { SystemMetadataService } from 'src/services/system-metadata.service';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 describe(SystemMetadataService.name, () => {
   let sut: SystemMetadataService;

@@ -1,8 +1,9 @@
-import { AlbumController } from 'src/controllers/album.controller';
-import { AlbumService } from 'src/services/album.service';
 import request from 'supertest';
 import { factory } from 'test/small.factory';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { AlbumController } from 'src/controllers/album.controller';
+import { AlbumService } from 'src/services/album.service';
 
 describe(AlbumController.name, () => {
   let ctx: ControllerContext;

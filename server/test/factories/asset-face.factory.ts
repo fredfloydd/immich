@@ -1,10 +1,11 @@
 import { Selectable } from 'kysely';
-import { SourceType } from 'src/enum';
-import { AssetFaceTable } from 'src/schema/tables/asset-face.table';
 import { build } from 'test/factories/builder.factory';
 import { PersonFactory } from 'test/factories/person.factory';
 import { AssetFaceLike, FactoryBuilder, PersonLike } from 'test/factories/types';
 import { newDate, newUuid, newUuidV7 } from 'test/small.factory';
+
+import { SourceType } from 'src/enum';
+import { AssetFaceTable } from 'src/schema/tables/asset-face.table';
 
 export class AssetFaceFactory {
   #person: PersonFactory | null = null;

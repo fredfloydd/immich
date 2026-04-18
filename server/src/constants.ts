@@ -1,7 +1,9 @@
-import { Duration } from 'luxon';
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+
+import { Duration } from 'luxon';
 import { SemVer } from 'semver';
+
 import { ApiTag, AudioCodec, DatabaseExtension, ExifOrientation, VectorIndex } from 'src/enum';
 
 export const IMMICH_SERVER_START = 'Immich Server is listening';

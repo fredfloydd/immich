@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, ForeignKeyColumn, Generated, Table, Timestamp } from '@immich/sql-tools';
+
 import { PrimaryGeneratedUuidV7Column } from 'src/decorators';
 import { MemoryTable } from 'src/schema/tables/memory.table';
 

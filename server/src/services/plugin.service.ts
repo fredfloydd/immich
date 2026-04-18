@@ -1,6 +1,8 @@
+import { join } from 'node:path';
+
 import { Plugin as ExtismPlugin, newPlugin } from '@extism/extism';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { join } from 'node:path';
+
 import { Asset, WorkflowAction, WorkflowFilter } from 'src/database';
 import { OnEvent, OnJob } from 'src/decorators';
 import { PluginManifestDto, PluginManifestSchema } from 'src/dtos/plugin-manifest.dto';

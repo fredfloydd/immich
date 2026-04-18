@@ -1,8 +1,9 @@
 import mockfs from 'mock-fs';
+import { automock } from 'test/utils';
+
 import { CrawlOptionsDto } from 'src/dtos/library.dto';
 import { LoggingRepository } from 'src/repositories/logging.repository';
 import { StorageRepository } from 'src/repositories/storage.repository';
-import { automock } from 'test/utils';
 
 interface Test {
   test: string;

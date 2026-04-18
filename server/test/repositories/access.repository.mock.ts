@@ -1,6 +1,7 @@
+import { Mocked, vitest } from 'vitest';
+
 import { AccessRepository } from 'src/repositories/access.repository';
 import { RepositoryInterface } from 'src/types';
-import { Mocked, vitest } from 'vitest';
 
 type IAccessRepository = { [K in keyof AccessRepository]: RepositoryInterface<AccessRepository[K]> };
 

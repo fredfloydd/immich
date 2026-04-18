@@ -10,6 +10,7 @@ import {
   Unique,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AssetEditAction, AssetEditParameters } from 'src/dtos/editing.dto';
 import { asset_edit_audit, asset_edit_delete, asset_edit_insert } from 'src/schema/functions';

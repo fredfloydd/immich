@@ -1,7 +1,9 @@
+import { readFile } from 'node:fs/promises';
+
 import { Injectable } from '@nestjs/common';
 import { Insertable, Kysely } from 'kysely';
 import { InjectKysely } from 'nestjs-kysely';
-import { readFile } from 'node:fs/promises';
+
 import { GenerateSql } from 'src/decorators';
 import { DB } from 'src/schema';
 import { SystemMetadataTable } from 'src/schema/tables/system-metadata.table';

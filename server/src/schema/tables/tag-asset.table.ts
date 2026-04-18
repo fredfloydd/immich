@@ -1,4 +1,5 @@
 import { ForeignKeyColumn, Index, Table } from '@immich/sql-tools';
+
 import { AssetTable } from 'src/schema/tables/asset.table';
 import { TagTable } from 'src/schema/tables/tag.table';
 

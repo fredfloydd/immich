@@ -1,9 +1,10 @@
-import { mapAsset } from 'src/dtos/asset-response.dto';
-import { ViewService } from 'src/services/view.service';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { authStub } from 'test/fixtures/auth.stub';
 import { getForAsset } from 'test/mappers';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { mapAsset } from 'src/dtos/asset-response.dto';
+import { ViewService } from 'src/services/view.service';
 
 describe(ViewService.name, () => {
   let sut: ViewService;

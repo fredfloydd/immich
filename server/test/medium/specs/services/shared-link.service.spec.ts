@@ -1,5 +1,10 @@
-import { Kysely } from 'kysely';
 import { randomBytes } from 'node:crypto';
+
+import { Kysely } from 'kysely';
+import { newMediumService } from 'test/medium.factory';
+import { factory } from 'test/small.factory';
+import { getKyselyDB } from 'test/utils';
+
 import { SharedLinkType } from 'src/enum';
 import { AccessRepository } from 'src/repositories/access.repository';
 import { DatabaseRepository } from 'src/repositories/database.repository';
@@ -9,9 +14,6 @@ import { SharedLinkRepository } from 'src/repositories/shared-link.repository';
 import { StorageRepository } from 'src/repositories/storage.repository';
 import { DB } from 'src/schema';
 import { SharedLinkService } from 'src/services/shared-link.service';
-import { newMediumService } from 'test/medium.factory';
-import { factory } from 'test/small.factory';
-import { getKyselyDB } from 'test/utils';
 
 let defaultDatabase: Kysely<DB>;
 

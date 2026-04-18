@@ -9,6 +9,7 @@ import {
   Unique,
   UpdateDateColumn,
 } from '@immich/sql-tools';
+
 import { UpdatedAtTrigger, UpdateIdColumn } from 'src/decorators';
 import { AssetFileType } from 'src/enum';
 import { AssetTable } from 'src/schema/tables/asset.table';

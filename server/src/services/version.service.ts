@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { DateTime } from 'luxon';
 import semver, { SemVer } from 'semver';
+
 import { serverVersion } from 'src/constants';
 import { OnEvent, OnJob } from 'src/decorators';
 import { ReleaseNotification, ServerVersionResponseDto } from 'src/dtos/server.dto';

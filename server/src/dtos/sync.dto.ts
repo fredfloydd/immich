@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import { createZodDto } from 'nestjs-zod';
+import z from 'zod';
+
 import { AssetEditActionSchema } from 'src/dtos/editing.dto';
 import {
   AlbumUserRoleSchema,
@@ -14,7 +16,6 @@ import {
   UserMetadataKeySchema,
 } from 'src/enum';
 import { isoDatetimeToDate } from 'src/validation';
-import z from 'zod';
 
 export const extraSyncModels: Function[] = [];
 

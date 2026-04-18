@@ -1,6 +1,7 @@
+import { newUuidV7 } from 'test/small.factory';
+
 import { Tag } from 'src/database';
 import { TagResponseDto } from 'src/dtos/tag.dto';
-import { newUuidV7 } from 'test/small.factory';
 
 const parent = Object.freeze<Tag>({
   id: 'tag-parent',

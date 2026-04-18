@@ -1,8 +1,4 @@
 import { BadRequestException, ForbiddenException, UnauthorizedException } from '@nestjs/common';
-import { AssetIdErrorReason } from 'src/dtos/asset-ids.response.dto';
-import { mapSharedLink } from 'src/dtos/shared-link.dto';
-import { SharedLinkType } from 'src/enum';
-import { SharedLinkService } from 'src/services/shared-link.service';
 import { AlbumFactory } from 'test/factories/album.factory';
 import { AssetFactory } from 'test/factories/asset.factory';
 import { SharedLinkFactory } from 'test/factories/shared-link.factory';
@@ -11,6 +7,11 @@ import { sharedLinkStub } from 'test/fixtures/shared-link.stub';
 import { getForSharedLink } from 'test/mappers';
 import { factory } from 'test/small.factory';
 import { newTestService, ServiceMocks } from 'test/utils';
+
+import { AssetIdErrorReason } from 'src/dtos/asset-ids.response.dto';
+import { mapSharedLink } from 'src/dtos/shared-link.dto';
+import { SharedLinkType } from 'src/enum';
+import { SharedLinkService } from 'src/services/shared-link.service';
 
 describe(SharedLinkService.name, () => {
   let sut: SharedLinkService;

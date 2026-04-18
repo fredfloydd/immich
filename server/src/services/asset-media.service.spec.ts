@@ -4,6 +4,15 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
+import { AssetFileFactory } from 'test/factories/asset-file.factory';
+import { AssetFactory } from 'test/factories/asset.factory';
+import { AuthFactory } from 'test/factories/auth.factory';
+import { authStub } from 'test/fixtures/auth.stub';
+import { fileStub } from 'test/fixtures/file.stub';
+import { userStub } from 'test/fixtures/user.stub';
+import { getForAsset } from 'test/mappers';
+import { newTestService, ServiceMocks } from 'test/utils';
+
 import { AssetFile } from 'src/database';
 import { AssetMediaStatus, AssetRejectReason, AssetUploadAction } from 'src/dtos/asset-media-response.dto';
 import { AssetMediaCreateDto, AssetMediaSize, UploadFieldName } from 'src/dtos/asset-media.dto';
@@ -15,14 +24,6 @@ import { AssetMediaService } from 'src/services/asset-media.service';
 import { UploadBody } from 'src/types';
 import { ASSET_CHECKSUM_CONSTRAINT } from 'src/utils/database';
 import { ImmichFileResponse } from 'src/utils/file';
-import { AssetFileFactory } from 'test/factories/asset-file.factory';
-import { AssetFactory } from 'test/factories/asset.factory';
-import { AuthFactory } from 'test/factories/auth.factory';
-import { authStub } from 'test/fixtures/auth.stub';
-import { fileStub } from 'test/fixtures/file.stub';
-import { userStub } from 'test/fixtures/user.stub';
-import { getForAsset } from 'test/mappers';
-import { newTestService, ServiceMocks } from 'test/utils';
 
 const file1 = Buffer.from('d2947b871a706081be194569951b7db246907957', 'hex');
 

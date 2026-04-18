@@ -1,4 +1,5 @@
 import { Database, Extensions, Generated, Int8 } from '@immich/sql-tools';
+
 import { asset_face_source_type, asset_visibility_enum, assets_status_enum } from 'src/schema/enums';
 import {
   album_delete_audit,

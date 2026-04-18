@@ -1,8 +1,9 @@
-import { DuplicateController } from 'src/controllers/duplicate.controller';
-import { DuplicateService } from 'src/services/duplicate.service';
 import request from 'supertest';
 import { factory } from 'test/small.factory';
 import { ControllerContext, controllerSetup, mockBaseService } from 'test/utils';
+
+import { DuplicateController } from 'src/controllers/duplicate.controller';
+import { DuplicateService } from 'src/services/duplicate.service';
 
 describe(DuplicateController.name, () => {
   let ctx: ControllerContext;

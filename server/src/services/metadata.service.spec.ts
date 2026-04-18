@@ -1,7 +1,16 @@
-import { BinaryField, ExifDateTime } from 'exiftool-vendored';
-import { DateTime } from 'luxon';
 import { randomBytes } from 'node:crypto';
 import { Stats } from 'node:fs';
+
+import { BinaryField, ExifDateTime } from 'exiftool-vendored';
+import { DateTime } from 'luxon';
+import { AssetFactory } from 'test/factories/asset.factory';
+import { PersonFactory } from 'test/factories/person.factory';
+import { probeStub } from 'test/fixtures/media.stub';
+import { tagStub } from 'test/fixtures/tag.stub';
+import { getForMetadataExtraction, getForSidecarWrite } from 'test/mappers';
+import { factory } from 'test/small.factory';
+import { makeStream, newTestService, ServiceMocks } from 'test/utils';
+
 import { defaults } from 'src/config';
 import {
   AssetFileType,
@@ -16,13 +25,6 @@ import {
 } from 'src/enum';
 import { ImmichTags } from 'src/repositories/metadata.repository';
 import { firstDateTime, MetadataService } from 'src/services/metadata.service';
-import { AssetFactory } from 'test/factories/asset.factory';
-import { PersonFactory } from 'test/factories/person.factory';
-import { probeStub } from 'test/fixtures/media.stub';
-import { tagStub } from 'test/fixtures/tag.stub';
-import { getForMetadataExtraction, getForSidecarWrite } from 'test/mappers';
-import { factory } from 'test/small.factory';
-import { makeStream, newTestService, ServiceMocks } from 'test/utils';
 
 const forSidecarJob = (
   asset: {
