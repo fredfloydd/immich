@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { mdiImageMultipleOutline, mdiImageOffOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import type { OnStack, OnUnstack } from '$lib/utils/actions';
   import { deleteStack, stackAssets } from '$lib/utils/asset-utils';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import { mdiImageMultipleOutline, mdiImageOffOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     unstack?: boolean;

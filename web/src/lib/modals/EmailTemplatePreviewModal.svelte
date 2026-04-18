@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Modal, ModalBody } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Modal, ModalBody } from '@immich/ui';
 
   interface Props {
     html: string;

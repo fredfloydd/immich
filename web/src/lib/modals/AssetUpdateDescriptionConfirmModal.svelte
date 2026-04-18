@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Field, FormModal, Textarea } from '@immich/ui';
   import { mdiText } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Field, FormModal, Textarea } from '@immich/ui';
 
   type Props = {
     onClose: (description?: string) => void;

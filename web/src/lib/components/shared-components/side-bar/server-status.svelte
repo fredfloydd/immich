@@ -1,4 +1,16 @@
 <script lang="ts">
+  import { mdiAlert, mdiNewBox } from '@mdi/js';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import {
+    getAboutInfo,
+    getVersionHistory,
+    type ServerAboutResponseDto,
+    type ServerVersionHistoryResponseDto,
+  } from '@immich/sdk';
+  import { Icon, modalManager, Text } from '@immich/ui';
+
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { releaseManager } from '$lib/managers/release-manager.svelte';
   import ServerAboutModal from '$lib/modals/ServerAboutModal.svelte';
@@ -7,16 +19,6 @@
   import type { ReleaseEvent } from '$lib/types';
   import { semverToName } from '$lib/utils';
   import { requestServerInfo } from '$lib/utils/auth';
-  import {
-    getAboutInfo,
-    getVersionHistory,
-    type ServerAboutResponseDto,
-    type ServerVersionHistoryResponseDto,
-  } from '@immich/sdk';
-  import { Icon, modalManager, Text } from '@immich/ui';
-  import { mdiAlert, mdiNewBox } from '@mdi/js';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   const { serverVersion, connected } = websocketStore;
 

@@ -1,6 +1,7 @@
-import type { PersonResponseDto } from '@immich/sdk';
 import { t } from 'svelte-i18n';
 import { derived } from 'svelte/store';
+
+import type { PersonResponseDto } from '@immich/sdk';
 
 export const searchNameLocal = (
   name: string,

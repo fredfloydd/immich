@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { onDestroy } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { updateMyPreferences } from '@immich/sdk';
+
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { updateMyPreferences } from '@immich/sdk';
-  import { onDestroy } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   let gCastEnabled = $state(authManager.authenticated ? authManager.preferences.cast.gCastEnabled : false);
 

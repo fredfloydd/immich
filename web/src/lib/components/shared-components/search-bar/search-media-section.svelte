@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { Text } from '@immich/ui';
+
   import { MediaType } from '$lib/constants';
   import RadioButton from '$lib/elements/RadioButton.svelte';
-  import { Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     filteredMedia: MediaType;

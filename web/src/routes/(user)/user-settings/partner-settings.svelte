@@ -1,8 +1,8 @@
 <script lang="ts">
-  import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
-  import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
-  import PartnerSelectionModal from '$lib/modals/PartnerSelectionModal.svelte';
-  import { handleError } from '$lib/utils/handle-error';
+  import { mdiCheck, mdiClose } from '@mdi/js';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import {
     createPartner,
     getPartners,
@@ -13,9 +13,11 @@
     type UserResponseDto,
   } from '@immich/sdk';
   import { Button, Icon, IconButton, modalManager, Text } from '@immich/ui';
-  import { mdiCheck, mdiClose } from '@mdi/js';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
+  import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
+  import PartnerSelectionModal from '$lib/modals/PartnerSelectionModal.svelte';
+  import { handleError } from '$lib/utils/handle-error';
 
   interface PartnerSharing {
     user: UserResponseDto;

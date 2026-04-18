@@ -1,15 +1,17 @@
 <script lang="ts">
+  import { mdiBellOutline, mdiCheckAll } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+  import { flip } from 'svelte/animate';
+  import { fade } from 'svelte/transition';
+
+  import { NotificationType, type NotificationDto } from '@immich/sdk';
+  import { Button, Icon, Scrollable, Stack, Text, toastManager } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { focusTrap } from '$lib/actions/focus-trap';
   import NotificationItem from '$lib/components/shared-components/navigation-bar/notification-item.svelte';
   import { notificationManager } from '$lib/stores/notification-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { NotificationType, type NotificationDto } from '@immich/sdk';
-  import { Button, Icon, Scrollable, Stack, Text, toastManager } from '@immich/ui';
-  import { mdiBellOutline, mdiCheckAll } from '@mdi/js';
-  import { t } from 'svelte-i18n';
-  import { flip } from 'svelte/animate';
-  import { fade } from 'svelte/transition';
 
   const noUnreadNotifications = $derived(notificationManager.notifications.length === 0);
 

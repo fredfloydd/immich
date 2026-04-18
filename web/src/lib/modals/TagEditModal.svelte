@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { mdiTag } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { FormModal } from '@immich/ui';
+
   import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
   import { SettingInputFieldType } from '$lib/constants';
   import { handleUpdateTag } from '$lib/services/tag.service';
   import type { TreeNode } from '$lib/utils/tree-utils';
-  import { FormModal } from '@immich/ui';
-  import { mdiTag } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     tag: TreeNode;

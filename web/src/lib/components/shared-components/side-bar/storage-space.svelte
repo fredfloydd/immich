@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { LoadingSpinner, Meter } from '@immich/ui';
+
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { locale } from '$lib/stores/preferences.store';
   import { userInteraction } from '$lib/stores/user.svelte';
   import { requestServerInfo } from '$lib/utils/auth';
   import { getByteUnitString } from '$lib/utils/byte-units';
-  import { LoadingSpinner, Meter } from '@immich/ui';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   let hasQuota = $derived(authManager.user.quotaSizeInBytes !== null);
   let availableBytes = $derived(

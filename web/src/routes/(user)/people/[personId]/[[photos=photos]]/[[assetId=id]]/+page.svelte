@@ -1,13 +1,26 @@
 <script lang="ts">
+  import { mdiAccountBoxOutline, mdiAccountMultipleCheckOutline, mdiArrowLeft, mdiDotsVertical } from '@mdi/js';
+  import { DateTime } from 'luxon';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility, searchPerson, updatePerson, type PersonResponseDto } from '@immich/sdk';
+  import {
+    ActionButton,
+    CommandPaletteDefaultProvider,
+    ContextMenuButton,
+    LoadingSpinner,
+    modalManager,
+    toastManager,
+    type ActionItem,
+  } from '@immich/ui';
+
   import { afterNavigate, goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/stores';
   import { clickOutside } from '$lib/actions/click-outside';
   import { listNavigation } from '$lib/actions/list-navigation';
   import { scrollMemoryClearer } from '$lib/actions/scroll-memory';
   import ImageThumbnail from '$lib/components/assets/thumbnail/image-thumbnail.svelte';
-  import EditNameInput from './edit-name-input.svelte';
-  import MergeFaceSelector from './merge-face-selector.svelte';
-  import UnMergeFaceSelector from './unmerge-face-selector.svelte';
   import OnEvents from '$lib/components/OnEvents.svelte';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
@@ -39,21 +52,11 @@
   import { getPeopleThumbnailUrl } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
   import { isExternalUrl } from '$lib/utils/navigation';
-  import { AssetVisibility, searchPerson, updatePerson, type PersonResponseDto } from '@immich/sdk';
-  import {
-    ActionButton,
-    CommandPaletteDefaultProvider,
-    ContextMenuButton,
-    LoadingSpinner,
-    modalManager,
-    toastManager,
-    type ActionItem,
-  } from '@immich/ui';
-  import { mdiAccountBoxOutline, mdiAccountMultipleCheckOutline, mdiArrowLeft, mdiDotsVertical } from '@mdi/js';
-  import { DateTime } from 'luxon';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
+  import EditNameInput from './edit-name-input.svelte';
+  import MergeFaceSelector from './merge-face-selector.svelte';
+  import UnMergeFaceSelector from './unmerge-face-selector.svelte';
 
   interface Props {
     data: PageData;

@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
-import { UserAvatarColor, UserStatus, type UserAdminResponseDto, type UserResponseDto } from '@immich/sdk';
 import { Sync } from 'factory.ts';
+
+import { UserAvatarColor, UserStatus, type UserAdminResponseDto, type UserResponseDto } from '@immich/sdk';
 
 export const userFactory = Sync.makeFactory<UserResponseDto>({
   id: Sync.each(() => faker.string.uuid()),

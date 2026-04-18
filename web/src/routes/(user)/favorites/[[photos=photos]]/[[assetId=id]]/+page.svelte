@@ -1,4 +1,9 @@
 <script lang="ts">
+  import { mdiDotsVertical } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { ActionButton, CommandPaletteDefaultProvider } from '@immich/ui';
+
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import EmptyPlaceholder from '$lib/components/shared-components/empty-placeholder.svelte';
@@ -19,9 +24,7 @@
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { TimelineManager } from '$lib/managers/timeline-manager/timeline-manager.svelte';
   import { getAssetBulkActions } from '$lib/services/asset.service';
-  import { ActionButton, CommandPaletteDefaultProvider } from '@immich/ui';
-  import { mdiDotsVertical } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   interface Props {

@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { ImmichProduct } from '$lib/constants';
-  import { getLicenseLink } from '$lib/utils/license-utils';
-  import { Button, Icon } from '@immich/ui';
   import { mdiCheckCircleOutline, mdiServer } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Button, Icon } from '@immich/ui';
+
+  import { ImmichProduct } from '$lib/constants';
+  import { getLicenseLink } from '$lib/utils/license-utils';
 </script>
 
 <!-- SERVER Purchase Options -->

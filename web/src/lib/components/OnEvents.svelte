@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   import { eventManager, type Events } from '$lib/managers/event-manager.svelte';
   import type { EventCallback, EventMap } from '$lib/utils/base-event-manager.svelte';
-  import { onMount } from 'svelte';
 
   type Props = {
     [K in keyof Events as `on${K}`]?: (...args: Events[K]) => void;

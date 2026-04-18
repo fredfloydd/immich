@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { login, type LoginResponseDto } from '@immich/sdk';
+  import { Alert, Button, Field, Input, PasswordInput, Stack } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import AuthPageLayout from '$lib/components/layouts/AuthPageLayout.svelte';
   import { eventManager } from '$lib/managers/event-manager.svelte';
@@ -7,10 +13,7 @@
   import { Route } from '$lib/route';
   import { oauth } from '$lib/utils';
   import { getServerErrorMessage, handleError } from '$lib/utils/handle-error';
-  import { login, type LoginResponseDto } from '@immich/sdk';
-  import { Alert, Button, Field, Input, PasswordInput, Stack } from '@immich/ui';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   interface Props {

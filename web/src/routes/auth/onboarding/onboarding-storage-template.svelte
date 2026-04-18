@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { Link } from '@immich/ui';
+
   import StorageTemplateSettings from '$lib/components/admin-settings/StorageTemplateSettings.svelte';
   import FormatMessage from '$lib/elements/FormatMessage.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
-  import { Link } from '@immich/ui';
 </script>
 
 <div class="flex flex-col">

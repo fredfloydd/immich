@@ -1,13 +1,16 @@
 <script lang="ts">
-  import WorkflowPickerItemCard from './WorkflowPickerItemCard.svelte';
+  import { mdiPlus } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import type { AlbumResponseDto, PersonResponseDto } from '@immich/sdk';
+  import { Button, Field, modalManager } from '@immich/ui';
+
   import AlbumPickerModal from '$lib/modals/AlbumPickerModal.svelte';
   import PeoplePickerModal from '$lib/modals/PeoplePickerModal.svelte';
   import { fetchPickerMetadata, type PickerMetadata } from '$lib/services/workflow.service';
   import type { ComponentConfig } from '$lib/utils/workflow';
-  import type { AlbumResponseDto, PersonResponseDto } from '@immich/sdk';
-  import { Button, Field, modalManager } from '@immich/ui';
-  import { mdiPlus } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
+  import WorkflowPickerItemCard from './WorkflowPickerItemCard.svelte';
 
   type Props = {
     component: ComponentConfig;

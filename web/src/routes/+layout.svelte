@@ -1,22 +1,8 @@
 <script lang="ts">
-  import { afterNavigate, beforeNavigate } from '$app/navigation';
-  import { page } from '$app/state';
-  import { getPagesProvider, getSettingsProvider } from '$lib/commands';
-  import DownloadPanel from './download-panel.svelte';
-  import ErrorLayout from './ErrorLayout.svelte';
-  import OnEvents from '$lib/components/OnEvents.svelte';
-  import NavigationLoadingBar from './navigation-loading-bar.svelte';
-  import UploadPanel from './upload-panel.svelte';
-  import VersionAnnouncement from './VersionAnnouncement.svelte';
-  import { authManager } from '$lib/managers/auth-manager.svelte';
-  import { eventManager } from '$lib/managers/event-manager.svelte';
-  import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
-  import ServerRestartingModal from '$lib/modals/ServerRestartingModal.svelte';
-  import { Route } from '$lib/route';
-  import { locale } from '$lib/stores/preferences.store';
-  import { sidebarStore } from '$lib/stores/sidebar.svelte';
-  import { closeWebsocketConnection, openWebsocketConnection, websocketStore } from '$lib/stores/websocket';
-  import { maintenanceShouldRedirect } from '$lib/utils/maintenance';
+  import { onMount, type Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+  import { get } from 'svelte/store';
+
   import { getServerConfig } from '@immich/sdk';
   import {
     CommandPaletteProvider,
@@ -35,9 +21,27 @@
     toastManager,
     TooltipProvider,
   } from '@immich/ui';
-  import { onMount, type Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
-  import { get } from 'svelte/store';
+
+  import { afterNavigate, beforeNavigate } from '$app/navigation';
+  import { page } from '$app/state';
+  import { getPagesProvider, getSettingsProvider } from '$lib/commands';
+  import OnEvents from '$lib/components/OnEvents.svelte';
+  import { authManager } from '$lib/managers/auth-manager.svelte';
+  import { eventManager } from '$lib/managers/event-manager.svelte';
+  import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
+  import ServerRestartingModal from '$lib/modals/ServerRestartingModal.svelte';
+  import { Route } from '$lib/route';
+  import { locale } from '$lib/stores/preferences.store';
+  import { sidebarStore } from '$lib/stores/sidebar.svelte';
+  import { closeWebsocketConnection, openWebsocketConnection, websocketStore } from '$lib/stores/websocket';
+  import { maintenanceShouldRedirect } from '$lib/utils/maintenance';
+
+  import DownloadPanel from './download-panel.svelte';
+  import ErrorLayout from './ErrorLayout.svelte';
+  import NavigationLoadingBar from './navigation-loading-bar.svelte';
+  import UploadPanel from './upload-panel.svelte';
+  import VersionAnnouncement from './VersionAnnouncement.svelte';
+
   import '../app.css';
 
   interface Props {

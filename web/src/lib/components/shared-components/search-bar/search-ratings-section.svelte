@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { Text } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Text } from '@immich/ui';
+
   import Combobox from '../combobox.svelte';
 
   interface Props {

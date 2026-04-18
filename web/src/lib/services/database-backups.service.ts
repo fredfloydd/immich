@@ -1,8 +1,6 @@
-import { eventManager } from '$lib/managers/event-manager.svelte';
-import { uploadRequest } from '$lib/utils';
-import { openFilePicker } from '$lib/utils/file-uploader';
-import { handleError } from '$lib/utils/handle-error';
-import { getFormatter } from '$lib/utils/i18n';
+import { mdiDownload, mdiTrashCanOutline } from '@mdi/js';
+import type { MessageFormatter } from 'svelte-i18n';
+
 import {
   deleteDatabaseBackup,
   getBaseUrl,
@@ -11,8 +9,12 @@ import {
   type DatabaseBackupUploadDto,
 } from '@immich/sdk';
 import { modalManager, type ActionItem } from '@immich/ui';
-import { mdiDownload, mdiTrashCanOutline } from '@mdi/js';
-import type { MessageFormatter } from 'svelte-i18n';
+
+import { eventManager } from '$lib/managers/event-manager.svelte';
+import { uploadRequest } from '$lib/utils';
+import { openFilePicker } from '$lib/utils/file-uploader';
+import { handleError } from '$lib/utils/handle-error';
+import { getFormatter } from '$lib/utils/i18n';
 
 export const getDatabaseBackupActions = ($t: MessageFormatter, filename: string) => {
   const Download: ActionItem = {

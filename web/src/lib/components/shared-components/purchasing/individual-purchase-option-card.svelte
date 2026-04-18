@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { ImmichProduct } from '$lib/constants';
-  import { getLicenseLink as getProductLink } from '$lib/utils/license-utils';
-  import { Button, Icon } from '@immich/ui';
   import { mdiAccount, mdiCheckCircleOutline } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Button, Icon } from '@immich/ui';
+
+  import { ImmichProduct } from '$lib/constants';
+  import { getLicenseLink as getProductLink } from '$lib/utils/license-utils';
 </script>
 
 <!-- Individual Purchase Option -->

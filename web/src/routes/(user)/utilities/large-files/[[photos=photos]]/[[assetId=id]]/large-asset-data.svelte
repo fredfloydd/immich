@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { type AssetResponseDto } from '@immich/sdk';
+
   import Thumbnail from '$lib/components/assets/thumbnail/thumbnail.svelte';
   import { getFileSize } from '$lib/utils/asset-utils';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import { type AssetResponseDto } from '@immich/sdk';
 
   interface Props {
     asset: AssetResponseDto;

@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
   import { goto } from '$app/navigation';
   import empty3Url from '$lib/assets/empty-3.svg';
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import EmptyPlaceholder from '$lib/components/shared-components/empty-placeholder.svelte';
   import DeleteAssets from '$lib/components/timeline/actions/DeleteAssetsAction.svelte';
-  import RestoreAssets from './RestoreAction.svelte';
   import SelectAllAssets from '$lib/components/timeline/actions/SelectAllAction.svelte';
   import AssetSelectControlBar from '$lib/components/timeline/AssetSelectControlBar.svelte';
   import Timeline from '$lib/components/timeline/Timeline.svelte';
@@ -15,8 +16,9 @@
   import { Route } from '$lib/route';
   import { getTrashActions } from '$lib/services/trash.service';
   import { handlePromiseError } from '$lib/utils';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
+  import RestoreAssets from './RestoreAction.svelte';
 
   type Props = {
     data: PageData;

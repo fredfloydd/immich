@@ -1,9 +1,12 @@
+import { redirect } from '@sveltejs/kit';
+
+import { getAllSharedLinks } from '@immich/sdk';
+
 import { UUID_REGEX } from '$lib/constants';
 import { Route } from '$lib/route';
 import { authenticate } from '$lib/utils/auth';
 import { getFormatter } from '$lib/utils/i18n';
-import { getAllSharedLinks } from '@immich/sdk';
-import { redirect } from '@sveltejs/kit';
+
 import type { LayoutLoad } from './$types';
 
 export const load = (async ({ params, url }) => {

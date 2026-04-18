@@ -1,4 +1,12 @@
 <script lang="ts">
+  import { mdiClose, mdiDeleteOutline, mdiDotsVertical, mdiSend, mdiThumbUp } from '@mdi/js';
+  import * as luxon from 'luxon';
+  import { t } from 'svelte-i18n';
+  import { fromAction } from 'svelte/attachments';
+
+  import { ReactionType, type ActivityResponseDto, type AssetTypeEnum } from '@immich/sdk';
+  import { Icon, IconButton, LoadingSpinner, Textarea, toastManager } from '@immich/ui';
+
   import { shortcut } from '$lib/actions/shortcut';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
@@ -12,12 +20,7 @@
   import { getAssetType } from '$lib/utils/asset-utils';
   import { handleError } from '$lib/utils/handle-error';
   import { isTenMinutesApart } from '$lib/utils/timesince';
-  import { ReactionType, type ActivityResponseDto, type AssetTypeEnum } from '@immich/sdk';
-  import { Icon, IconButton, LoadingSpinner, Textarea, toastManager } from '@immich/ui';
-  import { mdiClose, mdiDeleteOutline, mdiDotsVertical, mdiSend, mdiThumbUp } from '@mdi/js';
-  import * as luxon from 'luxon';
-  import { t } from 'svelte-i18n';
-  import { fromAction } from 'svelte/attachments';
+
   import UserAvatar from '../shared-components/user-avatar.svelte';
 
   const units: Intl.RelativeTimeFormatUnit[] = ['year', 'month', 'week', 'day', 'hour', 'minute', 'second'];

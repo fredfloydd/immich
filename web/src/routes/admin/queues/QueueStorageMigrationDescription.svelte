@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
   import { OpenQueryParam } from '$lib/constants';
   import FormatMessage from '$lib/elements/FormatMessage.svelte';
   import { Route } from '$lib/route';
-  import { t } from 'svelte-i18n';
 </script>
 
 <FormatMessage

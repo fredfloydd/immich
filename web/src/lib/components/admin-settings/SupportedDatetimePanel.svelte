@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { locale } from '$lib/stores/preferences.store';
-  import type { SystemConfigTemplateStorageOptionDto } from '@immich/sdk';
-  import { Card, CardBody, CardHeader, Text } from '@immich/ui';
   import { DateTime } from 'luxon';
   import { t } from 'svelte-i18n';
+
+  import type { SystemConfigTemplateStorageOptionDto } from '@immich/sdk';
+  import { Card, CardBody, CardHeader, Text } from '@immich/ui';
+
+  import { locale } from '$lib/stores/preferences.store';
 
   interface Props {
     options: SystemConfigTemplateStorageOptionDto;

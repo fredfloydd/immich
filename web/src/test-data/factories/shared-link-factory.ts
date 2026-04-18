@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
-import { SharedLinkType, type SharedLinkResponseDto } from '@immich/sdk';
 import { Sync } from 'factory.ts';
+
+import { SharedLinkType, type SharedLinkResponseDto } from '@immich/sdk';
 
 export const sharedLinkFactory = Sync.makeFactory<SharedLinkResponseDto>({
   id: Sync.each(() => faker.string.uuid()),

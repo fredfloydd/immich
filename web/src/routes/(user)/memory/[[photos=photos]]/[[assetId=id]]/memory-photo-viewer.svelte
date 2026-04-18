@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+
+  import { AssetMediaSize } from '@immich/sdk';
+
+  import DelayedLoadingSpinner from '$lib/components/DelayedLoadingSpinner.svelte';
   import { assetViewerFadeDuration } from '$lib/constants';
   import type { TimelineAsset } from '$lib/managers/timeline-manager/types';
   import { getAssetMediaUrl } from '$lib/utils';
   import { getAltText } from '$lib/utils/thumbnail-util';
-  import { AssetMediaSize } from '@immich/sdk';
-  import DelayedLoadingSpinner from '$lib/components/DelayedLoadingSpinner.svelte';
-  import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
 
   interface Props {
     asset: TimelineAsset;

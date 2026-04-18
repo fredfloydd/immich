@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { mdiTagMultipleOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { IconButton, modalManager } from '@immich/ui';
+
   import { shortcut } from '$lib/actions/shortcut';
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import AssetTagModal from '$lib/modals/AssetTagModal.svelte';
-  import { IconButton, modalManager } from '@immich/ui';
-  import { mdiTagMultipleOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     menuItem?: boolean;

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import type { TimelineMonth } from '../timeline-month.svelte';
 import { findClosestTimelineMonthForDate } from './search-support.svelte';
 

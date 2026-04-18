@@ -1,5 +1,6 @@
-import { type MaintenanceAuthDto, type MaintenanceStatusResponseDto } from '@immich/sdk';
 import { writable } from 'svelte/store';
+
+import { type MaintenanceAuthDto, type MaintenanceStatusResponseDto } from '@immich/sdk';
 
 export const maintenanceStore = {
   auth: writable<MaintenanceAuthDto>(),

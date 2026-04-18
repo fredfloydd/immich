@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiArrowLeft } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility } from '@immich/sdk';
+  import { ActionButton, CommandPaletteDefaultProvider } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import ControlAppBar from '$lib/components/shared-components/control-app-bar.svelte';
   import CreateSharedLink from '$lib/components/timeline/actions/CreateSharedLinkAction.svelte';
@@ -8,10 +14,7 @@
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import { Route } from '$lib/route';
   import { getAssetBulkActions } from '$lib/services/asset.service';
-  import { AssetVisibility } from '@immich/sdk';
-  import { ActionButton, CommandPaletteDefaultProvider } from '@immich/ui';
-  import { mdiArrowLeft } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   interface Props {

@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { getPeopleThumbnailUrl } from '$lib/utils';
   import { type PersonResponseDto } from '@immich/sdk';
+
   import ImageThumbnail from '$lib/components/assets/thumbnail/image-thumbnail.svelte';
+  import { getPeopleThumbnailUrl } from '$lib/utils';
 
   interface Props {
     person: PersonResponseDto;

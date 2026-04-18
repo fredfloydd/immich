@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { cleanClass } from '$lib';
-  import { Icon } from '@immich/ui';
   import { mdiImageBrokenVariant } from '@mdi/js';
+  import { cleanClass } from '$lib';
   import { t } from 'svelte-i18n';
   import type { ClassValue } from 'svelte/elements';
+
+  import { Icon } from '@immich/ui';
 
   interface Props {
     class?: ClassValue;

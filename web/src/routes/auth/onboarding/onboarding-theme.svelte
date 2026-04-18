@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { moonPath, moonViewBox, sunPath, sunViewBox } from '$lib/assets/svg-paths';
-  import { Icon, themeManager, ThemePreference } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Icon, themeManager, ThemePreference } from '@immich/ui';
+
+  import { moonPath, moonViewBox, sunPath, sunViewBox } from '$lib/assets/svg-paths';
 </script>
 
 <div class="flex flex-col gap-4">

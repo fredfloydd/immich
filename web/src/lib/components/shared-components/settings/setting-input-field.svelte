@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { SettingInputFieldType } from '$lib/constants';
-  import { PasswordInput } from '@immich/ui';
   import { onMount, tick, type Snippet } from 'svelte';
   import { t } from 'svelte-i18n';
   import { quintOut } from 'svelte/easing';
   import type { FormEventHandler } from 'svelte/elements';
   import { fly } from 'svelte/transition';
+
+  import { PasswordInput } from '@immich/ui';
+
+  import { SettingInputFieldType } from '$lib/constants';
 
   type Props = {
     min?: number;

@@ -1,4 +1,12 @@
 <script lang="ts">
+  import { mdiDeleteOutline, mdiDownload, mdiRenameOutline, mdiShareVariantOutline } from '@mdi/js';
+  import { groupBy } from 'lodash-es';
+  import { onMount, type Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { type AlbumResponseDto, type SharedLinkResponseDto } from '@immich/sdk';
+  import { modalManager } from '@immich/ui';
+
   import AlbumCardGroup from '$lib/components/album-page/album-card-group.svelte';
   import AlbumsTable from '$lib/components/album-page/albums-table.svelte';
   import OnEvents from '$lib/components/OnEvents.svelte';
@@ -20,12 +28,6 @@
   import { getSelectedAlbumGroupOption, sortAlbums, stringToSortOrder, type AlbumGroup } from '$lib/utils/album-utils';
   import type { ContextMenuPosition } from '$lib/utils/context-menu';
   import { normalizeSearchString } from '$lib/utils/string-utils';
-  import { type AlbumResponseDto, type SharedLinkResponseDto } from '@immich/sdk';
-  import { modalManager } from '@immich/ui';
-  import { mdiDeleteOutline, mdiDownload, mdiRenameOutline, mdiShareVariantOutline } from '@mdi/js';
-  import { groupBy } from 'lodash-es';
-  import { onMount, type Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     ownedAlbums?: AlbumResponseDto[];

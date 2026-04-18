@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiCameraIris, mdiChartPie, mdiFilterMinusOutline, mdiFolderOutline, mdiPlayCircle } from '@mdi/js';
+  import type { Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { Code, CommandPaletteDefaultProvider, Container, Heading, modalManager } from '@immich/ui';
+
   import { goto, invalidate } from '$app/navigation';
   import emptyFoldersUrl from '$lib/assets/empty-folders.svg';
   import AdminCard from '$lib/components/AdminCard.svelte';
@@ -15,10 +21,7 @@
     getLibraryFolderActions,
   } from '$lib/services/library.service';
   import { getBytesWithUnit } from '$lib/utils/byte-units';
-  import { Code, CommandPaletteDefaultProvider, Container, Heading, modalManager } from '@immich/ui';
-  import { mdiCameraIris, mdiChartPie, mdiFilterMinusOutline, mdiFolderOutline, mdiPlayCircle } from '@mdi/js';
-  import type { Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
+
   import type { LayoutData } from './$types';
 
   type Props = {

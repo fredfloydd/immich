@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { handleEditExclusionPattern } from '$lib/services/library.service';
-  import type { LibraryResponseDto } from '@immich/sdk';
-  import { Field, FormModal, Input, Text } from '@immich/ui';
   import { mdiFolderSync } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import type { LibraryResponseDto } from '@immich/sdk';
+  import { Field, FormModal, Input, Text } from '@immich/ui';
+
+  import { handleEditExclusionPattern } from '$lib/services/library.service';
 
   type Props = {
     library: LibraryResponseDto;

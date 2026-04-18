@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { mdiShareVariantOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import type { AlbumResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { dateFormats } from '$lib/constants';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { Route } from '$lib/route';
   import { locale } from '$lib/stores/preferences.store';
   import type { ContextMenuPosition } from '$lib/utils/context-menu';
-  import type { AlbumResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
-  import { mdiShareVariantOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     album: AlbumResponseDto;

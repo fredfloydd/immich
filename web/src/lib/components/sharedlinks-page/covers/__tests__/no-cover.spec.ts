@@ -1,5 +1,6 @@
-import NoCover from '$lib/components/sharedlinks-page/covers/no-cover.svelte';
 import { render } from '@testing-library/svelte';
+
+import NoCover from '$lib/components/sharedlinks-page/covers/no-cover.svelte';
 
 describe('NoCover component', () => {
   it('renders correctly', () => {

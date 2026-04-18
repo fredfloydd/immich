@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { deleteProfileImage, updateMyUser, UserAvatarColor } from '@immich/sdk';
+  import { Modal, ModalBody, toastManager } from '@immich/ui';
+
   import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { deleteProfileImage, updateMyUser, UserAvatarColor } from '@immich/sdk';
-  import { Modal, ModalBody, toastManager } from '@immich/ui';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     onClose: () => void;

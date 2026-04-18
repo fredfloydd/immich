@@ -1,5 +1,6 @@
-import * as sdk from '@immich/sdk';
 import type { Mock, MockedObject } from 'vitest';
+
+import * as sdk from '@immich/sdk';
 
 vi.mock('@immich/sdk', async (originalImport) => {
   const module = await originalImport<typeof import('@immich/sdk')>();

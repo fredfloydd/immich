@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { getComponentDefaultValue, getComponentFromSchema } from '$lib/utils/workflow';
   import { Field, Input, MultiSelect, Select, Switch, Text } from '@immich/ui';
+
+  import { getComponentDefaultValue, getComponentFromSchema } from '$lib/utils/workflow';
+
   import WorkflowPickerField from './WorkflowPickerField.svelte';
 
   type Props = {

@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { mdiImageOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { updateAlbumInfo, type AlbumResponseDto, type AssetResponseDto } from '@immich/sdk';
+  import { toastManager } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { eventManager } from '$lib/managers/event-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { updateAlbumInfo, type AlbumResponseDto, type AssetResponseDto } from '@immich/sdk';
-  import { toastManager } from '@immich/ui';
-  import { mdiImageOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     asset: AssetResponseDto;

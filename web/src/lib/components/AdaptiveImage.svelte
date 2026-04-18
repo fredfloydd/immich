@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { untrack, type Snippet } from 'svelte';
+
+  import type { AssetResponseDto, SharedLinkResponseDto } from '@immich/sdk';
+
   import AlphaBackground from '$lib/components/AlphaBackground.svelte';
   import BrokenAsset from '$lib/components/assets/broken-asset.svelte';
   import DelayedLoadingSpinner from '$lib/components/DelayedLoadingSpinner.svelte';
@@ -10,8 +14,6 @@
   import { scaleToCover, scaleToFit, type Size } from '$lib/utils/container-utils';
   import { getAltText } from '$lib/utils/thumbnail-util';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import type { AssetResponseDto, SharedLinkResponseDto } from '@immich/sdk';
-  import { untrack, type Snippet } from 'svelte';
 
   type Props = {
     asset: AssetResponseDto;

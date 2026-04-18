@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cleanClass } from '$lib';
+
   import BrokenAsset from '$lib/components/assets/broken-asset.svelte';
 
   interface Props {

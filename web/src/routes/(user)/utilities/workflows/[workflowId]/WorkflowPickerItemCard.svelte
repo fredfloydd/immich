@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { getAssetMediaUrl, getPeopleThumbnailUrl } from '$lib/utils';
-  import type { AlbumResponseDto, PersonResponseDto } from '@immich/sdk';
-  import { Card, CardBody, IconButton, Text } from '@immich/ui';
   import { mdiClose } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import type { AlbumResponseDto, PersonResponseDto } from '@immich/sdk';
+  import { Card, CardBody, IconButton, Text } from '@immich/ui';
+
+  import { getAssetMediaUrl, getPeopleThumbnailUrl } from '$lib/utils';
 
   type Props = {
     item: AlbumResponseDto | PersonResponseDto;

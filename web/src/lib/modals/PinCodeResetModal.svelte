@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
-  import { handleResetPinCode } from '$lib/services/user.service';
-  import { BasicModal, Field, FormModal, HelperText, PasswordInput, Stack, type ModalSize } from '@immich/ui';
   import { mdiLockReset } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { BasicModal, Field, FormModal, HelperText, PasswordInput, Stack, type ModalSize } from '@immich/ui';
+
+  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
+  import { handleResetPinCode } from '$lib/services/user.service';
 
   type Props = {
     onClose: (success?: true) => void;

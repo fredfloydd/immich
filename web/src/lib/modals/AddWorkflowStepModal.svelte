@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { PluginActionResponseDto, PluginFilterResponseDto } from '@immich/sdk';
-  import { Modal, ModalBody, Text } from '@immich/ui';
   import { mdiFilterOutline, mdiPlayCircleOutline } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import type { PluginActionResponseDto, PluginFilterResponseDto } from '@immich/sdk';
+  import { Modal, ModalBody, Text } from '@immich/ui';
 
   type Props = {
     filters: PluginFilterResponseDto[];

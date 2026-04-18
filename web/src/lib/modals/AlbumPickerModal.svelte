@@ -1,4 +1,11 @@
 <script lang="ts">
+  import { mdiKeyboardReturn } from '@mdi/js';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { createAlbum, getAllAlbums, type AlbumResponseDto } from '@immich/sdk';
+  import { Button, Icon, Modal, ModalBody, ModalFooter, Text } from '@immich/ui';
+
   import { initInput } from '$lib/actions/focus';
   import {
     AlbumModalRowConverter,
@@ -7,11 +14,7 @@
   } from '$lib/components/shared-components/album-selection/album-selection-utils';
   import { eventManager } from '$lib/managers/event-manager.svelte';
   import { albumViewSettings } from '$lib/stores/preferences.store';
-  import { createAlbum, getAllAlbums, type AlbumResponseDto } from '@immich/sdk';
-  import { Button, Icon, Modal, ModalBody, ModalFooter, Text } from '@immich/ui';
-  import { mdiKeyboardReturn } from '@mdi/js';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
+
   import AlbumListItem from '../components/asset-viewer/album-list-item.svelte';
   import NewAlbumListItem from '../components/shared-components/album-selection/new-album-list-item.svelte';
 

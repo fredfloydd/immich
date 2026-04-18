@@ -1,5 +1,6 @@
+import { readdirSync, readFileSync } from 'node:fs';
+
 import { getClosestAvailableLocale, langs } from '$lib/utils/i18n';
-import { readFileSync, readdirSync } from 'node:fs';
 
 describe('i18n', () => {
   describe('loaders', () => {

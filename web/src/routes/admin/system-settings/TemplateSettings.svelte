@@ -1,15 +1,18 @@
 <script lang="ts">
+  import { mdiEyeOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { getNotificationTemplateAdmin, type SystemConfigDto, type SystemConfigTemplateEmailsDto } from '@immich/sdk';
+  import { Button, Icon, LoadingSpinner, modalManager } from '@immich/ui';
+
   import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
-  import SettingTextarea from './setting-textarea.svelte';
   import FormatMessage from '$lib/elements/FormatMessage.svelte';
   import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
   import EmailTemplatePreviewModal from '$lib/modals/EmailTemplatePreviewModal.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { type SystemConfigDto, type SystemConfigTemplateEmailsDto, getNotificationTemplateAdmin } from '@immich/sdk';
-  import { Button, Icon, LoadingSpinner, modalManager } from '@immich/ui';
-  import { mdiEyeOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
+
+  import SettingTextarea from './setting-textarea.svelte';
 
   interface Props {
     config: SystemConfigDto;

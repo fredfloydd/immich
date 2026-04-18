@@ -1,10 +1,13 @@
 <script lang="ts">
-  import AdminPageLayout from '$lib/components/layouts/AdminPageLayout.svelte';
-  import ServerStatisticsPanel from './ServerStatisticsPanel.svelte';
+  import { onMount } from 'svelte';
+
   import { getServerStatistics, type ServerStatsResponseDto } from '@immich/sdk';
   import { Container } from '@immich/ui';
-  import { onMount } from 'svelte';
+
+  import AdminPageLayout from '$lib/components/layouts/AdminPageLayout.svelte';
+
   import type { PageData } from './$types';
+  import ServerStatisticsPanel from './ServerStatisticsPanel.svelte';
 
   type Props = {
     data: PageData;

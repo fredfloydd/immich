@@ -1,21 +1,4 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-  import { page } from '$app/state';
-  import OnboardingBackup from './onboarding-backup.svelte';
-  import OnboardingCard from './onboarding-card.svelte';
-  import OnboardingHello from './onboarding-hello.svelte';
-  import OnboardingLocale from './onboarding-language.svelte';
-  import OnboardingMobileApp from './onboarding-mobile-app.svelte';
-  import OnboardingServerPrivacy from './onboarding-server-privacy.svelte';
-  import OnboardingStorageTemplate from './onboarding-storage-template.svelte';
-  import OnboardingTheme from './onboarding-theme.svelte';
-  import OnboardingUserPrivacy from './onboarding-user-privacy.svelte';
-  import { authManager } from '$lib/managers/auth-manager.svelte';
-  import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
-  import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
-  import { Route } from '$lib/route';
-  import { OnboardingRole } from '$lib/types';
-  import { setUserOnboarding, updateAdminOnboarding } from '@immich/sdk';
   import {
     mdiCellphoneArrowDownVariant,
     mdiCloudCheckOutline,
@@ -26,6 +9,26 @@
   } from '@mdi/js';
   import { onMount } from 'svelte';
   import { t } from 'svelte-i18n';
+
+  import { setUserOnboarding, updateAdminOnboarding } from '@immich/sdk';
+
+  import { goto } from '$app/navigation';
+  import { page } from '$app/state';
+  import { authManager } from '$lib/managers/auth-manager.svelte';
+  import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
+  import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
+  import { Route } from '$lib/route';
+  import { OnboardingRole } from '$lib/types';
+
+  import OnboardingBackup from './onboarding-backup.svelte';
+  import OnboardingCard from './onboarding-card.svelte';
+  import OnboardingHello from './onboarding-hello.svelte';
+  import OnboardingLocale from './onboarding-language.svelte';
+  import OnboardingMobileApp from './onboarding-mobile-app.svelte';
+  import OnboardingServerPrivacy from './onboarding-server-privacy.svelte';
+  import OnboardingStorageTemplate from './onboarding-storage-template.svelte';
+  import OnboardingTheme from './onboarding-theme.svelte';
+  import OnboardingUserPrivacy from './onboarding-user-privacy.svelte';
 
   interface OnboardingStep {
     name: string;

@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { locale } from '$lib/stores/preferences.store';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import {
     AssetVisibility,
     getAlbumStatistics,
@@ -8,8 +10,8 @@
     type AssetStatsResponseDto,
   } from '@immich/sdk';
   import { Heading, Table, TableBody, TableCell, TableHeader, TableHeading, TableRow } from '@immich/ui';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import { locale } from '$lib/stores/preferences.store';
 
   let timelineStats: AssetStatsResponseDto = $state({
     videos: 0,

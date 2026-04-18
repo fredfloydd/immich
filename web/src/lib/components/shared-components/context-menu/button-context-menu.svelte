@@ -1,4 +1,9 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  import { IconButton, type Color, type Size, type Variants } from '@immich/ui';
+
   import { contextMenuNavigation } from '$lib/actions/context-menu-navigation';
   import { shortcuts } from '$lib/actions/shortcut';
   import ContextMenu from '$lib/components/shared-components/context-menu/context-menu.svelte';
@@ -10,9 +15,6 @@
     type Align,
   } from '$lib/utils/context-menu';
   import { generateId } from '$lib/utils/generate-id';
-  import { IconButton, type Color, type Size, type Variants } from '@immich/ui';
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
 
   type Props = {
     icon: string;

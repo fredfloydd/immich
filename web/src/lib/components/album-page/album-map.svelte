@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { mdiMapOutline } from '@mdi/js';
+  import { onDestroy, onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { getAlbumMapMarkers, type AlbumResponseDto, type MapMarkerResponseDto } from '@immich/sdk';
+  import { IconButton, modalManager } from '@immich/ui';
+
   import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import MapModal from '$lib/modals/MapModal.svelte';
   import { handleError } from '$lib/utils/handle-error';
   import { navigate } from '$lib/utils/navigation';
-  import { getAlbumMapMarkers, type AlbumResponseDto, type MapMarkerResponseDto } from '@immich/sdk';
-  import { IconButton, modalManager } from '@immich/ui';
-  import { mdiMapOutline } from '@mdi/js';
-  import { onDestroy, onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     album: AlbumResponseDto;

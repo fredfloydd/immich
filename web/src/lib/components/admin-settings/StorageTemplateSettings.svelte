@@ -1,9 +1,19 @@
 <script lang="ts">
+  import handlebar from 'handlebars';
+  import * as luxon from 'luxon';
+  import { onDestroy } from 'svelte';
+  import { t } from 'svelte-i18n';
+  import { createBubbler, preventDefault } from 'svelte/legacy';
+  import { fade } from 'svelte/transition';
+
+  import { getStorageTemplateOptions, type SystemConfigTemplateStorageOptionDto } from '@immich/sdk';
+  import { Heading, Link, LoadingSpinner, Text } from '@immich/ui';
+
   import SupportedDatetimePanel from '$lib/components/admin-settings/SupportedDatetimePanel.svelte';
   import SupportedVariablesPanel from '$lib/components/admin-settings/SupportedVariablesPanel.svelte';
-  import SettingButtonsRow from '$lib/components/shared-components/settings/SystemConfigButtonRow.svelte';
   import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
+  import SettingButtonsRow from '$lib/components/shared-components/settings/SystemConfigButtonRow.svelte';
   import { SettingInputFieldType } from '$lib/constants';
   import FormatMessage from '$lib/elements/FormatMessage.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
@@ -11,14 +21,6 @@
   import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
   import { Route } from '$lib/route';
   import { handleSystemConfigSave } from '$lib/services/system-config.service';
-  import { getStorageTemplateOptions, type SystemConfigTemplateStorageOptionDto } from '@immich/sdk';
-  import { Heading, Link, LoadingSpinner, Text } from '@immich/ui';
-  import handlebar from 'handlebars';
-  import * as luxon from 'luxon';
-  import { onDestroy } from 'svelte';
-  import { t } from 'svelte-i18n';
-  import { createBubbler, preventDefault } from 'svelte/legacy';
-  import { fade } from 'svelte/transition';
 
   type Props = {
     minified?: boolean;

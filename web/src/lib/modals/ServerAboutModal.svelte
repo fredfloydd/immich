@@ -1,10 +1,12 @@
 <script lang="ts">
-  import ServerAboutItem from '$lib/components/ServerAboutItem.svelte';
-  import { locale } from '$lib/stores/preferences.store';
-  import { type ServerAboutResponseDto, type ServerVersionHistoryResponseDto } from '@immich/sdk';
-  import { Alert, Label, Modal, ModalBody } from '@immich/ui';
   import { DateTime } from 'luxon';
   import { t } from 'svelte-i18n';
+
+  import { type ServerAboutResponseDto, type ServerVersionHistoryResponseDto } from '@immich/sdk';
+  import { Alert, Label, Modal, ModalBody } from '@immich/ui';
+
+  import ServerAboutItem from '$lib/components/ServerAboutItem.svelte';
+  import { locale } from '$lib/stores/preferences.store';
 
   interface Props {
     onClose: () => void;

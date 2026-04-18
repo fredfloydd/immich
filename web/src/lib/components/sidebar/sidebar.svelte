@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { onMount, type Snippet } from 'svelte';
+
   import { clickOutside } from '$lib/actions/click-outside';
   import { focusTrap } from '$lib/actions/focus-trap';
   import { menuButtonId } from '$lib/components/shared-components/navigation-bar/navigation-bar.svelte';
   import { mediaQueryManager } from '$lib/stores/media-query-manager.svelte';
   import { sidebarStore } from '$lib/stores/sidebar.svelte';
-  import { onMount, type Snippet } from 'svelte';
 
   interface Props {
     ariaLabel?: string;

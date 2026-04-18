@@ -1,6 +1,7 @@
 <script module lang="ts">
-  import { handlePromiseError } from '$lib/utils';
   import { tick, type Snippet } from 'svelte';
+
+  import { handlePromiseError } from '$lib/utils';
 
   /**
    * Usage: <div use:portal={'css selector'}> or <div use:portal={document.body}>

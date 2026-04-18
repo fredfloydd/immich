@@ -20,15 +20,17 @@
 </script>
 
 <script lang="ts">
-  import { focusOutside } from '$lib/actions/focus-outside';
-  import { shortcuts } from '$lib/actions/shortcut';
-  import { generateId } from '$lib/utils/generate-id';
-  import { Icon, IconButton, Label } from '@immich/ui';
   import { mdiChevronDown, mdiClose, mdiMagnify } from '@mdi/js';
   import { onMount, tick } from 'svelte';
   import { t } from 'svelte-i18n';
   import type { FormEventHandler } from 'svelte/elements';
   import { fly } from 'svelte/transition';
+
+  import { Icon, IconButton, Label } from '@immich/ui';
+
+  import { focusOutside } from '$lib/actions/focus-outside';
+  import { shortcuts } from '$lib/actions/shortcut';
+  import { generateId } from '$lib/utils/generate-id';
 
   interface Props {
     label: string;

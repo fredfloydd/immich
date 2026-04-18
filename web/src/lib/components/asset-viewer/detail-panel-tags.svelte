@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { mdiClose } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { getAssetInfo, type AssetResponseDto } from '@immich/sdk';
+  import { Badge, IconButton, Link, Text } from '@immich/ui';
+
   import HeaderActionButton from '$lib/components/HeaderActionButton.svelte';
   import OnEvents from '$lib/components/OnEvents.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { Route } from '$lib/route';
   import { getAssetActions } from '$lib/services/asset.service';
   import { removeTag } from '$lib/utils/asset-utils';
-  import { getAssetInfo, type AssetResponseDto } from '@immich/sdk';
-  import { Badge, IconButton, Link, Text } from '@immich/ui';
-  import { mdiClose } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     asset: AssetResponseDto;

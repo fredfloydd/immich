@@ -1,10 +1,12 @@
 <script lang="ts">
-  import ApiKeyPermissionsPicker from '$lib/components/ApiKeyPermissionsPicker.svelte';
-  import { handleUpdateApiKey } from '$lib/services/api-key.service';
-  import { Permission } from '@immich/sdk';
-  import { Field, FormModal, Input } from '@immich/ui';
   import { mdiKeyVariant } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Permission } from '@immich/sdk';
+  import { Field, FormModal, Input } from '@immich/ui';
+
+  import ApiKeyPermissionsPicker from '$lib/components/ApiKeyPermissionsPicker.svelte';
+  import { handleUpdateApiKey } from '$lib/services/api-key.service';
 
   type Props = {
     apiKey: { id: string; name: string; permissions: Permission[] };

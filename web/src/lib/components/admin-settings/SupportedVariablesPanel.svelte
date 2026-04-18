@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Card, CardBody, Text } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Card, CardBody, Text } from '@immich/ui';
 </script>
 
 <Text size="small">{$t('other_variables')}</Text>

@@ -4,7 +4,9 @@ import { renderWithTooltips } from '$tests/helpers';
 import { assetFactory } from '@test-data/factories/asset-factory';
 import { preferencesFactory } from '@test-data/factories/preferences-factory';
 import { userAdminFactory } from '@test-data/factories/user-factory';
+
 import '@testing-library/jest-dom';
+
 import AssetViewerNavBar from './asset-viewer-nav-bar.svelte';
 
 describe('AssetViewerNavBar component', () => {

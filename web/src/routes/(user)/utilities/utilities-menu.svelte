@@ -1,8 +1,4 @@
 <script lang="ts">
-  import AppDownloadModal from '$lib/modals/AppDownloadModal.svelte';
-  import ObtainiumConfigModal from '$lib/modals/ObtainiumConfigModal.svelte';
-  import { Route } from '$lib/route';
-  import { Icon, modalManager, Text } from '@immich/ui';
   import {
     mdiCellphoneArrowDownVariant,
     mdiContentDuplicate,
@@ -11,6 +7,12 @@
     mdiLinkEdit,
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Icon, modalManager, Text } from '@immich/ui';
+
+  import AppDownloadModal from '$lib/modals/AppDownloadModal.svelte';
+  import ObtainiumConfigModal from '$lib/modals/ObtainiumConfigModal.svelte';
+  import { Route } from '$lib/route';
 
   const links = [
     { href: Route.duplicatesUtility(), icon: mdiContentDuplicate, label: $t('review_duplicates') },

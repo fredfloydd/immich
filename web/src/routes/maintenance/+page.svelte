@@ -1,13 +1,16 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { MaintenanceAction } from '@immich/sdk';
+  import { Button, Heading, Link, ProgressBar, Scrollable, Text } from '@immich/ui';
+
   import AuthPageLayout from '$lib/components/layouts/AuthPageLayout.svelte';
-  import MaintenanceRestoreFlow from './MaintenanceRestoreFlow.svelte';
   import FormatMessage from '$lib/elements/FormatMessage.svelte';
   import { handleSetMaintenanceMode } from '$lib/services/maintenance.service';
   import { maintenanceStore } from '$lib/stores/maintenance.store';
-  import { MaintenanceAction } from '@immich/sdk';
-  import { Button, Heading, Link, ProgressBar, Scrollable, Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
+  import MaintenanceRestoreFlow from './MaintenanceRestoreFlow.svelte';
 
   type Props = {
     data: PageData;

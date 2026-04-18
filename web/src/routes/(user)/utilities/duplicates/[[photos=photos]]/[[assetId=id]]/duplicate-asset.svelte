@@ -1,11 +1,4 @@
 <script lang="ts">
-  import { locale } from '$lib/stores/preferences.store';
-  import { getAssetMediaUrl } from '$lib/utils';
-  import { getAssetResolution, getFileSize } from '$lib/utils/asset-utils';
-  import { getAltText } from '$lib/utils/thumbnail-util';
-  import { fromISODateTime, fromISODateTimeUTC, toTimelineAsset } from '$lib/utils/timeline-util';
-  import { type AssetResponseDto, getAllAlbums } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
   import {
     mdiBookmarkOutline,
     mdiCalendar,
@@ -20,6 +13,16 @@
     mdiMapMarkerOutline,
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { getAllAlbums, type AssetResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
+  import { locale } from '$lib/stores/preferences.store';
+  import { getAssetMediaUrl } from '$lib/utils';
+  import { getAssetResolution, getFileSize } from '$lib/utils/asset-utils';
+  import { getAltText } from '$lib/utils/thumbnail-util';
+  import { fromISODateTime, fromISODateTimeUTC, toTimelineAsset } from '$lib/utils/timeline-util';
+
   import InfoRow from './info-row.svelte';
 
   interface Props {

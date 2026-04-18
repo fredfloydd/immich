@@ -1,3 +1,7 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import js from '@eslint/js';
 import tslintPluginCompat from '@koddsson/eslint-plugin-tscompat';
 import prettier from 'eslint-config-prettier';
@@ -5,9 +9,6 @@ import eslintPluginCompat from 'eslint-plugin-compat';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import parser from 'svelte-eslint-parser';
 import typescriptEslint from 'typescript-eslint';
 

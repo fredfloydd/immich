@@ -1,7 +1,9 @@
 <script lang="ts">
-  import HeaderActionButton from '$lib/components/HeaderActionButton.svelte';
-  import { Card, CardBody, CardHeader, CardTitle, Icon, type ActionItem, type IconLike } from '@immich/ui';
   import type { Snippet } from 'svelte';
+
+  import { Card, CardBody, CardHeader, CardTitle, Icon, type ActionItem, type IconLike } from '@immich/ui';
+
+  import HeaderActionButton from '$lib/components/HeaderActionButton.svelte';
 
   type Props = {
     icon: IconLike;

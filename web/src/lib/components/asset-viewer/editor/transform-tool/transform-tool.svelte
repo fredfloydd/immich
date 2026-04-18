@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { shortcuts } from '$lib/actions/shortcut';
-  import { transformManager } from '$lib/managers/edit/transform-manager.svelte';
-  import { Button, HStack, IconButton } from '@immich/ui';
   import { mdiFlipHorizontal, mdiFlipVertical, mdiRotateLeft, mdiRotateRight } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Button, HStack, IconButton } from '@immich/ui';
+
+  import { shortcuts } from '$lib/actions/shortcut';
+  import { transformManager } from '$lib/managers/edit/transform-manager.svelte';
 
   interface AspectRatioOption {
     label: string;

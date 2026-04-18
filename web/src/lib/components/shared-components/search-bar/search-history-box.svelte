@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { searchStore } from '$lib/stores/search.svelte';
-  import { Icon, IconButton, Text } from '@immich/ui';
   import { mdiClose, mdiMagnify } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { fly } from 'svelte/transition';
+
+  import { Icon, IconButton, Text } from '@immich/ui';
+
+  import { searchStore } from '$lib/stores/search.svelte';
 
   interface Props {
     id: string;

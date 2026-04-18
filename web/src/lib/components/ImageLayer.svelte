@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+
   import Image from '$lib/components/Image.svelte';
   import type { AdaptiveImageLoader, ImageQuality } from '$lib/utils/adaptive-image-loader.svelte';
-  import type { Snippet } from 'svelte';
 
   type Props = {
     adaptiveImageLoader: AdaptiveImageLoader;

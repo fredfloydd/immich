@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { AssetMediaSize, type AssetResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
   import { ResizeBoundary, transformManager } from '$lib/managers/edit/transform-manager.svelte';
   import { getAssetMediaUrl } from '$lib/utils';
   import { getAltText } from '$lib/utils/thumbnail-util';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import { AssetMediaSize, type AssetResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     asset: AssetResponseDto;

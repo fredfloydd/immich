@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { Icon, type IconLike } from '@immich/ui';
+
   import type { Shortcut } from '$lib/actions/shortcut';
   import { shortcut as bindShortcut, shortcutLabel as computeShortcutLabel } from '$lib/actions/shortcut';
   import { optionClickCallbackStore, selectedIdStore } from '$lib/stores/context-menu.store';
   import { generateId } from '$lib/utils/generate-id';
-  import { Icon, type IconLike } from '@immich/ui';
 
   interface Props {
     text: string;

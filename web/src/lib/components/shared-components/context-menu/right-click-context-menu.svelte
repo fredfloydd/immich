@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { tick, type Snippet } from 'svelte';
+
   import { contextMenuNavigation } from '$lib/actions/context-menu-navigation';
   import { shortcuts } from '$lib/actions/shortcut';
   import ContextMenu from '$lib/components/shared-components/context-menu/context-menu.svelte';
   import { optionClickCallbackStore, selectedIdStore } from '$lib/stores/context-menu.store';
   import { generateId } from '$lib/utils/generate-id';
-  import { tick, type Snippet } from 'svelte';
 
   interface Props {
     title: string;

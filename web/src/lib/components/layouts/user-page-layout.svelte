@@ -3,14 +3,16 @@
 </script>
 
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { Button, ContextMenuButton, HStack, isMenuItemType, type MenuItemType } from '@immich/ui';
+
   import { useActions, type ActionArray } from '$lib/actions/use-actions';
   import NavigationBar from '$lib/components/shared-components/navigation-bar/navigation-bar.svelte';
   import UserSidebar from '$lib/components/shared-components/side-bar/user-sidebar.svelte';
   import type { HeaderButtonActionItem } from '$lib/types';
   import { openFileUploadDialog } from '$lib/utils/file-uploader';
-  import { Button, ContextMenuButton, HStack, isMenuItemType, type MenuItemType } from '@immich/ui';
-  import type { Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     hideNavbar?: boolean;

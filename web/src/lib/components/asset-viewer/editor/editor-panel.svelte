@@ -1,12 +1,14 @@
 <script lang="ts">
-  import { shortcuts } from '$lib/actions/shortcut';
-  import { editManager, EditToolType } from '$lib/managers/edit/edit-manager.svelte';
-  import { websocketEvents } from '$lib/stores/websocket';
-  import { getAssetEdits, type AssetResponseDto } from '@immich/sdk';
-  import { Button, HStack, IconButton } from '@immich/ui';
   import { mdiClose } from '@mdi/js';
   import { onDestroy, onMount } from 'svelte';
   import { t } from 'svelte-i18n';
+
+  import { getAssetEdits, type AssetResponseDto } from '@immich/sdk';
+  import { Button, HStack, IconButton } from '@immich/ui';
+
+  import { shortcuts } from '$lib/actions/shortcut';
+  import { editManager, EditToolType } from '$lib/managers/edit/edit-manager.svelte';
+  import { websocketEvents } from '$lib/stores/websocket';
 
   onMount(() => {
     return websocketEvents.on('on_asset_update', (assetUpdate) => {

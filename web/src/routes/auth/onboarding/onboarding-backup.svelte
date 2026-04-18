@@ -1,8 +1,10 @@
 <script lang="ts">
-  import FormatMessage from '$lib/elements/FormatMessage.svelte';
-  import { Icon, Link, Stack } from '@immich/ui';
   import { mdiAlertCircleOutline } from '@mdi/js';
   import type { Translations } from 'svelte-i18n';
+
+  import { Icon, Link, Stack } from '@immich/ui';
+
+  import FormatMessage from '$lib/elements/FormatMessage.svelte';
 
   const messageKeys = [
     'admin.backup_onboarding_3_description',

@@ -1,16 +1,19 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { Link } from '@immich/ui';
+
   import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
   import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
-  import SettingSelect from './setting-select.svelte';
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
   import SettingButtonsRow from '$lib/components/shared-components/settings/SystemConfigButtonRow.svelte';
   import { SettingInputFieldType } from '$lib/constants';
   import FormatMessage from '$lib/elements/FormatMessage.svelte';
   import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
   import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
-  import { Link } from '@immich/ui';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
+
+  import SettingSelect from './setting-select.svelte';
 
   const disabled = $derived(featureFlagsManager.value.configFile);
   const config = $derived(systemConfigManager.value);

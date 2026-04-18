@@ -1,16 +1,8 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-  import emptyWorkflows from '$lib/assets/empty-workflows.svg';
-  import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
-  import OnEvents from '$lib/components/OnEvents.svelte';
-  import EmptyPlaceholder from '$lib/components/shared-components/empty-placeholder.svelte';
-  import { Route } from '$lib/route';
-  import {
-    getWorkflowActions,
-    getWorkflowsActions,
-    getWorkflowShowSchemaAction,
-    type WorkflowPayload,
-  } from '$lib/services/workflow.service';
+  import { mdiClose, mdiDotsVertical } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+  import { SvelteMap, SvelteSet } from 'svelte/reactivity';
+
   import { type PluginFilterResponseDto, type WorkflowResponseDto } from '@immich/sdk';
   import {
     Button,
@@ -26,9 +18,20 @@
     Text,
     VStack,
   } from '@immich/ui';
-  import { mdiClose, mdiDotsVertical } from '@mdi/js';
-  import { t } from 'svelte-i18n';
-  import { SvelteMap, SvelteSet } from 'svelte/reactivity';
+
+  import { goto } from '$app/navigation';
+  import emptyWorkflows from '$lib/assets/empty-workflows.svg';
+  import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
+  import OnEvents from '$lib/components/OnEvents.svelte';
+  import EmptyPlaceholder from '$lib/components/shared-components/empty-placeholder.svelte';
+  import { Route } from '$lib/route';
+  import {
+    getWorkflowActions,
+    getWorkflowsActions,
+    getWorkflowShowSchemaAction,
+    type WorkflowPayload,
+  } from '$lib/services/workflow.service';
+
   import type { PageData } from './$types';
 
   type Props = {

@@ -1,16 +1,4 @@
 <script lang="ts">
-  import Dropdown from '$lib/elements/Dropdown.svelte';
-  import SearchBar from '$lib/elements/SearchBar.svelte';
-  import { PlacesGroupBy, placesViewSettings } from '$lib/stores/preferences.store';
-  import {
-    type PlacesGroupOptionMetadata,
-    collapseAllPlacesGroups,
-    expandAllPlacesGroups,
-    findGroupOptionMetadata,
-    getSelectedPlacesGroupOption,
-    groupOptionsMetadata,
-  } from '$lib/utils/places-utils';
-  import { IconButton } from '@immich/ui';
   import {
     mdiFolderArrowUpOutline,
     mdiFolderRemoveOutline,
@@ -19,6 +7,20 @@
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { fly } from 'svelte/transition';
+
+  import { IconButton } from '@immich/ui';
+
+  import Dropdown from '$lib/elements/Dropdown.svelte';
+  import SearchBar from '$lib/elements/SearchBar.svelte';
+  import { PlacesGroupBy, placesViewSettings } from '$lib/stores/preferences.store';
+  import {
+    collapseAllPlacesGroups,
+    expandAllPlacesGroups,
+    findGroupOptionMetadata,
+    getSelectedPlacesGroupOption,
+    groupOptionsMetadata,
+    type PlacesGroupOptionMetadata,
+  } from '$lib/utils/places-utils';
 
   interface Props {
     placesGroups: string[];

@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Icon } from '@immich/ui';
   import { mdiClose } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Icon } from '@immich/ui';
 
   type Props = {
     label: string;

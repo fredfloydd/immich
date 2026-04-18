@@ -1,6 +1,8 @@
+import { searchUsersAdmin } from '@immich/sdk';
+
 import { authenticate, requestServerInfo } from '$lib/utils/auth';
 import { getFormatter } from '$lib/utils/i18n';
-import { searchUsersAdmin } from '@immich/sdk';
+
 import type { LayoutLoad } from './$types';
 
 export const load = (async ({ url }) => {

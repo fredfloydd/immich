@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { mdiHistory } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { restoreAssets } from '@immich/sdk';
+  import { Button, toastManager } from '@immich/ui';
+
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import type { OnRestore } from '$lib/utils/actions';
   import { handleError } from '$lib/utils/handle-error';
-  import { restoreAssets } from '@immich/sdk';
-  import { Button, toastManager } from '@immich/ui';
-  import { mdiHistory } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     onRestore: OnRestore | undefined;

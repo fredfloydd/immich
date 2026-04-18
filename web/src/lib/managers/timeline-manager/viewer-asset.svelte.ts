@@ -1,9 +1,9 @@
 import type { CommonPosition } from '$lib/utils/layout-utils';
 
 import {
-  ViewportProximity,
   calculateViewerAssetViewportProximity,
   isInOrNearViewport,
+  ViewportProximity,
 } from './internal/intersection-support.svelte';
 import type { TimelineDay } from './timeline-day.svelte';
 import type { TimelineAsset } from './types';

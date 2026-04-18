@@ -1,7 +1,7 @@
 <script lang="ts">
-  import ServerStatisticsCard from '$lib/components/server-statistics/ServerStatisticsCard.svelte';
-  import { locale } from '$lib/stores/preferences.store';
-  import { getBytesWithUnit } from '$lib/utils/byte-units';
+  import { mdiCameraIris, mdiChartPie, mdiPlayCircle } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
   import type { ServerStatsResponseDto, UserAdminResponseDto } from '@immich/sdk';
   import {
     Code,
@@ -15,8 +15,10 @@
     TableRow,
     Text,
   } from '@immich/ui';
-  import { mdiCameraIris, mdiChartPie, mdiPlayCircle } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
+  import ServerStatisticsCard from '$lib/components/server-statistics/ServerStatisticsCard.svelte';
+  import { locale } from '$lib/stores/preferences.store';
+  import { getBytesWithUnit } from '$lib/utils/byte-units';
 
   type Props = {
     statsPromise: Promise<ServerStatsResponseDto>;

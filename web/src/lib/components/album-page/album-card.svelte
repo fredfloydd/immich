@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { mdiDotsVertical } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import type { AlbumResponseDto } from '@immich/sdk';
+  import { IconButton } from '@immich/ui';
+
   import AlbumCover from '$lib/components/album-page/album-cover.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { getContextMenuPositionFromEvent, type ContextMenuPosition } from '$lib/utils/context-menu';
   import { getShortDateRange } from '$lib/utils/date-time';
-  import type { AlbumResponseDto } from '@immich/sdk';
-  import { IconButton } from '@immich/ui';
-  import { mdiDotsVertical } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     album: AlbumResponseDto;

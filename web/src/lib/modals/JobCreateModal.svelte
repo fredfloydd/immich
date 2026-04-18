@@ -1,9 +1,11 @@
 <script lang="ts">
-  import Combobox, { type ComboBoxOption } from '$lib/components/shared-components/combobox.svelte';
-  import { handleCreateJob } from '$lib/services/job.service';
+  import { t } from 'svelte-i18n';
+
   import { ManualJobName } from '@immich/sdk';
   import { FormModal } from '@immich/ui';
-  import { t } from 'svelte-i18n';
+
+  import Combobox, { type ComboBoxOption } from '$lib/components/shared-components/combobox.svelte';
+  import { handleCreateJob } from '$lib/services/job.service';
 
   type Props = { onClose: () => void };
 

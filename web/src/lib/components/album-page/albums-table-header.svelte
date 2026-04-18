@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { albumViewSettings, SortOrder, AlbumSortBy } from '$lib/stores/preferences.store';
-  import type { AlbumSortOptionMetadata } from '$lib/utils/album-utils';
   import { t } from 'svelte-i18n';
+
+  import { AlbumSortBy, albumViewSettings, SortOrder } from '$lib/stores/preferences.store';
+  import type { AlbumSortOptionMetadata } from '$lib/utils/album-utils';
 
   interface Props {
     option: AlbumSortOptionMetadata;

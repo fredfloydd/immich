@@ -1,9 +1,33 @@
 <script lang="ts">
+  import {
+    mdiCardsOutline,
+    mdiChevronDown,
+    mdiChevronLeft,
+    mdiChevronRight,
+    mdiChevronUp,
+    mdiDotsVertical,
+    mdiHeart,
+    mdiHeartOutline,
+    mdiImageMinusOutline,
+    mdiImageSearch,
+    mdiPause,
+    mdiPlay,
+    mdiSelectAll,
+    mdiVolumeHigh,
+    mdiVolumeOff,
+  } from '@mdi/js';
+  import type { NavigationTarget, Page } from '@sveltejs/kit';
+  import { DateTime } from 'luxon';
+  import { t } from 'svelte-i18n';
+  import type { Attachment } from 'svelte/attachments';
+  import { Tween } from 'svelte/motion';
+
+  import { AssetMediaSize, AssetTypeEnum, getAssetInfo } from '@immich/sdk';
+  import { ActionButton, IconButton, toastManager } from '@immich/ui';
+
   import { afterNavigate, goto } from '$app/navigation';
   import { page } from '$app/state';
   import { shortcuts } from '$lib/actions/shortcut';
-  import MemoryPhotoViewer from './memory-photo-viewer.svelte';
-  import MemoryVideoViewer from './memory-video-viewer.svelte';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import ControlAppBar from '$lib/components/shared-components/control-app-bar.svelte';
@@ -29,30 +53,9 @@
   import { locale, videoViewerMuted, videoViewerVolume } from '$lib/stores/preferences.store';
   import { getAssetMediaUrl, handlePromiseError, memoryLaneTitle } from '$lib/utils';
   import { fromISODateTimeUTC, toTimelineAsset } from '$lib/utils/timeline-util';
-  import { AssetMediaSize, AssetTypeEnum, getAssetInfo } from '@immich/sdk';
-  import { ActionButton, IconButton, toastManager } from '@immich/ui';
-  import {
-    mdiCardsOutline,
-    mdiChevronDown,
-    mdiChevronLeft,
-    mdiChevronRight,
-    mdiChevronUp,
-    mdiDotsVertical,
-    mdiHeart,
-    mdiHeartOutline,
-    mdiImageMinusOutline,
-    mdiImageSearch,
-    mdiPause,
-    mdiPlay,
-    mdiSelectAll,
-    mdiVolumeHigh,
-    mdiVolumeOff,
-  } from '@mdi/js';
-  import type { NavigationTarget, Page } from '@sveltejs/kit';
-  import { DateTime } from 'luxon';
-  import { t } from 'svelte-i18n';
-  import type { Attachment } from 'svelte/attachments';
-  import { Tween } from 'svelte/motion';
+
+  import MemoryPhotoViewer from './memory-photo-viewer.svelte';
+  import MemoryVideoViewer from './memory-video-viewer.svelte';
 
   let memoryGallery: HTMLElement | undefined = $state();
   let memoryWrapper: HTMLElement | undefined = $state();

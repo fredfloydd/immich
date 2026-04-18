@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { mdiDeleteOutline, mdiImageRemoveOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { getAlbumInfo, removeAssetFromAlbum, type AlbumResponseDto } from '@immich/sdk';
+  import { IconButton, modalManager, toastManager } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { getAlbumInfo, removeAssetFromAlbum, type AlbumResponseDto } from '@immich/sdk';
-  import { IconButton, modalManager, toastManager } from '@immich/ui';
-  import { mdiDeleteOutline, mdiImageRemoveOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     album: AlbumResponseDto;

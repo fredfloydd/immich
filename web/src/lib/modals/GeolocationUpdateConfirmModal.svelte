@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { LatLng } from '$lib/types';
-  import { ConfirmModal } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { ConfirmModal } from '@immich/ui';
+
+  import type { LatLng } from '$lib/types';
 
   type Props = {
     point: LatLng;

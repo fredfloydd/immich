@@ -1,12 +1,15 @@
 <script lang="ts">
+  import { mdiCheckCircle } from '@mdi/js';
+  import type { Action } from 'svelte/action';
+
+  import { type AlbumResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
   import { SCROLL_PROPERTIES } from '$lib/components/shared-components/album-selection/album-selection-utils';
   import { mediaQueryManager } from '$lib/stores/media-query-manager.svelte';
   import { getAssetMediaUrl } from '$lib/utils';
   import { normalizeSearchString } from '$lib/utils/string-utils.js';
-  import { type AlbumResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
-  import { mdiCheckCircle } from '@mdi/js';
-  import type { Action } from 'svelte/action';
+
   import AlbumListItemDetails from './album-list-item-details.svelte';
 
   interface Props {

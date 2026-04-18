@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { mdiAccountMultipleOutline, mdiBookshelf, mdiCog, mdiServer, mdiTrayFull, mdiWrench } from '@mdi/js';
+  import type { Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { AppShell, AppShellHeader, AppShellSidebar, MenuItemType, NavbarItem, type BreadcrumbItem } from '@immich/ui';
+
   import BreadcrumbActionPage from '$lib/components/BreadcrumbActionPage.svelte';
   import NavigationBar from '$lib/components/shared-components/navigation-bar/navigation-bar.svelte';
   import BottomInfo from '$lib/components/shared-components/side-bar/bottom-info.svelte';
   import { Route } from '$lib/route';
   import { sidebarStore } from '$lib/stores/sidebar.svelte';
   import type { HeaderButtonActionItem } from '$lib/types';
-  import { AppShell, AppShellHeader, AppShellSidebar, MenuItemType, NavbarItem, type BreadcrumbItem } from '@immich/ui';
-  import { mdiAccountMultipleOutline, mdiBookshelf, mdiCog, mdiServer, mdiTrayFull, mdiWrench } from '@mdi/js';
-  import type { Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     breadcrumbs: BreadcrumbItem[];

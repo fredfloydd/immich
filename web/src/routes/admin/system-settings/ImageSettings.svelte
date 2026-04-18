@@ -1,7 +1,8 @@
 <script lang="ts">
-  import SettingSelect from './setting-select.svelte';
-  import { Colorspace, ImageFormat } from '@immich/sdk';
+  import { t } from 'svelte-i18n';
   import { fade } from 'svelte/transition';
+
+  import { Colorspace, ImageFormat } from '@immich/sdk';
 
   import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
   import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
@@ -10,7 +11,8 @@
   import { SettingInputFieldType } from '$lib/constants';
   import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
   import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
-  import { t } from 'svelte-i18n';
+
+  import SettingSelect from './setting-select.svelte';
 
   const disabled = $derived(featureFlagsManager.value.configFile);
   const config = $derived(systemConfigManager.value);

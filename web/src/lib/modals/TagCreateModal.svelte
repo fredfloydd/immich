@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { handleCreateTag } from '$lib/services/tag.service';
-  import type { TreeNode } from '$lib/utils/tree-utils';
-  import { Field, FormModal, Input, Text } from '@immich/ui';
   import { mdiTag } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Field, FormModal, Input, Text } from '@immich/ui';
+
+  import { handleCreateTag } from '$lib/services/tag.service';
+  import type { TreeNode } from '$lib/utils/tree-utils';
 
   type Props = {
     onClose: () => void;

@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { locale as i18nLocale, t } from 'svelte-i18n';
+
+  import { Label, Text } from '@immich/ui';
+
   import { invalidateAll } from '$app/navigation';
   import Combobox from '$lib/components/shared-components/combobox.svelte';
   import { defaultLang } from '$lib/constants';
   import { lang } from '$lib/stores/preferences.store';
   import { getClosestAvailableLocale, langCodes, langs } from '$lib/utils/i18n';
-  import { Label, Text } from '@immich/ui';
-  import { locale as i18nLocale, t } from 'svelte-i18n';
 
   interface Props {
     showSettingDescription?: boolean;

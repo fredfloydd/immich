@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
-import type { PersonResponseDto } from '@immich/sdk';
 import { Sync } from 'factory.ts';
+
+import type { PersonResponseDto } from '@immich/sdk';
 
 export const personFactory = Sync.makeFactory<PersonResponseDto>({
   birthDate: Sync.each(() => faker.date.past().toISOString()),

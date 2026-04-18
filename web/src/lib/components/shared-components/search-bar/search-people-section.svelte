@@ -1,15 +1,17 @@
 <script lang="ts">
+  import { mdiArrowRight, mdiClose } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+  import type { SvelteSet } from 'svelte/reactivity';
+  import { tv } from 'tailwind-variants';
+
+  import { getAllPeople, type PersonResponseDto } from '@immich/sdk';
+  import { Button, LoadingSpinner, Text } from '@immich/ui';
+
   import ImageThumbnail from '$lib/components/assets/thumbnail/image-thumbnail.svelte';
   import SingleGridRow from '$lib/components/shared-components/single-grid-row.svelte';
   import SearchBar from '$lib/elements/SearchBar.svelte';
   import { getPeopleThumbnailUrl } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
-  import { getAllPeople, type PersonResponseDto } from '@immich/sdk';
-  import { Button, LoadingSpinner, Text } from '@immich/ui';
-  import { mdiArrowRight, mdiClose } from '@mdi/js';
-  import { t } from 'svelte-i18n';
-  import type { SvelteSet } from 'svelte/reactivity';
-  import { tv } from 'tailwind-variants';
 
   interface Props {
     selectedPeople: SvelteSet<string>;

@@ -1,9 +1,11 @@
+import { memoize } from 'lodash-es';
+
+import { defaults } from '@immich/sdk';
+
 import { authManager } from '$lib/managers/auth-manager.svelte';
 import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
 import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
 import { initLanguage } from '$lib/utils';
-import { defaults } from '@immich/sdk';
-import { memoize } from 'lodash-es';
 
 type Fetch = typeof fetch;
 

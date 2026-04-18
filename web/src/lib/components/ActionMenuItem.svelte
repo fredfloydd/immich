@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { type ActionItem } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { isEnabled } from '$lib/utils';
-  import { type ActionItem } from '@immich/ui';
 
   type Props = {
     action: ActionItem;

@@ -1,13 +1,15 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { getApiKeys, type ApiKeyResponseDto } from '@immich/sdk';
+  import { Button, Table, TableBody, TableCell, TableHeader, TableHeading, TableRow, Text } from '@immich/ui';
+
   import OnEvents from '$lib/components/OnEvents.svelte';
   import TableButton from '$lib/components/TableButton.svelte';
   import { dateFormats } from '$lib/constants';
   import { getApiKeyActions, getApiKeysActions } from '$lib/services/api-key.service';
   import { locale } from '$lib/stores/preferences.store';
-  import { getApiKeys, type ApiKeyResponseDto } from '@immich/sdk';
-  import { Button, Table, TableBody, TableCell, TableHeader, TableHeading, TableRow, Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
 
   type Props = {
     keys: ApiKeyResponseDto[];

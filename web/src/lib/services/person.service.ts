@@ -1,9 +1,3 @@
-import { eventManager } from '$lib/managers/event-manager.svelte';
-import PersonEditBirthDateModal from '$lib/modals/PersonEditBirthDateModal.svelte';
-import { handleError } from '$lib/utils/handle-error';
-import { getFormatter } from '$lib/utils/i18n';
-import { updatePerson, type PersonResponseDto } from '@immich/sdk';
-import { modalManager, toastManager, type ActionItem } from '@immich/ui';
 import {
   mdiCalendarEditOutline,
   mdiEyeOffOutline,
@@ -12,6 +6,14 @@ import {
   mdiHeartOutline,
 } from '@mdi/js';
 import type { MessageFormatter } from 'svelte-i18n';
+
+import { updatePerson, type PersonResponseDto } from '@immich/sdk';
+import { modalManager, toastManager, type ActionItem } from '@immich/ui';
+
+import { eventManager } from '$lib/managers/event-manager.svelte';
+import PersonEditBirthDateModal from '$lib/modals/PersonEditBirthDateModal.svelte';
+import { handleError } from '$lib/utils/handle-error';
+import { getFormatter } from '$lib/utils/i18n';
 
 export const getPersonActions = ($t: MessageFormatter, person: PersonResponseDto) => {
   const SetDateOfBirth: ActionItem = {

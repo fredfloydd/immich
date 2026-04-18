@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { Field, Input, Text } from '@immich/ui';
+
   import RadioButton from '$lib/elements/RadioButton.svelte';
   import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
-  import { Field, Input, Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     query: string | undefined;

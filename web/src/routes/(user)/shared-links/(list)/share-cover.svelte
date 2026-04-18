@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import type { SharedLinkResponseDto } from '@immich/sdk';
+
   import AlbumCover from '$lib/components/album-page/album-cover.svelte';
   import AssetCover from '$lib/components/sharedlinks-page/covers/asset-cover.svelte';
   import NoCover from '$lib/components/sharedlinks-page/covers/no-cover.svelte';
   import { getAssetMediaUrl } from '$lib/utils';
-  import type { SharedLinkResponseDto } from '@immich/sdk';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     sharedLink: SharedLinkResponseDto;

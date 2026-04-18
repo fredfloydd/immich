@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { getSearchSuggestions, SearchSuggestionType } from '@immich/sdk';
+  import { Text } from '@immich/ui';
+
   import Combobox, { asComboboxOptions, asSelectedOption } from '$lib/components/shared-components/combobox.svelte';
   import type { SearchCameraFilter } from '$lib/types';
   import { handlePromiseError } from '$lib/utils';
-  import { SearchSuggestionType, getSearchSuggestions } from '@immich/sdk';
-  import { Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     filters: SearchCameraFilter;

@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
-  import { locale } from '$lib/stores/preferences.store';
+  import { mdiCommentOutline, mdiThumbUp, mdiThumbUpOutline } from '@mdi/js';
+
   import type { ActivityResponseDto } from '@immich/sdk';
   import { Button } from '@immich/ui';
-  import { mdiCommentOutline, mdiThumbUp, mdiThumbUpOutline } from '@mdi/js';
+
+  import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
+  import { locale } from '$lib/stores/preferences.store';
 
   interface Props {
     isLiked: ActivityResponseDto | null;

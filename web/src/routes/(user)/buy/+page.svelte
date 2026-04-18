@@ -1,15 +1,18 @@
 <script lang="ts">
+  import { mdiAlertCircleOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { Alert, Container, Stack } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import LicenseActivationSuccess from '$lib/components/shared-components/purchasing/purchase-activation-success.svelte';
   import LicenseContent from '$lib/components/shared-components/purchasing/purchase-content.svelte';
-  import SupporterBadge from './supporter-badge.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { Route } from '$lib/route';
-  import { Alert, Container, Stack } from '@immich/ui';
-  import { mdiAlertCircleOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
+  import SupporterBadge from './supporter-badge.svelte';
 
   interface Props {
     data: PageData;

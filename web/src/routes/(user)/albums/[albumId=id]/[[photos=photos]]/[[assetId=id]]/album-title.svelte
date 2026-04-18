@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+  import { fromAction } from 'svelte/attachments';
+
+  import { updateAlbumInfo } from '@immich/sdk';
+  import { Textarea } from '@immich/ui';
+
   import { shortcut } from '$lib/actions/shortcut';
   import { eventManager } from '$lib/managers/event-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { updateAlbumInfo } from '@immich/sdk';
-  import { Textarea } from '@immich/ui';
-  import { t } from 'svelte-i18n';
-  import { fromAction } from 'svelte/attachments';
 
   type Props = {
     id: string;

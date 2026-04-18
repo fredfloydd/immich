@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { AssetVisibility } from '@immich/sdk';
+  import { isModalOpen, modalManager } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { shortcuts, type ShortcutOptions } from '$lib/actions/shortcut';
   import {
@@ -20,8 +23,6 @@
   import { handlePromiseError } from '$lib/utils';
   import { deleteAssets, updateStackedAssetInTimeline } from '$lib/utils/actions';
   import { archiveAssets, selectAllAssets, stackAssets } from '$lib/utils/asset-utils';
-  import { AssetVisibility } from '@immich/sdk';
-  import { isModalOpen, modalManager } from '@immich/ui';
 
   type Props = {
     timelineManager: TimelineManager;

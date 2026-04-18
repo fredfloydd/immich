@@ -1,6 +1,7 @@
 <script lang="ts" generics="T extends Record<string, unknown>">
-  import { TooltipProvider } from '@immich/ui';
   import type { Component } from 'svelte';
+
+  import { TooltipProvider } from '@immich/ui';
 
   type Props = {
     component: Component<T>;

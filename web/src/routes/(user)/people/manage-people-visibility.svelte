@@ -1,16 +1,19 @@
 <script lang="ts">
+  import { mdiClose, mdiEye, mdiEyeOff, mdiEyeSettings, mdiRestart } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+  import { SvelteMap } from 'svelte/reactivity';
+
+  import { updatePeople, type PersonResponseDto } from '@immich/sdk';
+  import { Button, IconButton, toastManager } from '@immich/ui';
+
   import { shortcut } from '$lib/actions/shortcut';
   import ImageThumbnail from '$lib/components/assets/thumbnail/image-thumbnail.svelte';
-  import PeopleInfiniteScroll from './people-infinite-scroll.svelte';
   import { ToggleVisibility } from '$lib/constants';
   import { locale } from '$lib/stores/preferences.store';
   import { getPeopleThumbnailUrl } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
-  import { updatePeople, type PersonResponseDto } from '@immich/sdk';
-  import { Button, IconButton, toastManager } from '@immich/ui';
-  import { mdiClose, mdiEye, mdiEyeOff, mdiEyeSettings, mdiRestart } from '@mdi/js';
-  import { t } from 'svelte-i18n';
-  import { SvelteMap } from 'svelte/reactivity';
+
+  import PeopleInfiniteScroll from './people-infinite-scroll.svelte';
 
   interface Props {
     people: PersonResponseDto[];

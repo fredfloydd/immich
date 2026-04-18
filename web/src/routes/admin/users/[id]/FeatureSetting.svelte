@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Icon, Text } from '@immich/ui';
   import { mdiCheck, mdiClose } from '@mdi/js';
+
+  import { Icon, Text } from '@immich/ui';
 
   interface Props {
     title: string;

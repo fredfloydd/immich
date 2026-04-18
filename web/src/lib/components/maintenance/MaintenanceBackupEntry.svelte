@@ -1,13 +1,15 @@
 <script lang="ts">
+  import { mdiAlertCircle, mdiCheckCircle, mdiDatabaseRefreshOutline } from '@mdi/js';
+  import { DateTime } from 'luxon';
+  import { t } from 'svelte-i18n';
+
+  import { Button, Card, CardBody, ContextMenuButton, HStack, Icon, Stack, Text } from '@immich/ui';
+
   import OnEvents from '$lib/components/OnEvents.svelte';
   import { BackupFileStatus } from '$lib/constants';
   import { getDatabaseBackupActions, handleRestoreDatabaseBackup } from '$lib/services/database-backups.service';
   import { locale } from '$lib/stores/preferences.store';
   import { getBytesWithUnit } from '$lib/utils/byte-units';
-  import { Button, Card, CardBody, ContextMenuButton, HStack, Icon, Stack, Text } from '@immich/ui';
-  import { mdiAlertCircle, mdiCheckCircle, mdiDatabaseRefreshOutline } from '@mdi/js';
-  import { DateTime } from 'luxon';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     filename: string;

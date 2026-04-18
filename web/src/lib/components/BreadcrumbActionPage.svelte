@@ -1,19 +1,21 @@
 <script lang="ts">
-  import type { HeaderButtonActionItem } from '$lib/types';
+  import { mdiSlashForward } from '@mdi/js';
+  import type { Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import {
     Breadcrumbs,
     Button,
     Container,
     ContextMenuButton,
     HStack,
+    isMenuItemType,
     MenuItemType,
     Scrollable,
-    isMenuItemType,
     type BreadcrumbItem,
   } from '@immich/ui';
-  import { mdiSlashForward } from '@mdi/js';
-  import type { Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import type { HeaderButtonActionItem } from '$lib/types';
 
   type Props = {
     breadcrumbs?: BreadcrumbItem[];

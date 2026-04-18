@@ -1,5 +1,6 @@
-import StarRating from '$lib/elements/StarRating.svelte';
 import { render } from '@testing-library/svelte';
+
+import StarRating from '$lib/elements/StarRating.svelte';
 
 describe('StarRating component', () => {
   it('renders correctly', () => {

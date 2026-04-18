@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiDotsVertical } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility } from '@immich/sdk';
+  import { ActionButton, CommandPaletteDefaultProvider } from '@immich/ui';
+
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import EmptyPlaceholder from '$lib/components/shared-components/empty-placeholder.svelte';
@@ -8,18 +14,14 @@
   import DownloadAction from '$lib/components/timeline/actions/DownloadAction.svelte';
   import FavoriteAction from '$lib/components/timeline/actions/FavoriteAction.svelte';
   import SelectAllAssets from '$lib/components/timeline/actions/SelectAllAction.svelte';
+  import SetVisibilityAction from '$lib/components/timeline/actions/SetVisibilityAction.svelte';
   import AssetSelectControlBar from '$lib/components/timeline/AssetSelectControlBar.svelte';
   import Timeline from '$lib/components/timeline/Timeline.svelte';
   import { AssetAction } from '$lib/constants';
-
-  import SetVisibilityAction from '$lib/components/timeline/actions/SetVisibilityAction.svelte';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import { TimelineManager } from '$lib/managers/timeline-manager/timeline-manager.svelte';
   import { getAssetBulkActions } from '$lib/services/asset.service';
-  import { AssetVisibility } from '@immich/sdk';
-  import { ActionButton, CommandPaletteDefaultProvider } from '@immich/ui';
-  import { mdiDotsVertical } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   interface Props {

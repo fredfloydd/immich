@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { mdiNavigationVariantOutline } from '@mdi/js';
+  import { DateTime } from 'luxon';
+  import { t } from 'svelte-i18n';
+
+  import { FormModal, HStack, VStack } from '@immich/ui';
+
   import DateInput from '$lib/elements/DateInput.svelte';
   import { TimelineManager } from '$lib/managers/timeline-manager/timeline-manager.svelte';
   import type { TimelineAsset } from '$lib/managers/timeline-manager/types';
   import { getPreferredTimeZone, getTimezones, toDatetime, type ZoneOption } from '$lib/modals/timezone-utils';
-  import { FormModal, HStack, VStack } from '@immich/ui';
-  import { mdiNavigationVariantOutline } from '@mdi/js';
-  import { DateTime } from 'luxon';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     timelineManager: TimelineManager;

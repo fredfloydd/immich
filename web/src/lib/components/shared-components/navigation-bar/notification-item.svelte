@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { NotificationLevel, NotificationType, type NotificationDto } from '@immich/sdk';
-  import { IconButton, Stack, Text } from '@immich/ui';
   import {
     mdiBackupRestore,
     mdiImageAlbum,
@@ -10,6 +8,9 @@
     mdiSync,
   } from '@mdi/js';
   import { DateTime } from 'luxon';
+
+  import { NotificationLevel, NotificationType, type NotificationDto } from '@immich/sdk';
+  import { IconButton, Stack, Text } from '@immich/ui';
 
   interface Props {
     notification: NotificationDto;

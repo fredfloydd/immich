@@ -1,11 +1,14 @@
 <script lang="ts">
+  import { mdiFaceManProfile } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { updatePerson, type AssetResponseDto, type PersonResponseDto } from '@immich/sdk';
+  import { toastManager } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { AssetAction } from '$lib/constants';
   import { handleError } from '$lib/utils/handle-error';
-  import { updatePerson, type AssetResponseDto, type PersonResponseDto } from '@immich/sdk';
-  import { toastManager } from '@immich/ui';
-  import { mdiFaceManProfile } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { OnAction } from './action';
 
   interface Props {

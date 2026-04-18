@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiLinkOff, mdiMotionPlayOutline, mdiTimerSand } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { getAssetInfo, updateAsset } from '@immich/sdk';
+  import { IconButton } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
@@ -6,10 +12,6 @@
   import type { OnLink, OnUnlink } from '$lib/utils/actions';
   import { handleError } from '$lib/utils/handle-error';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import { getAssetInfo, updateAsset } from '@immich/sdk';
-  import { IconButton } from '@immich/ui';
-  import { mdiLinkOff, mdiMotionPlayOutline, mdiTimerSand } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     onLink: OnLink;

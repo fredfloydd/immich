@@ -1,5 +1,7 @@
-import { renderWithTooltips } from '$tests/helpers';
 import userEvent from '@testing-library/user-event';
+
+import { renderWithTooltips } from '$tests/helpers';
+
 import SharedLinkFormFields from './SharedLinkFormFields.svelte';
 
 describe('SharedLinkFormFields component', () => {

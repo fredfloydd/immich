@@ -1,29 +1,4 @@
 <script lang="ts">
-  import Dropdown from '$lib/elements/Dropdown.svelte';
-  import GroupTab from '$lib/elements/GroupTab.svelte';
-  import SearchBar from '$lib/elements/SearchBar.svelte';
-  import {
-    AlbumFilter,
-    AlbumGroupBy,
-    AlbumSortBy,
-    AlbumViewMode,
-    albumViewSettings,
-    SortOrder,
-  } from '$lib/stores/preferences.store';
-  import {
-    type AlbumGroupOptionMetadata,
-    type AlbumSortOptionMetadata,
-    collapseAllAlbumGroups,
-    createAlbumAndRedirect,
-    expandAllAlbumGroups,
-    findFilterOption,
-    findGroupOptionMetadata,
-    findSortOptionMetadata,
-    getSelectedAlbumGroupOption,
-    groupOptionsMetadata,
-    sortOptionsMetadata,
-  } from '$lib/utils/album-utils';
-  import { Button, IconButton, Text } from '@immich/ui';
   import {
     mdiArrowDownThin,
     mdiArrowUpThin,
@@ -38,6 +13,33 @@
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { fly } from 'svelte/transition';
+
+  import { Button, IconButton, Text } from '@immich/ui';
+
+  import Dropdown from '$lib/elements/Dropdown.svelte';
+  import GroupTab from '$lib/elements/GroupTab.svelte';
+  import SearchBar from '$lib/elements/SearchBar.svelte';
+  import {
+    AlbumFilter,
+    AlbumGroupBy,
+    AlbumSortBy,
+    AlbumViewMode,
+    albumViewSettings,
+    SortOrder,
+  } from '$lib/stores/preferences.store';
+  import {
+    collapseAllAlbumGroups,
+    createAlbumAndRedirect,
+    expandAllAlbumGroups,
+    findFilterOption,
+    findGroupOptionMetadata,
+    findSortOptionMetadata,
+    getSelectedAlbumGroupOption,
+    groupOptionsMetadata,
+    sortOptionsMetadata,
+    type AlbumGroupOptionMetadata,
+    type AlbumSortOptionMetadata,
+  } from '$lib/utils/album-utils';
 
   interface Props {
     albumGroups: string[];

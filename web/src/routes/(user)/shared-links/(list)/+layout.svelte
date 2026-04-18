@@ -1,17 +1,20 @@
 <script lang="ts">
+  import { onMount, type Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { getAllSharedLinks, SharedLinkType, type SharedLinkResponseDto } from '@immich/sdk';
+  import { Container } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import OnEvents from '$lib/components/OnEvents.svelte';
-  import SharedLinkCard from './SharedLinkCard.svelte';
   import { type SharedLinkTab } from '$lib/constants';
   import GroupTab from '$lib/elements/GroupTab.svelte';
   import { Route } from '$lib/route';
-  import { getAllSharedLinks, SharedLinkType, type SharedLinkResponseDto } from '@immich/sdk';
-  import { Container } from '@immich/ui';
-  import { onMount, type Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
+
   import type { LayoutData } from './$types';
+  import SharedLinkCard from './SharedLinkCard.svelte';
 
   type Props = {
     children?: Snippet;

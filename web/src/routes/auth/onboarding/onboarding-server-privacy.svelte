@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { onDestroy } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
   import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
   import { handleSystemConfigSave } from '$lib/services/system-config.service';
-  import { onDestroy } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   const configToEdit = $state(systemConfigManager.cloneValue());
 

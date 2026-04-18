@@ -1,14 +1,9 @@
 <script lang="ts">
-  import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
-  import SettingCheckboxes from './setting-checkboxes.svelte';
-  import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
-  import SettingSelect from './setting-select.svelte';
-  import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
-  import SettingButtonsRow from '$lib/components/shared-components/settings/SystemConfigButtonRow.svelte';
-  import { SettingInputFieldType } from '$lib/constants';
-  import FormatMessage from '$lib/elements/FormatMessage.svelte';
-  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
-  import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
+  import { mdiHelpCircleOutline } from '@mdi/js';
+  import { isEqual, sortBy } from 'lodash-es';
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
   import {
     AudioCodec,
     CQMode,
@@ -19,10 +14,18 @@
     VideoContainer,
   } from '@immich/sdk';
   import { Icon, Link } from '@immich/ui';
-  import { mdiHelpCircleOutline } from '@mdi/js';
-  import { isEqual, sortBy } from 'lodash-es';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
+
+  import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
+  import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
+  import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
+  import SettingButtonsRow from '$lib/components/shared-components/settings/SystemConfigButtonRow.svelte';
+  import { SettingInputFieldType } from '$lib/constants';
+  import FormatMessage from '$lib/elements/FormatMessage.svelte';
+  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
+  import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
+
+  import SettingCheckboxes from './setting-checkboxes.svelte';
+  import SettingSelect from './setting-select.svelte';
 
   const disabled = $derived(featureFlagsManager.value.configFile);
   const config = $derived(systemConfigManager.value);

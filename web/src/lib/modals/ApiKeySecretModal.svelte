@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { copyToClipboard } from '$lib/utils';
-  import { Button, HStack, Modal, ModalBody, ModalFooter, Text, Textarea } from '@immich/ui';
   import { mdiKeyVariant } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Button, HStack, Modal, ModalBody, ModalFooter, Text, Textarea } from '@immich/ui';
+
+  import { copyToClipboard } from '$lib/utils';
 
   type Props = {
     secret?: string;

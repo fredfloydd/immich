@@ -1,9 +1,11 @@
+import { redirect } from '@sveltejs/kit';
+import { DateTime } from 'luxon';
+
+import { getStorage } from '@immich/sdk';
+
 import { authManager } from '$lib/managers/auth-manager.svelte';
 import { Route } from '$lib/route';
 import { userInteraction } from '$lib/stores/user.svelte';
-import { getStorage } from '@immich/sdk';
-import { redirect } from '@sveltejs/kit';
-import { DateTime } from 'luxon';
 
 export interface AuthOptions {
   admin?: true;

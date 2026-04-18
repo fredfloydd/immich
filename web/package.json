@@ -70,6 +70,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.0",
     "@faker-js/faker": "^10.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@koddsson/eslint-plugin-tscompat": "^0.2.0",
     "@socket.io/component-emitter": "^3.1.0",
     "@sveltejs/adapter-static": "^3.0.8",
@@ -97,7 +98,6 @@
     "globals": "^17.0.0",
     "happy-dom": "^20.0.0",
     "prettier": "^3.7.4",
-    "prettier-plugin-organize-imports": "^4.0.0",
     "prettier-plugin-sort-json": "^4.1.1",
     "prettier-plugin-svelte": "^3.3.3",
     "rollup-plugin-visualizer": "^7.0.0",

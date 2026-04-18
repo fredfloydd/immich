@@ -1,4 +1,25 @@
 <script lang="ts">
+  import {
+    mdiArrowLeft,
+    mdiArrowRight,
+    mdiCompare,
+    mdiDotsVertical,
+    mdiImageSearch,
+    mdiPresentationPlay,
+    mdiVideoOutline,
+  } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import {
+    AssetTypeEnum,
+    AssetVisibility,
+    type AlbumResponseDto,
+    type AssetResponseDto,
+    type PersonResponseDto,
+    type StackResponseDto,
+  } from '@immich/sdk';
+  import { ActionButton, CommandPaletteDefaultProvider, Tooltip, type ActionItem } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import ActionMenuItem from '$lib/components/ActionMenuItem.svelte';
   import type { OnAction, PreAction } from '$lib/components/asset-viewer/actions/action';
@@ -29,25 +50,6 @@
   import { getSharedLink, withoutIcons } from '$lib/utils';
   import type { OnUndoDelete } from '$lib/utils/actions';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import {
-    AssetTypeEnum,
-    AssetVisibility,
-    type AlbumResponseDto,
-    type AssetResponseDto,
-    type PersonResponseDto,
-    type StackResponseDto,
-  } from '@immich/sdk';
-  import { ActionButton, CommandPaletteDefaultProvider, Tooltip, type ActionItem } from '@immich/ui';
-  import {
-    mdiArrowLeft,
-    mdiArrowRight,
-    mdiCompare,
-    mdiDotsVertical,
-    mdiImageSearch,
-    mdiPresentationPlay,
-    mdiVideoOutline,
-  } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     asset: AssetResponseDto;

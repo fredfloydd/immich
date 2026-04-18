@@ -1,6 +1,10 @@
 <script lang="ts">
-  import { timeBeforeShowLoadingSpinner } from '$lib/constants';
-  import { handleError } from '$lib/utils/handle-error';
+  import { mdiMerge, mdiPlus } from '@mdi/js';
+  import { onMount, type Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+  import { quintOut } from 'svelte/easing';
+  import { fly } from 'svelte/transition';
+
   import {
     createPerson,
     getAllPeople,
@@ -9,12 +13,11 @@
     type PersonResponseDto,
   } from '@immich/sdk';
   import { Button, toastManager } from '@immich/ui';
-  import { mdiMerge, mdiPlus } from '@mdi/js';
-  import { onMount, type Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
-  import { quintOut } from 'svelte/easing';
-  import { fly } from 'svelte/transition';
+
   import ControlAppBar from '$lib/components/shared-components/control-app-bar.svelte';
+  import { timeBeforeShowLoadingSpinner } from '$lib/constants';
+  import { handleError } from '$lib/utils/handle-error';
+
   import FaceThumbnail from './face-thumbnail.svelte';
   import PeopleList from './people-list.svelte';
 

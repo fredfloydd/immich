@@ -1,17 +1,19 @@
 <script lang="ts">
+  import { mdiChevronLeft, mdiChevronRight, mdiClose, mdiCog, mdiFullscreen, mdiPause, mdiPlay } from '@mdi/js';
+  import { onDestroy, onMount } from 'svelte';
+  import { useSwipe } from 'svelte-gestures';
+  import { t } from 'svelte-i18n';
+  import { fly } from 'svelte/transition';
+
+  import { AssetTypeEnum } from '@immich/sdk';
+  import { IconButton, modalManager } from '@immich/ui';
+
   import { shortcuts, type ShortcutOptions } from '$lib/actions/shortcut';
   import ProgressBar from '$lib/components/shared-components/progress-bar/progress-bar.svelte';
   import { ProgressBarStatus } from '$lib/constants';
   import { languageManager } from '$lib/managers/language-manager.svelte';
   import SlideshowSettingsModal from '$lib/modals/SlideshowSettingsModal.svelte';
   import { SlideshowNavigation, slideshowStore } from '$lib/stores/slideshow.store';
-  import { AssetTypeEnum } from '@immich/sdk';
-  import { IconButton, modalManager } from '@immich/ui';
-  import { mdiChevronLeft, mdiChevronRight, mdiClose, mdiCog, mdiFullscreen, mdiPause, mdiPlay } from '@mdi/js';
-  import { onDestroy, onMount } from 'svelte';
-  import { useSwipe } from 'svelte-gestures';
-  import { t } from 'svelte-i18n';
-  import { fly } from 'svelte/transition';
 
   interface Props {
     isFullScreen: boolean;

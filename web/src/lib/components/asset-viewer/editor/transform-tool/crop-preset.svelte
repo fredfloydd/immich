@@ -1,6 +1,7 @@
 <script lang="ts">
-  import type { CropAspectRatio } from '$lib/managers/edit/transform-manager.svelte';
   import { Button, Icon, type Color } from '@immich/ui';
+
+  import type { CropAspectRatio } from '$lib/managers/edit/transform-manager.svelte';
 
   interface Props {
     size: {

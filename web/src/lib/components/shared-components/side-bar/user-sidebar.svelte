@@ -1,12 +1,4 @@
 <script lang="ts">
-  import BottomInfo from '$lib/components/shared-components/side-bar/bottom-info.svelte';
-  import RecentAlbums from '$lib/components/shared-components/side-bar/recent-albums.svelte';
-  import Sidebar from '$lib/components/sidebar/sidebar.svelte';
-  import { authManager } from '$lib/managers/auth-manager.svelte';
-  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
-  import { Route } from '$lib/route';
-  import { recentAlbumsDropdown } from '$lib/stores/preferences.store';
-  import { NavbarGroup, NavbarItem } from '@immich/ui';
   import {
     mdiAccount,
     mdiAccountMultiple,
@@ -34,6 +26,16 @@
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { fly } from 'svelte/transition';
+
+  import { NavbarGroup, NavbarItem } from '@immich/ui';
+
+  import BottomInfo from '$lib/components/shared-components/side-bar/bottom-info.svelte';
+  import RecentAlbums from '$lib/components/shared-components/side-bar/recent-albums.svelte';
+  import Sidebar from '$lib/components/sidebar/sidebar.svelte';
+  import { authManager } from '$lib/managers/auth-manager.svelte';
+  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
+  import { Route } from '$lib/route';
+  import { recentAlbumsDropdown } from '$lib/stores/preferences.store';
 </script>
 
 <Sidebar ariaLabel={$t('primary')}>

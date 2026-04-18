@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { shortcut } from '$lib/actions/shortcut';
-  import { handleError } from '$lib/utils/handle-error';
-  import { updateAsset, type AssetResponseDto } from '@immich/sdk';
-  import { Textarea, toastManager } from '@immich/ui';
   import { t } from 'svelte-i18n';
   import { fromAction } from 'svelte/attachments';
+
+  import { updateAsset, type AssetResponseDto } from '@immich/sdk';
+  import { Textarea, toastManager } from '@immich/ui';
+
+  import { shortcut } from '$lib/actions/shortcut';
+  import { handleError } from '$lib/utils/handle-error';
 
   interface Props {
     asset: AssetResponseDto;

@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
-  import { IconButton } from '@immich/ui';
   import { mdiClose } from '@mdi/js';
   import { onDestroy, onMount, type Snippet } from 'svelte';
   import { t } from 'svelte-i18n';
   import { fly } from 'svelte/transition';
+
+  import { IconButton } from '@immich/ui';
+
+  import { browser } from '$app/environment';
 
   interface Props {
     showBackButton?: boolean;

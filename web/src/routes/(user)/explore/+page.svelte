@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiHeart } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { AssetMediaSize, type SearchExploreResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
   import ImageThumbnail from '$lib/components/assets/thumbnail/image-thumbnail.svelte';
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import OnEvents from '$lib/components/OnEvents.svelte';
@@ -6,10 +12,7 @@
   import SingleGridRow from '$lib/components/shared-components/single-grid-row.svelte';
   import { Route } from '$lib/route';
   import { getAssetMediaUrl, getPeopleThumbnailUrl } from '$lib/utils';
-  import { AssetMediaSize, type SearchExploreResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
-  import { mdiHeart } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   interface Props {

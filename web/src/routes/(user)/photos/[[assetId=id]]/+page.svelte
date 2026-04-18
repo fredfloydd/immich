@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiDotsVertical } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility } from '@immich/sdk';
+  import { ActionButton, CommandPaletteDefaultProvider, ImageCarousel } from '@immich/ui';
+
   import ActionMenuItem from '$lib/components/ActionMenuItem.svelte';
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
@@ -36,10 +42,6 @@
   import { openFileUploadDialog } from '$lib/utils/file-uploader';
   import { getAltText } from '$lib/utils/thumbnail-util';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import { AssetVisibility } from '@immich/sdk';
-  import { ActionButton, CommandPaletteDefaultProvider, ImageCarousel } from '@immich/ui';
-  import { mdiDotsVertical } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   let timelineManager = $state<TimelineManager>() as TimelineManager;
   const options = { visibility: AssetVisibility.Timeline, withStacked: true, withPartners: true };

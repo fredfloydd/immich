@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { mdiChevronRight } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { AssetMediaSize, type AssetResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
   import { Route } from '$lib/route';
   import { placesViewSettings } from '$lib/stores/preferences.store';
   import { getAssetMediaUrl } from '$lib/utils';
-  import { type PlacesGroup, isPlacesGroupCollapsed, togglePlacesGroupCollapsing } from '$lib/utils/places-utils';
-  import { AssetMediaSize, type AssetResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
-  import { mdiChevronRight } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+  import { isPlacesGroupCollapsed, togglePlacesGroupCollapsing, type PlacesGroup } from '$lib/utils/places-utils';
 
   interface Props {
     places: AssetResponseDto[];

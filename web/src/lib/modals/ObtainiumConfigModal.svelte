@@ -1,8 +1,11 @@
 <script lang="ts">
-  import { handleCreateApiKey } from '$lib/services/api-key.service';
+  import { t } from 'svelte-i18n';
+
   import { Permission } from '@immich/sdk';
   import { Button, Field, Input, Modal, ModalBody, obtainiumBadge, Select, Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
+
+  import { handleCreateApiKey } from '$lib/services/api-key.service';
+
   let inputUrl = $state(location.origin);
   let inputApiKey = $state('');
   let archVariant = $state('');

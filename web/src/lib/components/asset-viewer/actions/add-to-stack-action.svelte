@@ -1,10 +1,13 @@
 <script lang="ts">
+  import { mdiUploadMultiple } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { createStack, type AssetResponseDto, type StackResponseDto } from '@immich/sdk';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { AssetAction } from '$lib/constants';
   import { openFileUploadDialog } from '$lib/utils/file-uploader';
-  import { createStack, type AssetResponseDto, type StackResponseDto } from '@immich/sdk';
-  import { mdiUploadMultiple } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { OnAction } from './action';
 
   interface Props {

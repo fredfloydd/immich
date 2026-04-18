@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { AssetOrder, updateMyPreferences } from '@immich/sdk';
+  import { Button, Field, NumberInput, Select, Switch, toastManager } from '@immich/ui';
+
   import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { handleError } from '$lib/utils/handle-error';
-  import { AssetOrder, updateMyPreferences } from '@immich/sdk';
-  import { Button, Field, NumberInput, Select, Switch, toastManager } from '@immich/ui';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
 
   // Albums
   let defaultAssetOrder = $state(authManager.preferences.albums?.defaultAssetOrder ?? AssetOrder.Desc);

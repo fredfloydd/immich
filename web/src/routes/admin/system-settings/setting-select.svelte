@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { Icon } from '@immich/ui';
   import { mdiChevronDown } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { quintOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
+
+  import { Icon } from '@immich/ui';
 
   interface Props {
     value: string | number | undefined;

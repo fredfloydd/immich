@@ -1,9 +1,16 @@
 <script lang="ts">
+  import { onDestroy, onMount } from 'svelte';
+  import { useSwipe, type SwipeCustomEvent } from 'svelte-gestures';
+  import { fade } from 'svelte/transition';
+
+  import { AssetMediaSize } from '@immich/sdk';
+  import { LoadingSpinner } from '@immich/ui';
+
   import FaceEditor from '$lib/components/asset-viewer/face-editor/face-editor.svelte';
   import VideoRemoteViewer from '$lib/components/asset-viewer/video-remote-viewer.svelte';
   import { assetViewerFadeDuration } from '$lib/constants';
-  import { castManager } from '$lib/managers/cast-manager.svelte';
   import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
+  import { castManager } from '$lib/managers/cast-manager.svelte';
   import {
     autoPlayVideo,
     loopVideo as loopVideoPreference,
@@ -11,11 +18,6 @@
     videoViewerVolume,
   } from '$lib/stores/preferences.store';
   import { getAssetMediaUrl, getAssetPlaybackUrl } from '$lib/utils';
-  import { AssetMediaSize } from '@immich/sdk';
-  import { LoadingSpinner } from '@immich/ui';
-  import { onDestroy, onMount } from 'svelte';
-  import { useSwipe, type SwipeCustomEvent } from 'svelte-gestures';
-  import { fade } from 'svelte/transition';
 
   interface Props {
     assetId: string;

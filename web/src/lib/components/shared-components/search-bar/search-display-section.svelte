@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { SearchDisplayFilters } from '$lib/types';
-  import { Checkbox, Label, Text } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Checkbox, Label, Text } from '@immich/ui';
+
+  import type { SearchDisplayFilters } from '$lib/types';
 
   type Props = {
     filters: SearchDisplayFilters;

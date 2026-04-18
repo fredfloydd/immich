@@ -1,13 +1,9 @@
-import { defaultLang, locales } from '$lib/constants';
-import { authManager } from '$lib/managers/auth-manager.svelte';
-import { alwaysLoadOriginalFile, lang } from '$lib/stores/preferences.store';
-import { isWebCompatibleImage } from '$lib/utils/asset-utils';
-import { handleError } from '$lib/utils/handle-error';
-import { langs } from '$lib/utils/i18n';
+import { init, register, t } from 'svelte-i18n';
+import { derived, get } from 'svelte/store';
+
 import {
   AssetMediaSize,
   AssetTypeEnum,
-  MemoryType,
   finishOAuth,
   getAssetOriginalPath,
   getAssetPlaybackPath,
@@ -16,6 +12,7 @@ import {
   getPeopleThumbnailPath,
   getUserProfileImagePath,
   linkOAuthAccount,
+  MemoryType,
   startOAuth,
   unlinkOAuthAccount,
   type AssetResponseDto,
@@ -26,8 +23,13 @@ import {
   type UserResponseDto,
 } from '@immich/sdk';
 import { toastManager, type ActionItem, type IfLike } from '@immich/ui';
-import { init, register, t } from 'svelte-i18n';
-import { derived, get } from 'svelte/store';
+
+import { defaultLang, locales } from '$lib/constants';
+import { authManager } from '$lib/managers/auth-manager.svelte';
+import { alwaysLoadOriginalFile, lang } from '$lib/stores/preferences.store';
+import { isWebCompatibleImage } from '$lib/utils/asset-utils';
+import { handleError } from '$lib/utils/handle-error';
+import { langs } from '$lib/utils/i18n';
 
 interface DownloadRequestOptions<T = unknown> {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';

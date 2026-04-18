@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { modalManager } from '@immich/ui';
+
   import OnEvents from '$lib/components/OnEvents.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import VersionAnnouncementModal from '$lib/modals/VersionAnnouncementModal.svelte';
   import type { ReleaseEvent } from '$lib/types';
   import { getReleaseType, semverToName } from '$lib/utils';
-  import { modalManager } from '@immich/ui';
 
   let modal = $state<{
     onClose: Promise<void>;

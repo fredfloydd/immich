@@ -1,12 +1,15 @@
 <script lang="ts">
+  import { mdiPinOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import type { AssetResponseDto, StackResponseDto } from '@immich/sdk';
+  import { modalManager } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { AssetAction } from '$lib/constants';
   import { keepThisDeleteOthers } from '$lib/utils/asset-utils';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import type { AssetResponseDto, StackResponseDto } from '@immich/sdk';
-  import { modalManager } from '@immich/ui';
-  import { mdiPinOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { OnAction } from './action';
 
   interface Props {

@@ -1,6 +1,4 @@
 <script lang="ts">
-  import type { RenderedOption } from '$lib/elements/Dropdown.svelte';
-  import { Field, FormModal, HelperText, NumberInput, Switch } from '@immich/ui';
   import {
     mdiArrowDownThin,
     mdiArrowUpThin,
@@ -10,6 +8,11 @@
     mdiShuffle,
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Field, FormModal, HelperText, NumberInput, Switch } from '@immich/ui';
+
+  import type { RenderedOption } from '$lib/elements/Dropdown.svelte';
+
   import SettingDropdown from '../components/shared-components/settings/setting-dropdown.svelte';
   import { SlideshowLook, SlideshowNavigation, SlideshowState, slideshowStore } from '../stores/slideshow.store';
 

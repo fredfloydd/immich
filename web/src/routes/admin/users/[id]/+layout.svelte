@@ -1,17 +1,18 @@
 <script lang="ts">
-  import { goto, invalidateAll } from '$app/navigation';
-  import AdminCard from '$lib/components/AdminCard.svelte';
-  import AdminPageLayout from '$lib/components/layouts/AdminPageLayout.svelte';
-  import OnEvents from '$lib/components/OnEvents.svelte';
-  import ServerStatisticsCard from '$lib/components/server-statistics/ServerStatisticsCard.svelte';
-  import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
-  import DeviceCard from '$lib/components/user-settings-page/device-card.svelte';
-  import FeatureSetting from './FeatureSetting.svelte';
-  import { Route } from '$lib/route';
-  import { getUserAdminActions } from '$lib/services/user-admin.service';
-  import { locale } from '$lib/stores/preferences.store';
-  import { createDateFormatter, findLocale } from '$lib/utils';
-  import { getBytesWithUnit } from '$lib/utils/byte-units';
+  import {
+    mdiAccountOutline,
+    mdiCameraIris,
+    mdiChartPie,
+    mdiChartPieOutline,
+    mdiCheckCircle,
+    mdiDevices,
+    mdiFeatureSearchOutline,
+    mdiPlayCircle,
+    mdiTrashCanOutline,
+  } from '@mdi/js';
+  import type { Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import { type UserAdminResponseDto } from '@immich/sdk';
   import {
     Alert,
@@ -27,20 +28,22 @@
     Stack,
     Text,
   } from '@immich/ui';
-  import {
-    mdiAccountOutline,
-    mdiCameraIris,
-    mdiChartPie,
-    mdiChartPieOutline,
-    mdiCheckCircle,
-    mdiDevices,
-    mdiFeatureSearchOutline,
-    mdiPlayCircle,
-    mdiTrashCanOutline,
-  } from '@mdi/js';
-  import type { Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import { goto, invalidateAll } from '$app/navigation';
+  import AdminCard from '$lib/components/AdminCard.svelte';
+  import AdminPageLayout from '$lib/components/layouts/AdminPageLayout.svelte';
+  import OnEvents from '$lib/components/OnEvents.svelte';
+  import ServerStatisticsCard from '$lib/components/server-statistics/ServerStatisticsCard.svelte';
+  import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
+  import DeviceCard from '$lib/components/user-settings-page/device-card.svelte';
+  import { Route } from '$lib/route';
+  import { getUserAdminActions } from '$lib/services/user-admin.service';
+  import { locale } from '$lib/stores/preferences.store';
+  import { createDateFormatter, findLocale } from '$lib/utils';
+  import { getBytesWithUnit } from '$lib/utils/byte-units';
+
   import type { LayoutData } from './$types';
+  import FeatureSetting from './FeatureSetting.svelte';
 
   type Props = {
     children?: Snippet;

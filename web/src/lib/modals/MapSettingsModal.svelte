@@ -1,10 +1,12 @@
 <script lang="ts">
-  import DateInput from '$lib/elements/DateInput.svelte';
-  import type { MapSettings } from '$lib/stores/preferences.store';
-  import { Button, Field, FormModal, Select, Stack, Switch } from '@immich/ui';
   import { Duration } from 'luxon';
   import { t } from 'svelte-i18n';
   import { fly } from 'svelte/transition';
+
+  import { Button, Field, FormModal, Select, Stack, Switch } from '@immich/ui';
+
+  import DateInput from '$lib/elements/DateInput.svelte';
+  import type { MapSettings } from '$lib/stores/preferences.store';
 
   type Props = {
     settings: MapSettings;

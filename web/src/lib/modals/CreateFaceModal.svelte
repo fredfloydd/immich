@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { createFace, createPerson } from '@immich/sdk';
+  import { Field, FormModal, Input, LoadingSpinner, Text } from '@immich/ui';
+
   import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
   import { delay } from '$lib/utils/asset-utils';
   import { handleError } from '$lib/utils/handle-error';
-  import { createFace, createPerson } from '@immich/sdk';
-  import { Field, FormModal, Input, LoadingSpinner, Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     assetId: string;

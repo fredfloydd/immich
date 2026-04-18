@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { mdiArchiveArrowDownOutline, mdiArchiveArrowUpOutline, mdiTimerSand } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility } from '@immich/sdk';
+  import { IconButton } from '@immich/ui';
+
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import type { OnArchive } from '$lib/utils/actions';
   import { archiveAssets } from '$lib/utils/asset-utils';
-  import { AssetVisibility } from '@immich/sdk';
-  import { IconButton } from '@immich/ui';
-  import { mdiArchiveArrowDownOutline, mdiArchiveArrowUpOutline, mdiTimerSand } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     onArchive?: OnArchive;

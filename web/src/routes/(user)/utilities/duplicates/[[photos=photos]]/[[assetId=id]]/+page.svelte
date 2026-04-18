@@ -1,19 +1,4 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-  import { page } from '$app/state';
-  import { shortcuts } from '$lib/actions/shortcut';
-  import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
-  import LinkToDocs from './LinkToDocs.svelte';
-  import DuplicatesCompareControl from './duplicates-compare-control.svelte';
-  import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
-  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
-  import ShortcutsModal from '$lib/modals/ShortcutsModal.svelte';
-  import { Route } from '$lib/route';
-  import { locale } from '$lib/stores/preferences.store';
-  import { handleError } from '$lib/utils/handle-error';
-  import type { AssetResponseDto } from '@immich/sdk';
-  import { createStack, deleteDuplicates, resolveDuplicates, updateAssets } from '@immich/sdk';
-  import { Button, HStack, IconButton, modalManager, Text, toastManager } from '@immich/ui';
   import {
     mdiCheckOutline,
     mdiChevronLeft,
@@ -24,7 +9,25 @@
     mdiTrashCanOutline,
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import type { AssetResponseDto } from '@immich/sdk';
+  import { createStack, deleteDuplicates, resolveDuplicates, updateAssets } from '@immich/sdk';
+  import { Button, HStack, IconButton, modalManager, Text, toastManager } from '@immich/ui';
+
+  import { goto } from '$app/navigation';
+  import { page } from '$app/state';
+  import { shortcuts } from '$lib/actions/shortcut';
+  import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
+  import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
+  import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
+  import ShortcutsModal from '$lib/modals/ShortcutsModal.svelte';
+  import { Route } from '$lib/route';
+  import { locale } from '$lib/stores/preferences.store';
+  import { handleError } from '$lib/utils/handle-error';
+
   import type { PageData } from './$types';
+  import DuplicatesCompareControl from './duplicates-compare-control.svelte';
+  import LinkToDocs from './LinkToDocs.svelte';
 
   interface Props {
     data: PageData;

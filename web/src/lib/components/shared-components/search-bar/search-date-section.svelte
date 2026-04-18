@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { SearchDateFilter } from '$lib/types';
-  import { DatePicker, Text } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { DatePicker, Text } from '@immich/ui';
+
+  import type { SearchDateFilter } from '$lib/types';
 
   type Props = {
     filters: SearchDateFilter;

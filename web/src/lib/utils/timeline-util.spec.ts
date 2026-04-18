@@ -1,7 +1,8 @@
+import { DateTime } from 'luxon';
+
 import { locale } from '$lib/stores/preferences.store';
 import { parseUtcDate } from '$lib/utils/date-time';
 import { formatGroupTitle, toISOYearMonthUTC } from '$lib/utils/timeline-util';
-import { DateTime } from 'luxon';
 
 describe('formatGroupTitle', () => {
   beforeAll(() => {

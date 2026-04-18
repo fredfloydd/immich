@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { InterpolationValues } from '$lib/elements/format-message';
   import {
     TYPE,
     type MessageFormatElement,
@@ -8,6 +7,8 @@
   } from '@formatjs/icu-messageformat-parser';
   import { IntlMessageFormat, type FormatXMLElementFn } from 'intl-messageformat';
   import { locale as i18nLocale, json, type Translations } from 'svelte-i18n';
+
+  import type { InterpolationValues } from '$lib/elements/format-message';
 
   type MessagePart = {
     message: string;

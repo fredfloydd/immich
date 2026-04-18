@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { locale } from '$lib/stores/preferences.store';
-  import type { SessionResponseDto } from '@immich/sdk';
-  import { Icon, IconButton } from '@immich/ui';
   import {
     mdiAndroid,
     mdiApple,
@@ -16,6 +13,11 @@
   } from '@mdi/js';
   import { DateTime, type ToRelativeCalendarOptions } from 'luxon';
   import { t } from 'svelte-i18n';
+
+  import type { SessionResponseDto } from '@immich/sdk';
+  import { Icon, IconButton } from '@immich/ui';
+
+  import { locale } from '$lib/stores/preferences.store';
 
   interface Props {
     session: SessionResponseDto;

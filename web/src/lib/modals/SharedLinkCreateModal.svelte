@@ -1,10 +1,12 @@
 <script lang="ts">
-  import SharedLinkFormFields from '$lib/components/SharedLinkFormFields.svelte';
-  import { handleCreateSharedLink } from '$lib/services/shared-link.service';
-  import { SharedLinkType } from '@immich/sdk';
-  import { FormModal } from '@immich/ui';
   import { mdiLink } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { SharedLinkType } from '@immich/sdk';
+  import { FormModal } from '@immich/ui';
+
+  import SharedLinkFormFields from '$lib/components/SharedLinkFormFields.svelte';
+  import { handleCreateSharedLink } from '$lib/services/shared-link.service';
 
   interface Props {
     onClose: () => void;

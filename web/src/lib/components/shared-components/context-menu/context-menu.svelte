@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+
   import { clickOutside } from '$lib/actions/click-outside';
   import { languageManager } from '$lib/managers/language-manager.svelte';
-  import type { Snippet } from 'svelte';
 
   interface Props {
     isVisible?: boolean;

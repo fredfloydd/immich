@@ -1,20 +1,23 @@
 <script lang="ts">
-  import QueueCard from './QueueCard.svelte';
-  import QueueStorageMigrationDescription from './QueueStorageMigrationDescription.svelte';
+  import type { Component } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import {
+    QueueCommand,
+    QueueName,
+    runQueueCommandLegacy,
+    type QueueCommandDto,
+    type QueueResponseDto,
+  } from '@immich/sdk';
+  import { modalManager, toastManager } from '@immich/ui';
+
   import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
   import { queueManager } from '$lib/managers/queue-manager.svelte';
   import { asQueueItem } from '$lib/services/queue.service';
   import { handleError } from '$lib/utils/handle-error';
-  import {
-    QueueCommand,
-    type QueueCommandDto,
-    QueueName,
-    type QueueResponseDto,
-    runQueueCommandLegacy,
-  } from '@immich/sdk';
-  import { modalManager, toastManager } from '@immich/ui';
-  import type { Component } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import QueueCard from './QueueCard.svelte';
+  import QueueStorageMigrationDescription from './QueueStorageMigrationDescription.svelte';
 
   type Props = {
     queues: QueueResponseDto[];

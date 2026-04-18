@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { generateId } from '$lib/utils/generate-id';
-  import { Switch } from '@immich/ui';
   import type { Snippet } from 'svelte';
   import { t } from 'svelte-i18n';
   import { quintOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
+
+  import { Switch } from '@immich/ui';
+
+  import { generateId } from '$lib/utils/generate-id';
 
   interface Props {
     title: string;

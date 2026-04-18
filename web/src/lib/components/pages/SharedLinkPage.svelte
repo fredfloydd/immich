@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { onDestroy, tick } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { sharedLinkLogin, SharedLinkType, type AssetResponseDto, type SharedLinkResponseDto } from '@immich/sdk';
+  import { Button, Logo, PasswordInput } from '@immich/ui';
+
   import AlbumViewer from '$lib/components/album-page/album-viewer.svelte';
   import IndividualSharedViewer from '$lib/components/share-page/individual-shared-viewer.svelte';
   import ControlAppBar from '$lib/components/shared-components/control-app-bar.svelte';
@@ -8,10 +14,6 @@
   import { setSharedLink } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
   import { navigate } from '$lib/utils/navigation';
-  import { sharedLinkLogin, SharedLinkType, type AssetResponseDto, type SharedLinkResponseDto } from '@immich/sdk';
-  import { Button, Logo, PasswordInput } from '@immich/ui';
-  import { onDestroy, tick } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     data: {

@@ -1,13 +1,15 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { Button, LoadingSpinner, toastManager } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { featureFlagsManager } from '$lib/managers/feature-flags-manager.svelte';
   import { oauth } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
-  import { Button, LoadingSpinner, toastManager } from '@immich/ui';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
 
   let loading = $state(true);
 

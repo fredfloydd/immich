@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   import { assetViewerManager, type Events } from '$lib/managers/asset-viewer-manager.svelte';
   import type { EventCallback, EventMap } from '$lib/utils/base-event-manager.svelte';
-  import { onMount } from 'svelte';
 
   type Props = {
     [K in keyof Events as `on${K}`]?: EventCallback<Events, K>;

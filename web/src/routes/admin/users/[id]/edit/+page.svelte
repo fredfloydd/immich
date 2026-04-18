@@ -1,13 +1,16 @@
 <script lang="ts">
+  import { mdiAccountEditOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { Field, FormModal, Input, Link, NumberInput, Switch, Text } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { Route } from '$lib/route';
   import { handleUpdateUserAdmin } from '$lib/services/user-admin.service';
   import { userInteraction } from '$lib/stores/user.svelte';
   import { ByteUnit, convertFromBytes, convertToBytes } from '$lib/utils/byte-units';
-  import { Field, FormModal, Input, Link, NumberInput, Switch, Text } from '@immich/ui';
-  import { mdiAccountEditOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   type Props = {

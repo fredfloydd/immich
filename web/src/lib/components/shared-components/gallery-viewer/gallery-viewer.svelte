@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { debounce } from 'lodash-es';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility, type AssetResponseDto } from '@immich/sdk';
+  import { modalManager } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { shortcuts, type ShortcutOptions } from '$lib/actions/shortcut';
   import type { Action } from '$lib/components/asset-viewer/actions/action';
@@ -22,10 +28,6 @@
   import { getJustifiedLayoutFromAssets } from '$lib/utils/layout-utils';
   import { navigate } from '$lib/utils/navigation';
   import { isTimelineAsset, toTimelineAsset } from '$lib/utils/timeline-util';
-  import { AssetVisibility, type AssetResponseDto } from '@immich/sdk';
-  import { modalManager } from '@immich/ui';
-  import { debounce } from 'lodash-es';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     assets: AssetResponseDto[];

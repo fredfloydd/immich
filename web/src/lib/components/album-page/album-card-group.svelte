@@ -1,15 +1,17 @@
 <script lang="ts">
-  import AlbumCard from '$lib/components/album-page/album-card.svelte';
-  import { Route } from '$lib/route';
-  import { albumViewSettings } from '$lib/stores/preferences.store';
-  import { type AlbumGroup, isAlbumGroupCollapsed, toggleAlbumGroupCollapsing } from '$lib/utils/album-utils';
-  import type { ContextMenuPosition } from '$lib/utils/context-menu';
-  import type { AlbumResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
   import { mdiChevronRight } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { flip } from 'svelte/animate';
   import { slide } from 'svelte/transition';
+
+  import type { AlbumResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
+  import AlbumCard from '$lib/components/album-page/album-card.svelte';
+  import { Route } from '$lib/route';
+  import { albumViewSettings } from '$lib/stores/preferences.store';
+  import { isAlbumGroupCollapsed, toggleAlbumGroupCollapsing, type AlbumGroup } from '$lib/utils/album-utils';
+  import type { ContextMenuPosition } from '$lib/utils/context-menu';
 
   interface Props {
     albums: AlbumResponseDto[];

@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { isFirefox } from '$lib/utils/asset-utils';
-  import { cancelImageUrl } from '$lib/utils/sw-messaging';
   import { onDestroy, untrack } from 'svelte';
   import type { HTMLImgAttributes } from 'svelte/elements';
+
+  import { isFirefox } from '$lib/utils/asset-utils';
+  import { cancelImageUrl } from '$lib/utils/sw-messaging';
 
   type Props = Omit<HTMLImgAttributes, 'onload' | 'onerror'> & {
     src: string | undefined;

@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { mdiPartyPopper } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { Button, Icon } from '@immich/ui';
+
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { setSupportBadgeVisibility } from '$lib/utils/purchase-utils';
-  import { Button, Icon } from '@immich/ui';
-  import { mdiPartyPopper } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     onDone: () => void;

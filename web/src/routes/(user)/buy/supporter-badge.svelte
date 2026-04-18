@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Logo } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Logo } from '@immich/ui';
 
   interface Props {
     centered?: boolean;

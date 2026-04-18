@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { ByteUnit } from '$lib/utils/byte-units';
   import { Icon, Text } from '@immich/ui';
+
+  import { ByteUnit } from '$lib/utils/byte-units';
 
   type ValueData = {
     value: number;

@@ -1,6 +1,8 @@
-import { OpenQueryParam, type SharedLinkTab } from '$lib/constants';
-import { QueueName, type MetadataSearchDto, type SmartSearchDto } from '@immich/sdk';
 import { omitBy } from 'lodash-es';
+
+import { QueueName, type MetadataSearchDto, type SmartSearchDto } from '@immich/sdk';
+
+import { OpenQueryParam, type SharedLinkTab } from '$lib/constants';
 
 const asQueueSlug = (name: QueueName) => {
   return name.replaceAll(/[A-Z]/g, (m) => '-' + m.toLowerCase());

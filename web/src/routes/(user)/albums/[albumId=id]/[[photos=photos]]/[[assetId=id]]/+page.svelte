@@ -1,10 +1,36 @@
 <script lang="ts">
+  import {
+    mdiAccountEye,
+    mdiAccountEyeOutline,
+    mdiArrowLeft,
+    mdiCogOutline,
+    mdiDeleteOutline,
+    mdiDotsVertical,
+    mdiDownload,
+    mdiImageOutline,
+    mdiImagePlusOutline,
+    mdiLink,
+    mdiPlus,
+    mdiPresentationPlay,
+  } from '@mdi/js';
+  import { onDestroy } from 'svelte';
+  import { t } from 'svelte-i18n';
+  import { fly } from 'svelte/transition';
+
+  import { AlbumUserRole, AssetVisibility, getAlbumInfo, updateAlbumInfo, type AlbumResponseDto } from '@immich/sdk';
+  import {
+    ActionButton,
+    CommandPaletteDefaultProvider,
+    Icon,
+    IconButton,
+    modalManager,
+    toastManager,
+  } from '@immich/ui';
+
   import { goto, invalidate, onNavigate } from '$app/navigation';
   import { scrollMemoryClearer } from '$lib/actions/scroll-memory';
-  import AlbumDescription from './album-description.svelte';
   import AlbumMap from '$lib/components/album-page/album-map.svelte';
   import AlbumSummary from '$lib/components/album-page/album-summary.svelte';
-  import AlbumTitle from './album-title.svelte';
   import ActivityStatus from '$lib/components/asset-viewer/activity-status.svelte';
   import ActivityViewer from '$lib/components/asset-viewer/activity-viewer.svelte';
   import HeaderActionButton from '$lib/components/HeaderActionButton.svelte';
@@ -51,33 +77,10 @@
   import { handlePromiseError } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
   import { isAlbumsRoute, navigate, type AssetGridRouteSearchParams } from '$lib/utils/navigation';
-  import { AlbumUserRole, AssetVisibility, getAlbumInfo, updateAlbumInfo, type AlbumResponseDto } from '@immich/sdk';
-  import {
-    ActionButton,
-    CommandPaletteDefaultProvider,
-    Icon,
-    IconButton,
-    modalManager,
-    toastManager,
-  } from '@immich/ui';
-  import {
-    mdiAccountEye,
-    mdiAccountEyeOutline,
-    mdiArrowLeft,
-    mdiCogOutline,
-    mdiDeleteOutline,
-    mdiDotsVertical,
-    mdiDownload,
-    mdiImageOutline,
-    mdiImagePlusOutline,
-    mdiLink,
-    mdiPlus,
-    mdiPresentationPlay,
-  } from '@mdi/js';
-  import { onDestroy } from 'svelte';
-  import { t } from 'svelte-i18n';
-  import { fly } from 'svelte/transition';
+
   import type { PageData } from './$types';
+  import AlbumDescription from './album-description.svelte';
+  import AlbumTitle from './album-title.svelte';
 
   interface Props {
     data: PageData;

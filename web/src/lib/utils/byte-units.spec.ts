@@ -1,4 +1,4 @@
-import { ByteUnit, getByteUnitString, getBytesWithUnit } from '$lib/utils/byte-units';
+import { ByteUnit, getBytesWithUnit, getByteUnitString } from '$lib/utils/byte-units';
 
 describe('getBytesWithUnit', () => {
   const tests = [

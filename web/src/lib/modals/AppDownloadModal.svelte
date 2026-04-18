@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { appStoreBadge, BasicModal, fdroidBadge, playStoreBadge } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { appStoreBadge, BasicModal, fdroidBadge, playStoreBadge } from '@immich/ui';
+
   interface Props {
     onClose: () => void;
   }

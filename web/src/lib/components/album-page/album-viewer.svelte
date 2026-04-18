@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { mdiDownload, mdiFileImagePlusOutline, mdiPresentationPlay } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import type { AlbumResponseDto, SharedLinkResponseDto } from '@immich/sdk';
+  import { ActionButton, IconButton, Logo } from '@immich/ui';
+
   import { shortcut } from '$lib/actions/shortcut';
   import AlbumMap from '$lib/components/album-page/album-map.svelte';
   import DownloadAction from '$lib/components/timeline/actions/DownloadAction.svelte';
@@ -16,10 +22,7 @@
   import { SlideshowNavigation, SlideshowState, slideshowStore } from '$lib/stores/slideshow.store';
   import { handlePromiseError } from '$lib/utils';
   import { fileUploadHandler, openFileUploadDialog } from '$lib/utils/file-uploader';
-  import type { AlbumResponseDto, SharedLinkResponseDto } from '@immich/sdk';
-  import { ActionButton, IconButton, Logo } from '@immich/ui';
-  import { mdiDownload, mdiFileImagePlusOutline, mdiPresentationPlay } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import ControlAppBar from '../shared-components/control-app-bar.svelte';
   import ThemeButton from '../shared-components/theme-button.svelte';
   import AlbumSummary from './album-summary.svelte';

@@ -1,6 +1,8 @@
 import { authManager } from '$lib/managers/auth-manager.svelte';
 import { CastDestinationType, CastState, type ICastDestination } from '$lib/managers/cast-manager.svelte';
+
 import 'chromecast-caf-sender';
+
 import { Duration } from 'luxon';
 
 const FRAMEWORK_LINK = 'https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1';

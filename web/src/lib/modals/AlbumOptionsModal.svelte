@@ -1,14 +1,7 @@
 <script lang="ts">
-  import AlbumSharedLink from '$lib/components/album-page/album-shared-link.svelte';
-  import HeaderActionButton from '$lib/components/HeaderActionButton.svelte';
-  import OnEvents from '$lib/components/OnEvents.svelte';
-  import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
-  import {
-    getAlbumActions,
-    handleRemoveUserFromAlbum,
-    handleUpdateAlbum,
-    handleUpdateUserAlbumRole,
-  } from '$lib/services/album.service';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import {
     AlbumUserRole,
     AssetOrder,
@@ -19,8 +12,17 @@
     type UserResponseDto,
   } from '@immich/sdk';
   import { Field, HStack, Modal, ModalBody, Select, Stack, Switch, Text, type SelectOption } from '@immich/ui';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import AlbumSharedLink from '$lib/components/album-page/album-shared-link.svelte';
+  import HeaderActionButton from '$lib/components/HeaderActionButton.svelte';
+  import OnEvents from '$lib/components/OnEvents.svelte';
+  import UserAvatar from '$lib/components/shared-components/user-avatar.svelte';
+  import {
+    getAlbumActions,
+    handleRemoveUserFromAlbum,
+    handleUpdateAlbum,
+    handleUpdateUserAlbumRole,
+  } from '$lib/services/album.service';
 
   type Props = {
     album: AlbumResponseDto;

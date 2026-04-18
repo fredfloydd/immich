@@ -1,12 +1,4 @@
 <script lang="ts">
-  import { Route } from '$lib/route';
-  import { locale } from '$lib/stores/preferences.store';
-  import { uploadAssetsStore } from '$lib/stores/upload';
-  import type { UploadAsset } from '$lib/types';
-  import { UploadState } from '$lib/types';
-  import { getByteUnitString } from '$lib/utils/byte-units';
-  import { fileUploadHandler } from '$lib/utils/file-uploader';
-  import { Icon } from '@immich/ui';
   import {
     mdiAlertCircle,
     mdiCheckCircle,
@@ -19,6 +11,16 @@
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { fade } from 'svelte/transition';
+
+  import { Icon } from '@immich/ui';
+
+  import { Route } from '$lib/route';
+  import { locale } from '$lib/stores/preferences.store';
+  import { uploadAssetsStore } from '$lib/stores/upload';
+  import type { UploadAsset } from '$lib/types';
+  import { UploadState } from '$lib/types';
+  import { getByteUnitString } from '$lib/utils/byte-units';
+  import { fileUploadHandler } from '$lib/utils/file-uploader';
 
   interface Props {
     uploadAsset: UploadAsset;

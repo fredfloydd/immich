@@ -1,8 +1,11 @@
 <script lang="ts">
-  import { shortcuts } from '$lib/actions/shortcut';
-  import { Icon } from '@immich/ui';
   import { mdiChevronRight } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Icon } from '@immich/ui';
+
+  import { shortcuts } from '$lib/actions/shortcut';
+
   import NavigationArea from '../navigation-area.svelte';
 
   interface Props {

@@ -1,4 +1,12 @@
 <script lang="ts">
+  import {
+    EquirectangularAdapter,
+    events,
+    Viewer,
+    type AdapterConstructor,
+    type PluginConstructor,
+  } from '@photo-sphere-viewer/core';
+
   import { shortcuts } from '$lib/actions/shortcut';
   import AssetViewerEvents from '$lib/components/AssetViewerEvents.svelte';
   import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
@@ -6,19 +14,18 @@
   import { boundingBoxesArray, type Faces } from '$lib/stores/people.store';
   import { alwaysLoadOriginalFile } from '$lib/stores/preferences.store';
   import { calculateBoundingBoxMatrix, getOcrBoundingBoxes, type Point } from '$lib/utils/ocr-utils';
-  import {
-    EquirectangularAdapter,
-    Viewer,
-    events,
-    type AdapterConstructor,
-    type PluginConstructor,
-  } from '@photo-sphere-viewer/core';
+
   import '@photo-sphere-viewer/core/index.css';
+
   import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
+
   import '@photo-sphere-viewer/markers-plugin/index.css';
+
   import { ResolutionPlugin } from '@photo-sphere-viewer/resolution-plugin';
   import { SettingsPlugin } from '@photo-sphere-viewer/settings-plugin';
+
   import '@photo-sphere-viewer/settings-plugin/index.css';
+
   import { escape } from 'lodash-es';
   import { onDestroy, onMount } from 'svelte';
 

@@ -1,4 +1,9 @@
 <script lang="ts">
+  import { mdiCheckCircle, mdiCircleOutline } from '@mdi/js';
+  import type { Snippet } from 'svelte';
+
+  import { Icon } from '@immich/ui';
+
   import AssetLayout from '$lib/components/timeline/AssetLayout.svelte';
   import type { AssetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import { TimelineDay } from '$lib/managers/timeline-manager/timeline-day.svelte';
@@ -9,9 +14,6 @@
   import { uploadAssetsStore } from '$lib/stores/upload';
   import type { CommonPosition } from '$lib/utils/layout-utils';
   import { fromTimelinePlainDate, getDateLocaleString } from '$lib/utils/timeline-util';
-  import { Icon } from '@immich/ui';
-  import { mdiCheckCircle, mdiCircleOutline } from '@mdi/js';
-  import type { Snippet } from 'svelte';
 
   type Props = {
     thumbnail: Snippet<

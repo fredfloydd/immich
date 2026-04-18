@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { Button, Heading, HStack, Scrollable } from '@immich/ui';
   import { mdiArrowLeft } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { Button, Heading, HStack, Scrollable } from '@immich/ui';
+
   import MaintenanceBackupsList from '$lib/components/maintenance/MaintenanceBackupsList.svelte';
 
   type Props = {

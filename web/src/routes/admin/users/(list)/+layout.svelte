@@ -1,10 +1,8 @@
 <script lang="ts">
-  import AdminPageLayout from '$lib/components/layouts/AdminPageLayout.svelte';
-  import OnEvents from '$lib/components/OnEvents.svelte';
-  import { Route } from '$lib/route';
-  import { getUserAdminActions, getUserAdminsActions } from '$lib/services/user-admin.service';
-  import { locale } from '$lib/stores/preferences.store';
-  import { getByteUnitString } from '$lib/utils/byte-units';
+  import { mdiInfinity } from '@mdi/js';
+  import type { Snippet } from 'svelte';
+  import { t } from 'svelte-i18n';
+
   import { searchUsersAdmin, type UserAdminResponseDto } from '@immich/sdk';
   import {
     CommandPaletteDefaultProvider,
@@ -20,9 +18,14 @@
     TableHeading,
     TableRow,
   } from '@immich/ui';
-  import { mdiInfinity } from '@mdi/js';
-  import type { Snippet } from 'svelte';
-  import { t } from 'svelte-i18n';
+
+  import AdminPageLayout from '$lib/components/layouts/AdminPageLayout.svelte';
+  import OnEvents from '$lib/components/OnEvents.svelte';
+  import { Route } from '$lib/route';
+  import { getUserAdminActions, getUserAdminsActions } from '$lib/services/user-admin.service';
+  import { locale } from '$lib/stores/preferences.store';
+  import { getByteUnitString } from '$lib/utils/byte-units';
+
   import type { LayoutData } from './$types';
 
   type Props = {

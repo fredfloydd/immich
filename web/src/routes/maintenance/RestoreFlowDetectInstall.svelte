@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { detectPriorInstall, type MaintenanceDetectInstallResponseDto } from '@immich/sdk';
-  import { Button, Heading, HStack, Icon, Stack, Text } from '@immich/ui';
   import { mdiAlert, mdiArrowRight, mdiCheck, mdiClose, mdiRefresh } from '@mdi/js';
   import { onMount } from 'svelte';
   import { t } from 'svelte-i18n';
+
+  import { detectPriorInstall, type MaintenanceDetectInstallResponseDto } from '@immich/sdk';
+  import { Button, Heading, HStack, Icon, Stack, Text } from '@immich/ui';
 
   type Props = {
     next: () => void;

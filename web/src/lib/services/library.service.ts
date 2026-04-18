@@ -1,12 +1,6 @@
-import { goto } from '$app/navigation';
-import { eventManager } from '$lib/managers/event-manager.svelte';
-import LibraryExclusionPatternAddModal from '$lib/modals/LibraryExclusionPatternAddModal.svelte';
-import LibraryExclusionPatternEditModal from '$lib/modals/LibraryExclusionPatternEditModal.svelte';
-import LibraryFolderAddModal from '$lib/modals/LibraryFolderAddModal.svelte';
-import LibraryFolderEditModal from '$lib/modals/LibraryFolderEditModal.svelte';
-import { Route } from '$lib/route';
-import { handleError } from '$lib/utils/handle-error';
-import { getFormatter } from '$lib/utils/i18n';
+import { mdiInformationOutline, mdiPencilOutline, mdiPlusBoxOutline, mdiSync, mdiTrashCanOutline } from '@mdi/js';
+import type { MessageFormatter } from 'svelte-i18n';
+
 import {
   createLibrary,
   deleteLibrary,
@@ -20,8 +14,16 @@ import {
   type UpdateLibraryDto,
 } from '@immich/sdk';
 import { modalManager, toastManager, type ActionItem } from '@immich/ui';
-import { mdiInformationOutline, mdiPencilOutline, mdiPlusBoxOutline, mdiSync, mdiTrashCanOutline } from '@mdi/js';
-import type { MessageFormatter } from 'svelte-i18n';
+
+import { goto } from '$app/navigation';
+import { eventManager } from '$lib/managers/event-manager.svelte';
+import LibraryExclusionPatternAddModal from '$lib/modals/LibraryExclusionPatternAddModal.svelte';
+import LibraryExclusionPatternEditModal from '$lib/modals/LibraryExclusionPatternEditModal.svelte';
+import LibraryFolderAddModal from '$lib/modals/LibraryFolderAddModal.svelte';
+import LibraryFolderEditModal from '$lib/modals/LibraryFolderEditModal.svelte';
+import { Route } from '$lib/route';
+import { handleError } from '$lib/utils/handle-error';
+import { getFormatter } from '$lib/utils/i18n';
 
 export const getLibrariesActions = ($t: MessageFormatter) => {
   const ScanAll: ActionItem = {

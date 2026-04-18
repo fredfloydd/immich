@@ -1,4 +1,5 @@
 import { render } from '@testing-library/svelte';
+
 import SettingSwitch from './setting-switch.svelte';
 
 describe('SettingSwitch component', () => {

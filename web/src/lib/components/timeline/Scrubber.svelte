@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { mdiPlay } from '@mdi/js';
+  import { clamp } from 'lodash-es';
+  import { onMount } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
+
+  import { Icon } from '@immich/ui';
+
   import { TimelineManager } from '$lib/managers/timeline-manager/timeline-manager.svelte';
   import type { ScrubberMonth, ViewportTopMonth } from '$lib/managers/timeline-manager/types';
   import { mediaQueryManager } from '$lib/stores/media-query-manager.svelte';
   import { getTabbable } from '$lib/utils/focus-util';
   import { type ScrubberListener } from '$lib/utils/timeline-util';
-  import { Icon } from '@immich/ui';
-  import { mdiPlay } from '@mdi/js';
-  import { clamp } from 'lodash-es';
-  import { onMount } from 'svelte';
-  import { fade, fly } from 'svelte/transition';
 
   interface Props {
     /** Offset from the top of the timeline (e.g., for headers) */

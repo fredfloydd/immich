@@ -1,4 +1,28 @@
 <script lang="ts">
+  import {
+    mdiCamera,
+    mdiCameraIris,
+    mdiClose,
+    mdiEye,
+    mdiEyeOff,
+    mdiImageOutline,
+    mdiInformationOutline,
+    mdiPencil,
+    mdiPlus,
+  } from '@mdi/js';
+  import { DateTime } from 'luxon';
+  import { t } from 'svelte-i18n';
+  import { slide } from 'svelte/transition';
+
+  import {
+    AssetMediaSize,
+    getAllAlbums,
+    getAssetInfo,
+    type AlbumResponseDto,
+    type AssetResponseDto,
+  } from '@immich/sdk';
+  import { Icon, IconButton, LoadingSpinner, Text } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import DetailPanelDate from '$lib/components/asset-viewer/detail-panel-date.svelte';
   import DetailPanelDescription from '$lib/components/asset-viewer/detail-panel-description.svelte';
@@ -17,28 +41,7 @@
   import { getByteUnitString } from '$lib/utils/byte-units';
   import { handleError } from '$lib/utils/handle-error';
   import { getParentPath } from '$lib/utils/tree-utils';
-  import {
-    AssetMediaSize,
-    getAllAlbums,
-    getAssetInfo,
-    type AlbumResponseDto,
-    type AssetResponseDto,
-  } from '@immich/sdk';
-  import { Icon, IconButton, LoadingSpinner, Text } from '@immich/ui';
-  import {
-    mdiCamera,
-    mdiCameraIris,
-    mdiClose,
-    mdiEye,
-    mdiEyeOff,
-    mdiImageOutline,
-    mdiInformationOutline,
-    mdiPencil,
-    mdiPlus,
-  } from '@mdi/js';
-  import { DateTime } from 'luxon';
-  import { t } from 'svelte-i18n';
-  import { slide } from 'svelte/transition';
+
   import ImageThumbnail from '../assets/thumbnail/image-thumbnail.svelte';
   import PersonSidePanel from '../faces-page/person-side-panel.svelte';
   import OnEvents from '../OnEvents.svelte';

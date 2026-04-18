@@ -1,5 +1,6 @@
-import { AssetOrder, type UserPreferencesResponseDto } from '@immich/sdk';
 import { Sync } from 'factory.ts';
+
+import { AssetOrder, type UserPreferencesResponseDto } from '@immich/sdk';
 
 export const preferencesFactory = Sync.makeFactory<UserPreferencesResponseDto>({
   albums: {

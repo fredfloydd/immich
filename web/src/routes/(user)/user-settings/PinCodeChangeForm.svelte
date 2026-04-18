@@ -1,9 +1,11 @@
 <script lang="ts">
-  import PinCodeResetModal from '$lib/modals/PinCodeResetModal.svelte';
-  import { handleError } from '$lib/utils/handle-error';
+  import { t } from 'svelte-i18n';
+
   import { changePinCode } from '@immich/sdk';
   import { Button, Field, Heading, modalManager, PinInput, Text, toastManager } from '@immich/ui';
-  import { t } from 'svelte-i18n';
+
+  import PinCodeResetModal from '$lib/modals/PinCodeResetModal.svelte';
+  import { handleError } from '$lib/utils/handle-error';
 
   let currentPinCode = $state('');
   let newPinCode = $state('');

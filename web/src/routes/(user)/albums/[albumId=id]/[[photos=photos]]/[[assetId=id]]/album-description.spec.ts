@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
+
 import { render, screen } from '@testing-library/svelte';
 import { describe } from 'vitest';
+
 import AlbumDescription from './album-description.svelte';
 
 describe('AlbumDescription component', () => {

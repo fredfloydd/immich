@@ -1,12 +1,4 @@
 <script lang="ts">
-  import { focusOutside } from '$lib/actions/focus-outside';
-  import ActionMenuItem from '$lib/components/ActionMenuItem.svelte';
-  import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
-  import { Route } from '$lib/route';
-  import { getPersonActions } from '$lib/services/person.service';
-  import { getPeopleThumbnailUrl } from '$lib/utils';
-  import { type PersonResponseDto } from '@immich/sdk';
-  import { Icon } from '@immich/ui';
   import {
     mdiAccountMultipleCheckOutline,
     mdiDotsVertical,
@@ -16,8 +8,18 @@
     mdiHeartOutline,
   } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { type PersonResponseDto } from '@immich/sdk';
+  import { Icon } from '@immich/ui';
+
+  import { focusOutside } from '$lib/actions/focus-outside';
+  import ActionMenuItem from '$lib/components/ActionMenuItem.svelte';
   import ImageThumbnail from '$lib/components/assets/thumbnail/image-thumbnail.svelte';
+  import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
+  import { Route } from '$lib/route';
+  import { getPersonActions } from '$lib/services/person.service';
+  import { getPeopleThumbnailUrl } from '$lib/utils';
 
   type Props = {
     person: PersonResponseDto;

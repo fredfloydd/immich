@@ -1,6 +1,8 @@
-import { foldersStore } from '$lib/stores/folders.svelte';
-import { getUniqueOriginalPaths } from '@immich/sdk';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+import { getUniqueOriginalPaths } from '@immich/sdk';
+
+import { foldersStore } from '$lib/stores/folders.svelte';
 
 vi.mock('$lib/managers/event-manager.svelte', () => ({
   eventManager: {

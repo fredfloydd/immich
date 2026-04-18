@@ -9,14 +9,6 @@
 </script>
 
 <script lang="ts">
-  import { afterNavigate } from '$app/navigation';
-  import OnEvents from '$lib/components/OnEvents.svelte';
-  import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
-  import MapSettingsModal from '$lib/modals/MapSettingsModal.svelte';
-  import { mapSettings } from '$lib/stores/preferences.store';
-  import { getAssetMediaUrl, handlePromiseError } from '$lib/utils';
-  import { getMapMarkers, type MapMarkerResponseDto } from '@immich/sdk';
-  import { Icon, modalManager, Theme, themeManager } from '@immich/ui';
   import { mdiCog, mdiMap, mdiMapMarker } from '@mdi/js';
   import type { Feature, GeoJsonProperties, Geometry, Point } from 'geojson';
   import { isEqual, omit } from 'lodash-es';
@@ -47,6 +39,17 @@
     Popup,
     ScaleControl,
   } from 'svelte-maplibre';
+
+  import { getMapMarkers, type MapMarkerResponseDto } from '@immich/sdk';
+  import { Icon, modalManager, Theme, themeManager } from '@immich/ui';
+
+  import { afterNavigate } from '$app/navigation';
+  import OnEvents from '$lib/components/OnEvents.svelte';
+  import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
+  import MapSettingsModal from '$lib/modals/MapSettingsModal.svelte';
+  import { mapSettings } from '$lib/stores/preferences.store';
+  import { getAssetMediaUrl, handlePromiseError } from '$lib/utils';
+
   import type { SelectionBBox } from './types';
 
   interface Props {

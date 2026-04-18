@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { Checkbox, Label } from '@immich/ui';
   import { t } from 'svelte-i18n';
   import { quintOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
+
+  import { Checkbox, Label } from '@immich/ui';
 
   interface Props {
     value: string[];

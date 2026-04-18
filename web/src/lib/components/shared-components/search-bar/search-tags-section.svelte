@@ -1,11 +1,14 @@
 <script lang="ts">
-  import Combobox, { type ComboBoxOption } from '$lib/components/shared-components/combobox.svelte';
-  import { authManager } from '$lib/managers/auth-manager.svelte';
-  import { getAllTags, type TagResponseDto } from '@immich/sdk';
-  import { Checkbox, Label, Text } from '@immich/ui';
   import { onMount } from 'svelte';
   import { t } from 'svelte-i18n';
   import { SvelteSet } from 'svelte/reactivity';
+
+  import { getAllTags, type TagResponseDto } from '@immich/sdk';
+  import { Checkbox, Label, Text } from '@immich/ui';
+
+  import Combobox, { type ComboBoxOption } from '$lib/components/shared-components/combobox.svelte';
+  import { authManager } from '$lib/managers/auth-manager.svelte';
+
   import TagPill from '../tag-pill.svelte';
 
   interface Props {

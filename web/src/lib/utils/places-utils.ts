@@ -1,6 +1,8 @@
-import { PlacesGroupBy, placesViewSettings, type PlacesViewSettings } from '$lib/stores/preferences.store';
-import { type AssetResponseDto } from '@immich/sdk';
 import { get } from 'svelte/store';
+
+import { type AssetResponseDto } from '@immich/sdk';
+
+import { PlacesGroupBy, placesViewSettings, type PlacesViewSettings } from '$lib/stores/preferences.store';
 
 /**
  * --------------

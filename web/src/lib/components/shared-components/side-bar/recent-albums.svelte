@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { getAllAlbums } from '@immich/sdk';
+
   import { Route } from '$lib/route';
   import { userInteraction } from '$lib/stores/user.svelte';
   import { getAssetMediaUrl } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
-  import { getAllAlbums } from '@immich/sdk';
-  import { t } from 'svelte-i18n';
 
   let albums = $state(userInteraction.recentAlbums);
 

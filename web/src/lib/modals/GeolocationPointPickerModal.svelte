@@ -1,5 +1,11 @@
 <script lang="ts">
+  import { mdiMapMarkerMultipleOutline } from '@mdi/js';
   import { isDefined } from '$lib';
+  import { t } from 'svelte-i18n';
+
+  import { searchPlaces, type AssetResponseDto, type PlacesResponseDto } from '@immich/sdk';
+  import { ConfirmModal, LoadingSpinner } from '@immich/ui';
+
   import { clickOutside } from '$lib/actions/click-outside';
   import { listNavigation } from '$lib/actions/list-navigation';
   import CoordinatesInput from '$lib/components/shared-components/coordinates-input.svelte';
@@ -10,10 +16,6 @@
   import type { LatLng } from '$lib/types';
   import { delay } from '$lib/utils/asset-utils';
   import { handleError } from '$lib/utils/handle-error';
-  import { searchPlaces, type AssetResponseDto, type PlacesResponseDto } from '@immich/sdk';
-  import { ConfirmModal, LoadingSpinner } from '@immich/ui';
-  import { mdiMapMarkerMultipleOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   type Props = {
     asset?: AssetResponseDto;

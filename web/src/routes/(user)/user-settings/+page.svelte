@@ -1,10 +1,13 @@
 <script lang="ts">
-  import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
-  import UserSettingsList from './user-settings-list.svelte';
-  import { getKeyboardActions } from '$lib/services/keyboard.service';
-  import { Container } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Container } from '@immich/ui';
+
+  import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
+  import { getKeyboardActions } from '$lib/services/keyboard.service';
+
   import type { PageData } from './$types';
+  import UserSettingsList from './user-settings-list.svelte';
 
   type Props = {
     data: PageData;

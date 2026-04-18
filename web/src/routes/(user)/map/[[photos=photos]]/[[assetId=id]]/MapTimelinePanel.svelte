@@ -1,4 +1,11 @@
 <script lang="ts">
+  import { mdiDotsVertical, mdiImageMultiple } from '@mdi/js';
+  import { ceil, floor } from 'lodash-es';
+  import { t } from 'svelte-i18n';
+
+  import { AssetVisibility } from '@immich/sdk';
+  import { ActionButton, CloseButton, CommandPaletteDefaultProvider, Icon } from '@immich/ui';
+
   import ActionMenuItem from '$lib/components/ActionMenuItem.svelte';
   import ButtonContextMenu from '$lib/components/shared-components/context-menu/button-context-menu.svelte';
   import type { SelectionBBox } from '$lib/components/shared-components/map/types';
@@ -29,11 +36,6 @@
     type OnLink,
     type OnUnlink,
   } from '$lib/utils/actions';
-  import { AssetVisibility } from '@immich/sdk';
-  import { ActionButton, CloseButton, CommandPaletteDefaultProvider, Icon } from '@immich/ui';
-  import { mdiDotsVertical, mdiImageMultiple } from '@mdi/js';
-  import { ceil, floor } from 'lodash-es';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     bbox: SelectionBBox;

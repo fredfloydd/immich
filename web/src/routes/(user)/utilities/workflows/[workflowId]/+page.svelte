@@ -1,12 +1,42 @@
 <script lang="ts">
+  import {
+    mdiArrowLeft,
+    mdiCodeJson,
+    mdiContentSave,
+    mdiFilterOutline,
+    mdiFlashOutline,
+    mdiInformationOutline,
+    mdiPlayCircleOutline,
+    mdiPlus,
+    mdiTrashCanOutline,
+    mdiViewDashboard,
+  } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import type { PluginActionResponseDto, PluginFilterResponseDto, PluginTriggerResponseDto } from '@immich/sdk';
+  import {
+    Button,
+    Card,
+    CardBody,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+    Container,
+    Field,
+    HStack,
+    Icon,
+    Input,
+    modalManager,
+    Switch,
+    Text,
+    Textarea,
+    toastManager,
+    VStack,
+  } from '@immich/ui';
+
   import { beforeNavigate, goto } from '$app/navigation';
   import { dragAndDrop } from '$lib/attachments/drag-and-drop.svelte';
   import ControlAppBar from '$lib/components/shared-components/control-app-bar.svelte';
-  import SchemaFormFields from './SchemaFormFields.svelte';
-  import WorkflowCardConnector from './WorkflowCardConnector.svelte';
-  import WorkflowJsonEditor from './WorkflowJsonEditor.svelte';
-  import WorkflowSummarySidebar from './WorkflowSummary.svelte';
-  import WorkflowTriggerCard from './WorkflowTriggerCard.svelte';
   import AddWorkflowStepModal from '$lib/modals/AddWorkflowStepModal.svelte';
   import { Route } from '$lib/route';
   import {
@@ -22,40 +52,13 @@
     type WorkflowPayload,
   } from '$lib/services/workflow.service';
   import { handleError } from '$lib/utils/handle-error';
-  import type { PluginActionResponseDto, PluginFilterResponseDto, PluginTriggerResponseDto } from '@immich/sdk';
-  import {
-    Button,
-    Card,
-    CardBody,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-    Container,
-    Field,
-    HStack,
-    Icon,
-    Input,
-    Switch,
-    Text,
-    Textarea,
-    VStack,
-    modalManager,
-    toastManager,
-  } from '@immich/ui';
-  import {
-    mdiArrowLeft,
-    mdiCodeJson,
-    mdiContentSave,
-    mdiFilterOutline,
-    mdiFlashOutline,
-    mdiInformationOutline,
-    mdiPlayCircleOutline,
-    mdiPlus,
-    mdiTrashCanOutline,
-    mdiViewDashboard,
-  } from '@mdi/js';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
+  import SchemaFormFields from './SchemaFormFields.svelte';
+  import WorkflowCardConnector from './WorkflowCardConnector.svelte';
+  import WorkflowJsonEditor from './WorkflowJsonEditor.svelte';
+  import WorkflowSummarySidebar from './WorkflowSummary.svelte';
+  import WorkflowTriggerCard from './WorkflowTriggerCard.svelte';
 
   type Props = {
     data: PageData;

@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { Icon } from '@immich/ui';
   import { onDestroy, onMount, type Snippet } from 'svelte';
   import { slide } from 'svelte/transition';
+
+  import { Icon } from '@immich/ui';
+
   import { getAccordionState } from './setting-accordion-state.svelte';
 
   const accordionState = getAccordionState();

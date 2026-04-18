@@ -1,4 +1,20 @@
 <script lang="ts">
+  import { mdiArrowLeft, mdiDotsVertical, mdiImageOffOutline, mdiSelectAll } from '@mdi/js';
+  import { tick, untrack } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import {
+    getPerson,
+    getTagById,
+    searchAssets,
+    searchSmart,
+    type AlbumResponseDto,
+    type AssetResponseDto,
+    type MetadataSearchDto,
+    type SmartSearchDto,
+  } from '@immich/sdk';
+  import { ActionButton, CommandPaletteDefaultProvider, Icon, IconButton, LoadingSpinner } from '@immich/ui';
+
   import { afterNavigate, goto } from '$app/navigation';
   import { page } from '$app/state';
   import ActionMenuItem from '$lib/components/ActionMenuItem.svelte';
@@ -31,20 +47,6 @@
   import { handleError } from '$lib/utils/handle-error';
   import { isAlbumsRoute, isPeopleRoute } from '$lib/utils/navigation';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import {
-    type AlbumResponseDto,
-    type AssetResponseDto,
-    getPerson,
-    getTagById,
-    type MetadataSearchDto,
-    searchAssets,
-    searchSmart,
-    type SmartSearchDto,
-  } from '@immich/sdk';
-  import { ActionButton, CommandPaletteDefaultProvider, Icon, IconButton, LoadingSpinner } from '@immich/ui';
-  import { mdiArrowLeft, mdiDotsVertical, mdiImageOffOutline, mdiSelectAll } from '@mdi/js';
-  import { tick, untrack } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   const viewport: Viewport = $state({ width: 0, height: 0 });
   let searchResultsElement: HTMLElement | undefined = $state();

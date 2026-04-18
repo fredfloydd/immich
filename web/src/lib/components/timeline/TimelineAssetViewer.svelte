@@ -1,4 +1,9 @@
 <script lang="ts">
+  import { onDestroy, onMount, untrack } from 'svelte';
+  import { t } from 'svelte-i18n';
+
+  import { getAssetInfo, type AlbumResponseDto, type AssetResponseDto, type PersonResponseDto } from '@immich/sdk';
+
   import type { Action } from '$lib/components/asset-viewer/actions/action';
   import type { AssetCursor } from '$lib/components/asset-viewer/asset-viewer.svelte';
   import { AssetAction } from '$lib/constants';
@@ -14,9 +19,6 @@
   import { handleErrorAsync } from '$lib/utils/handle-error';
   import { navigate } from '$lib/utils/navigation';
   import { toTimelineAsset } from '$lib/utils/timeline-util';
-  import { type AlbumResponseDto, type AssetResponseDto, type PersonResponseDto, getAssetInfo } from '@immich/sdk';
-  import { onDestroy, onMount, untrack } from 'svelte';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     timelineManager: TimelineManager;

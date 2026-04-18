@@ -1,7 +1,9 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+import { getAssetOcr } from '@immich/sdk';
+
 import { assetCacheManager } from '$lib/managers/AssetCacheManager.svelte';
 import { ocrManager, type OcrBoundingBox } from '$lib/stores/ocr.svelte';
-import { getAssetOcr } from '@immich/sdk';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // Mock the SDK
 vi.mock('@immich/sdk', () => ({

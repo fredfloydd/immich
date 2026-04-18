@@ -1,14 +1,4 @@
 <script lang="ts">
-  import { cleanClass } from '$lib';
-  import QueueCardBadge from './QueueCardBadge.svelte';
-  import QueueCardButton from './QueueCardButton.svelte';
-  import Badge from '$lib/elements/Badge.svelte';
-  import { Route } from '$lib/route';
-  import { asQueueItem } from '$lib/services/queue.service';
-  import { locale } from '$lib/stores/preferences.store';
-  import { transformToTitleCase } from '$lib/utils';
-  import { QueueCommand, type QueueCommandDto, type QueueResponseDto } from '@immich/sdk';
-  import { Icon, IconButton, Link } from '@immich/ui';
   import {
     mdiAlertCircle,
     mdiAllInclusive,
@@ -20,8 +10,21 @@
     mdiPlay,
     mdiSelectionSearch,
   } from '@mdi/js';
+  import { cleanClass } from '$lib';
   import { type Component } from 'svelte';
   import { t } from 'svelte-i18n';
+
+  import { QueueCommand, type QueueCommandDto, type QueueResponseDto } from '@immich/sdk';
+  import { Icon, IconButton, Link } from '@immich/ui';
+
+  import Badge from '$lib/elements/Badge.svelte';
+  import { Route } from '$lib/route';
+  import { asQueueItem } from '$lib/services/queue.service';
+  import { locale } from '$lib/stores/preferences.store';
+  import { transformToTitleCase } from '$lib/utils';
+
+  import QueueCardBadge from './QueueCardBadge.svelte';
+  import QueueCardButton from './QueueCardButton.svelte';
 
   interface Props {
     queue: QueueResponseDto;

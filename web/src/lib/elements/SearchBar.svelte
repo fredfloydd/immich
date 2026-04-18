@@ -1,8 +1,10 @@
 <script lang="ts">
-  import type { SearchOptions } from '$lib/utils/dipatch';
-  import { IconButton, LoadingSpinner } from '@immich/ui';
   import { mdiClose, mdiMagnify } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { IconButton, LoadingSpinner } from '@immich/ui';
+
+  import type { SearchOptions } from '$lib/utils/dipatch';
 
   interface Props {
     name: string;

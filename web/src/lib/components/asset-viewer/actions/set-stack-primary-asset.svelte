@@ -1,10 +1,12 @@
 <script lang="ts">
-  import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
-
-  import { AssetAction } from '$lib/constants';
-  import { updateStack, type AssetResponseDto, type StackResponseDto } from '@immich/sdk';
   import { mdiImageCheckOutline } from '@mdi/js';
   import { t } from 'svelte-i18n';
+
+  import { updateStack, type AssetResponseDto, type StackResponseDto } from '@immich/sdk';
+
+  import MenuOption from '$lib/components/shared-components/context-menu/menu-option.svelte';
+  import { AssetAction } from '$lib/constants';
+
   import type { OnAction } from './action';
 
   interface Props {

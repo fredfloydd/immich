@@ -1,11 +1,18 @@
 <script lang="ts">
+  import { onDestroy, untrack } from 'svelte';
+  import { useSwipe, type SwipeCustomEvent } from 'svelte-gestures';
+  import { t } from 'svelte-i18n';
+
+  import { type SharedLinkResponseDto } from '@immich/sdk';
+  import { toastManager } from '@immich/ui';
+
   import { shortcuts } from '$lib/actions/shortcut';
   import { zoomImageAction } from '$lib/actions/zoom-image';
   import AdaptiveImage from '$lib/components/AdaptiveImage.svelte';
   import FaceEditor from '$lib/components/asset-viewer/face-editor/face-editor.svelte';
-  import Thumbhash from '$lib/components/Thumbhash.svelte';
   import OcrBoundingBox from '$lib/components/asset-viewer/ocr-bounding-box.svelte';
   import AssetViewerEvents from '$lib/components/AssetViewerEvents.svelte';
+  import Thumbhash from '$lib/components/Thumbhash.svelte';
   import { assetViewerManager } from '$lib/managers/asset-viewer-manager.svelte';
   import { castManager } from '$lib/managers/cast-manager.svelte';
   import { ocrManager } from '$lib/stores/ocr.svelte';
@@ -17,11 +24,7 @@
   import { handleError } from '$lib/utils/handle-error';
   import { getOcrBoundingBoxes } from '$lib/utils/ocr-utils';
   import { getBoundingBox, type BoundingBox } from '$lib/utils/people-utils';
-  import { type SharedLinkResponseDto } from '@immich/sdk';
-  import { toastManager } from '@immich/ui';
-  import { onDestroy, untrack } from 'svelte';
-  import { useSwipe, type SwipeCustomEvent } from 'svelte-gestures';
-  import { t } from 'svelte-i18n';
+
   import type { AssetCursor } from './asset-viewer.svelte';
 
   type Props = {

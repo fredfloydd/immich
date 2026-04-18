@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { mdiDeleteOutline } from '@mdi/js';
+  import { t } from 'svelte-i18n';
+
+  import { type SharedLinkResponseDto } from '@immich/sdk';
+  import { IconButton } from '@immich/ui';
+
   import { shortcut } from '$lib/actions/shortcut';
   import { assetMultiSelectManager } from '$lib/managers/asset-multi-select-manager.svelte';
   import { handleRemoveSharedLinkAssets } from '$lib/services/shared-link.service';
-  import { type SharedLinkResponseDto } from '@immich/sdk';
-  import { IconButton } from '@immich/ui';
-  import { mdiDeleteOutline } from '@mdi/js';
-  import { t } from 'svelte-i18n';
 
   interface Props {
     sharedLink: SharedLinkResponseDto;

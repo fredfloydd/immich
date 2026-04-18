@@ -1,12 +1,15 @@
 <script lang="ts">
-  import { eventManager } from '$lib/managers/event-manager.svelte';
-  import { tagAssets } from '$lib/utils/asset-utils';
-  import { getAllTags, upsertTags, type TagResponseDto } from '@immich/sdk';
-  import { FormModal } from '@immich/ui';
   import { mdiTag } from '@mdi/js';
   import { onMount } from 'svelte';
   import { t } from 'svelte-i18n';
   import { SvelteSet } from 'svelte/reactivity';
+
+  import { getAllTags, upsertTags, type TagResponseDto } from '@immich/sdk';
+  import { FormModal } from '@immich/ui';
+
+  import { eventManager } from '$lib/managers/event-manager.svelte';
+  import { tagAssets } from '$lib/utils/asset-utils';
+
   import Combobox, { type ComboBoxOption } from '../components/shared-components/combobox.svelte';
   import TagPill from '../components/shared-components/tag-pill.svelte';
 

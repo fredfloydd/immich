@@ -1,12 +1,15 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { signUpAdmin } from '@immich/sdk';
+  import { Alert, Button, Field, Input, PasswordInput, Text } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import AuthPageLayout from '$lib/components/layouts/AuthPageLayout.svelte';
   import { serverConfigManager } from '$lib/managers/server-config-manager.svelte';
   import { Route } from '$lib/route';
   import { handleError } from '$lib/utils/handle-error';
-  import { signUpAdmin } from '@immich/sdk';
-  import { Alert, Button, Field, Input, PasswordInput, Text } from '@immich/ui';
-  import { t } from 'svelte-i18n';
+
   import type { PageData } from './$types';
 
   let email = $state('');

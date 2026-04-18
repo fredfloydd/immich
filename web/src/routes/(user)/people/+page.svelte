@@ -1,11 +1,17 @@
 <script lang="ts">
+  import { mdiAccountOff, mdiEyeOutline } from '@mdi/js';
+  import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
+  import { quintOut } from 'svelte/easing';
+  import { fly } from 'svelte/transition';
+
+  import { getAllPeople, getPerson, searchPerson, updatePerson, type PersonResponseDto } from '@immich/sdk';
+  import { Button, Icon, modalManager, toastManager } from '@immich/ui';
+
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import { scrollMemory } from '$lib/actions/scroll-memory';
   import { shortcut } from '$lib/actions/shortcut';
-  import ManagePeopleVisibility from './manage-people-visibility.svelte';
-  import PeopleCard from './people-card.svelte';
-  import PeopleInfiniteScroll from './people-infinite-scroll.svelte';
   import SearchPeople from '$lib/components/faces-page/people-search.svelte';
   import UserPageLayout from '$lib/components/layouts/user-page-layout.svelte';
   import OnEvents from '$lib/components/OnEvents.svelte';
@@ -17,14 +23,11 @@
   import { handlePromiseError } from '$lib/utils';
   import { handleError } from '$lib/utils/handle-error';
   import { clearQueryParam } from '$lib/utils/navigation';
-  import { getAllPeople, getPerson, searchPerson, updatePerson, type PersonResponseDto } from '@immich/sdk';
-  import { Button, Icon, modalManager, toastManager } from '@immich/ui';
-  import { mdiAccountOff, mdiEyeOutline } from '@mdi/js';
-  import { onMount } from 'svelte';
-  import { t } from 'svelte-i18n';
-  import { quintOut } from 'svelte/easing';
-  import { fly } from 'svelte/transition';
+
   import type { PageData } from './$types';
+  import ManagePeopleVisibility from './manage-people-visibility.svelte';
+  import PeopleCard from './people-card.svelte';
+  import PeopleInfiniteScroll from './people-infinite-scroll.svelte';
 
   interface Props {
     data: PageData;

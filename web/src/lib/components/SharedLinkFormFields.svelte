@@ -1,7 +1,9 @@
 <script lang="ts">
-  import SharedLinkExpiration from '$lib/components/SharedLinkExpiration.svelte';
-  import { Field, Input, PasswordInput, Switch, Text } from '@immich/ui';
   import { t } from 'svelte-i18n';
+
+  import { Field, Input, PasswordInput, Switch, Text } from '@immich/ui';
+
+  import SharedLinkExpiration from '$lib/components/SharedLinkExpiration.svelte';
 
   type Props = {
     slug: string;

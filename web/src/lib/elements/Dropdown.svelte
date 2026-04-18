@@ -11,11 +11,13 @@
 </script>
 
 <script lang="ts" generics="T">
-  import { clickOutside } from '$lib/actions/click-outside';
-  import { Button, Icon, Text } from '@immich/ui';
   import { mdiCheck } from '@mdi/js';
   import { isEqual } from 'lodash-es';
   import { fly } from 'svelte/transition';
+
+  import { Button, Icon, Text } from '@immich/ui';
+
+  import { clickOutside } from '$lib/actions/click-outside';
 
   interface Props {
     class?: string;

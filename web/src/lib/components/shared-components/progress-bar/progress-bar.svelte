@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { ProgressBarStatus } from '$lib/constants';
-  import { handlePromiseError } from '$lib/utils';
-
   import { onMount } from 'svelte';
   import { tweened } from 'svelte/motion';
+
+  import { ProgressBarStatus } from '$lib/constants';
+  import { handlePromiseError } from '$lib/utils';
 
   interface Props {
     /**

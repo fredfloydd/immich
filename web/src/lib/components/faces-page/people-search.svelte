@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  import { searchPerson, type PersonResponseDto } from '@immich/sdk';
+
   import { initInput } from '$lib/actions/focus';
   import { maximumLengthSearchPeople, timeBeforeShowLoadingSpinner } from '$lib/constants';
   import SearchBar from '$lib/elements/SearchBar.svelte';
   import { handleError } from '$lib/utils/handle-error';
   import { searchNameLocal } from '$lib/utils/person';
-  import { searchPerson, type PersonResponseDto } from '@immich/sdk';
-  import { t } from 'svelte-i18n';
 
   let searchedPeople: PersonResponseDto[] = [];
   let searchWord: string;

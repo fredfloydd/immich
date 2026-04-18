@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { updateMyPreferences } from '@immich/sdk';
+  import { Button, toastManager } from '@immich/ui';
+
   import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
   import { SettingInputFieldType } from '$lib/constants';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { ByteUnit, convertFromBytes, convertToBytes } from '$lib/utils/byte-units';
   import { handleError } from '$lib/utils/handle-error';
-  import { updateMyPreferences } from '@immich/sdk';
-  import { Button, toastManager } from '@immich/ui';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
 
   let archiveSize = $state(convertFromBytes(authManager.preferences.download.archiveSize || 4, ByteUnit.GiB));
   let includeEmbeddedVideos = $state(authManager.preferences.download.includeEmbeddedVideos || false);

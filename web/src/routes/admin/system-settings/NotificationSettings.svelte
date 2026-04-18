@@ -1,5 +1,10 @@
 <script lang="ts">
-  import TemplateSettings from './TemplateSettings.svelte';
+  import { t } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { sendTestEmailAdmin } from '@immich/sdk';
+  import { Button, toastManager } from '@immich/ui';
+
   import SettingAccordion from '$lib/components/shared-components/settings/setting-accordion.svelte';
   import SettingInputField from '$lib/components/shared-components/settings/setting-input-field.svelte';
   import SettingSwitch from '$lib/components/shared-components/settings/setting-switch.svelte';
@@ -10,10 +15,8 @@
   import { systemConfigManager } from '$lib/managers/system-config-manager.svelte';
   import { handleSystemConfigSave } from '$lib/services/system-config.service';
   import { handleError } from '$lib/utils/handle-error';
-  import { sendTestEmailAdmin } from '@immich/sdk';
-  import { Button, toastManager } from '@immich/ui';
-  import { t } from 'svelte-i18n';
-  import { fade } from 'svelte/transition';
+
+  import TemplateSettings from './TemplateSettings.svelte';
 
   const disabled = $derived(featureFlagsManager.value.configFile);
   const config = $derived(systemConfigManager.value);

@@ -1,6 +1,8 @@
 import { faker } from '@faker-js/faker';
-import { AssetOrder, type AlbumResponseDto } from '@immich/sdk';
 import { Sync } from 'factory.ts';
+
+import { AssetOrder, type AlbumResponseDto } from '@immich/sdk';
+
 import { userFactory } from './user-factory';
 
 export const albumFactory = Sync.makeFactory<AlbumResponseDto>({
