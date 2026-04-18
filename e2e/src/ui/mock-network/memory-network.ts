@@ -1,5 +1,6 @@
-import type { MemoryResponseDto } from '@immich/sdk';
 import { BrowserContext } from '@playwright/test';
+
+import type { MemoryResponseDto } from '@immich/sdk';
 
 export type MemoryChanges = {
   memoryDeletions: string[];

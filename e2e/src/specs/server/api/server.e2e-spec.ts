@@ -1,9 +1,11 @@
+import request from 'supertest';
+import { beforeAll, describe, expect, it } from 'vitest';
+
 import { LoginResponseDto } from '@immich/sdk';
+
 import { createUserDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, describe, expect, it } from 'vitest';
 
 const serverLicense = {
   licenseKey: 'IMSV-6ECZ-91TE-WZRM-Q7AQ-MBN4-UW48-2CPT-71X9',

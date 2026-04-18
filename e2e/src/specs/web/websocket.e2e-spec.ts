@@ -1,5 +1,7 @@
-import { LoginResponseDto } from '@immich/sdk';
 import { expect, test } from '@playwright/test';
+
+import { LoginResponseDto } from '@immich/sdk';
+
 import { utils } from 'src/utils';
 
 test.describe('Websocket', () => {

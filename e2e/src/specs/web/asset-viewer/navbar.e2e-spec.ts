@@ -1,5 +1,7 @@
-import { AssetMediaResponseDto, LoginResponseDto, SharedLinkType } from '@immich/sdk';
 import { expect, test } from '@playwright/test';
+
+import { AssetMediaResponseDto, LoginResponseDto, SharedLinkType } from '@immich/sdk';
+
 import { utils } from 'src/utils';
 
 test.describe('Asset Viewer Navbar', () => {

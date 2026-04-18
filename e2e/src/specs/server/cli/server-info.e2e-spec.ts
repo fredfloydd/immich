@@ -1,5 +1,6 @@
-import { immichCli, utils } from 'src/utils';
 import { beforeAll, describe, expect, it } from 'vitest';
+
+import { immichCli, utils } from 'src/utils';
 
 describe(`immich server-info`, () => {
   beforeAll(async () => {

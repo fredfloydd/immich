@@ -1,11 +1,14 @@
-import { LoginResponseDto, QueueCommand, QueueName, updateConfig } from '@immich/sdk';
 import { cpSync, rmSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { basename } from 'node:path';
-import { errorDto } from 'src/responses';
-import { app, asBearerAuth, testAssetDir, utils } from 'src/utils';
+
 import request from 'supertest';
 import { afterEach, beforeAll, describe, expect, it } from 'vitest';
+
+import { LoginResponseDto, QueueCommand, QueueName, updateConfig } from '@immich/sdk';
+
+import { errorDto } from 'src/responses';
+import { app, asBearerAuth, testAssetDir, utils } from 'src/utils';
 
 describe('/jobs', () => {
   let admin: LoginResponseDto;

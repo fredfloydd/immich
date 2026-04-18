@@ -1,3 +1,13 @@
+import { randomBytes } from 'node:crypto';
+import { readFile, writeFile } from 'node:fs/promises';
+import { basename, join } from 'node:path';
+
+import { exiftool } from 'exiftool-vendored';
+import { DateTime } from 'luxon';
+import { Socket } from 'socket.io-client';
+import request from 'supertest';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
 import {
   AssetMediaResponseDto,
   AssetMediaStatus,
@@ -9,18 +19,11 @@ import {
   SharedLinkType,
   updateConfig,
 } from '@immich/sdk';
-import { exiftool } from 'exiftool-vendored';
-import { DateTime } from 'luxon';
-import { randomBytes } from 'node:crypto';
-import { readFile, writeFile } from 'node:fs/promises';
-import { basename, join } from 'node:path';
-import { Socket } from 'socket.io-client';
+
 import { createUserDto, uuidDto } from 'src/fixtures';
 import { makeRandomImage } from 'src/generators';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, tempDir, testAssetDir, utils } from 'src/utils';
-import request from 'supertest';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 const locationAssetFilepath = `${testAssetDir}/metadata/gps-position/thompson-springs.jpg`;
 const ratingAssetFilepath = `${testAssetDir}/metadata/rating/mongolels.jpg`;

@@ -1,7 +1,8 @@
-import { defineConfig, devices, PlaywrightTestConfig } from '@playwright/test';
-import dotenv from 'dotenv';
 import { cpus } from 'node:os';
 import { resolve } from 'node:path';
+
+import { defineConfig, devices, PlaywrightTestConfig } from '@playwright/test';
+import dotenv from 'dotenv';
 
 dotenv.config({ quiet: true, path: resolve(import.meta.dirname, '.env') });
 

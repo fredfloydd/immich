@@ -1,9 +1,11 @@
-import { LoginResponseDto, getSessions, login, signUpAdmin } from '@immich/sdk';
+import request from 'supertest';
+import { beforeEach, describe, expect, it } from 'vitest';
+
+import { getSessions, login, LoginResponseDto, signUpAdmin } from '@immich/sdk';
+
 import { loginDto, signupDto, uuidDto } from 'src/fixtures';
 import { deviceDto, errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeEach, describe, expect, it } from 'vitest';
 
 describe('/sessions', () => {
   let admin: LoginResponseDto;

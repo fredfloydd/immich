@@ -1,3 +1,6 @@
+import request from 'supertest';
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+
 import {
   addAssetsToAlbum,
   AlbumResponseDto,
@@ -9,11 +12,10 @@ import {
   LoginResponseDto,
   SharedLinkType,
 } from '@immich/sdk';
+
 import { createUserDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 const user1SharedEditorUser = 'user1SharedEditorUser';
 const user1SharedViewerUser = 'user1SharedViewerUser';

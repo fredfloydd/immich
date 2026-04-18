@@ -1,6 +1,9 @@
-import { AssetMediaResponseDto, LoginResponseDto, updateAssets } from '@immich/sdk';
-import { expect, test } from '@playwright/test';
 import crypto from 'node:crypto';
+
+import { expect, test } from '@playwright/test';
+
+import { AssetMediaResponseDto, LoginResponseDto, updateAssets } from '@immich/sdk';
+
 import { asBearerAuth, utils } from 'src/utils';
 
 test.describe('Duplicates Utility', () => {

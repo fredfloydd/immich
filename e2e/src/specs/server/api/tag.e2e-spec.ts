@@ -1,19 +1,21 @@
+import request from 'supertest';
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+
 import {
   AssetMediaResponseDto,
-  LoginResponseDto,
-  Permission,
-  TagCreateDto,
-  TagResponseDto,
   createTag,
   getAllTags,
+  LoginResponseDto,
+  Permission,
   tagAssets,
+  TagCreateDto,
+  TagResponseDto,
   upsertTags,
 } from '@immich/sdk';
+
 import { createUserDto, uuidDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 const create = (accessToken: string, dto: TagCreateDto) =>
   createTag({ tagCreateDto: dto }, { headers: asBearerAuth(accessToken) });

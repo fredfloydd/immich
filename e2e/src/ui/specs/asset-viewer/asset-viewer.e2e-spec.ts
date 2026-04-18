@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from '@playwright/test';
+
 import {
   Changes,
   createDefaultTimelineConfig,
@@ -12,6 +13,7 @@ import {
 import { setupBaseMockApiRoutes } from 'src/ui/mock-network/base-network';
 import { setupTimelineMockApiRoutes, TimelineTestContext } from 'src/ui/mock-network/timeline-network';
 import { utils } from 'src/utils';
+
 import { assetViewerUtils } from '../timeline/utils';
 
 test.describe.configure({ mode: 'parallel' });

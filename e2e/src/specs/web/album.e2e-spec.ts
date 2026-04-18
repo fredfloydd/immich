@@ -1,6 +1,9 @@
-import { LoginResponseDto } from '@immich/sdk';
-import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+
+import { expect, test } from '@playwright/test';
+
+import { LoginResponseDto } from '@immich/sdk';
+
 import { testAssetDir, utils } from 'src/utils';
 
 test.describe('Album', () => {

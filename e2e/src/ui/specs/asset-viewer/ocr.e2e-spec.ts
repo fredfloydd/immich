@@ -1,5 +1,7 @@
-import type { AssetOcrResponseDto, AssetResponseDto } from '@immich/sdk';
 import { expect, test } from '@playwright/test';
+
+import type { AssetOcrResponseDto, AssetResponseDto } from '@immich/sdk';
+
 import { toAssetResponseDto } from 'src/ui/generators/timeline';
 import {
   createMockStack,
@@ -8,6 +10,7 @@ import {
   setupBrokenAssetMockApiRoutes,
 } from 'src/ui/mock-network/broken-asset-network';
 import { createMockOcrData, setupOcrMockApiRoutes } from 'src/ui/mock-network/ocr-network';
+
 import { assetViewerUtils } from '../timeline/utils';
 import { setupAssetViewerFixture } from './utils';
 

@@ -1,4 +1,5 @@
 import { expect, Page, test } from '@playwright/test';
+
 import { SeededRandom, selectRandom, TimelineAssetConfig } from 'src/ui/generators/timeline';
 import {
   createMockPeople,
@@ -6,6 +7,7 @@ import {
   MockPerson,
   setupFaceEditorMockApiRoutes,
 } from 'src/ui/mock-network/face-editor-network';
+
 import { assetViewerUtils } from '../timeline/utils';
 import { setupAssetViewerFixture } from './utils';
 

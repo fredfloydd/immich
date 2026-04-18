@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from '@playwright/test';
+
 import {
   Changes,
   createDefaultTimelineConfig,
@@ -10,6 +11,7 @@ import {
 } from 'src/ui/generators/timeline';
 import { setupBaseMockApiRoutes } from 'src/ui/mock-network/base-network';
 import { setupTimelineMockApiRoutes, TimelineTestContext } from 'src/ui/mock-network/timeline-network';
+
 import { assetViewerUtils } from '../timeline/utils';
 
 const buildSearchUrl = (assetId: string) => {

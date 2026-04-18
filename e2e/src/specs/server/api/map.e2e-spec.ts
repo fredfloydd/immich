@@ -1,11 +1,14 @@
-import { AssetVisibility, LoginResponseDto } from '@immich/sdk';
 import { readFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
+
 import { Socket } from 'socket.io-client';
-import { errorDto } from 'src/responses';
-import { app, testAssetDir, utils } from 'src/utils';
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
+import { AssetVisibility, LoginResponseDto } from '@immich/sdk';
+
+import { errorDto } from 'src/responses';
+import { app, testAssetDir, utils } from 'src/utils';
 
 describe('/map', () => {
   let websocket: Socket;

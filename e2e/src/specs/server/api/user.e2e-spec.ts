@@ -1,9 +1,11 @@
-import { LoginResponseDto, SharedLinkType, deleteUserAdmin, getMyPreferences, getMyUser, login } from '@immich/sdk';
+import request from 'supertest';
+import { beforeAll, describe, expect, it } from 'vitest';
+
+import { deleteUserAdmin, getMyPreferences, getMyUser, login, LoginResponseDto, SharedLinkType } from '@immich/sdk';
+
 import { createUserDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, describe, expect, it } from 'vitest';
 
 const userLicense = {
   licenseKey: 'IMCL-FF69-TUK1-RWZU-V9Q8-QGQS-S5GC-X4R2-UFK4',

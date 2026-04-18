@@ -2,6 +2,8 @@
  * REST API output functions for converting timeline data to API response formats
  */
 
+import { DateTime } from 'luxon';
+
 import {
   AssetTypeEnum,
   AssetVisibility,
@@ -13,9 +15,10 @@ import {
   type TimeBucketsResponseDto,
   type UserResponseDto,
 } from '@immich/sdk';
-import { DateTime } from 'luxon';
+
 import { signupDto } from 'src/fixtures';
 import { parseTimeBucketKey } from 'src/ui/generators/timeline/utils';
+
 import type { MockTimelineAsset, MockTimelineData } from './timeline-config';
 
 /**

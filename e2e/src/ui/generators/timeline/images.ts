@@ -1,4 +1,5 @@
 import sharp from 'sharp';
+
 import { SeededRandom } from 'src/ui/generators/timeline/utils';
 
 export const randomThumbnail = async (seed: string, ratio: number) => {

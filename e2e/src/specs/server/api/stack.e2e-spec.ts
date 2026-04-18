@@ -1,9 +1,11 @@
+import request from 'supertest';
+import { beforeAll, describe, expect, it } from 'vitest';
+
 import { AssetMediaResponseDto, LoginResponseDto, searchStacks } from '@immich/sdk';
+
 import { createUserDto, uuidDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, describe, expect, it } from 'vitest';
 
 describe('/stacks', () => {
   let admin: LoginResponseDto;

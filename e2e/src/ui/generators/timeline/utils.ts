@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon';
+
 import { GENERATION_CONSTANTS, MockTimelineAsset } from 'src/ui/generators/timeline/timeline-config';
 
 /**

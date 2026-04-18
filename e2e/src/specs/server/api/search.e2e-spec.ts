@@ -1,3 +1,11 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+import { DateTime } from 'luxon';
+import { Socket } from 'socket.io-client';
+import request from 'supertest';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
 import {
   AssetMediaResponseDto,
   AssetResponseDto,
@@ -6,13 +14,9 @@ import {
   LoginResponseDto,
   updateAsset,
 } from '@immich/sdk';
-import { DateTime } from 'luxon';
-import { readFile } from 'node:fs/promises';
-import { join } from 'node:path';
-import { Socket } from 'socket.io-client';
+
 import { app, asBearerAuth, TEN_TIMES, testAssetDir, utils } from 'src/utils';
-import request from 'supertest';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
 const today = DateTime.now();
 
 describe('/search', () => {

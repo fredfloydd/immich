@@ -1,18 +1,21 @@
-import { OAuthClient, OAuthUser, generateLogoutToken } from '@immich/e2e-auth-server';
+import { createHash, randomBytes } from 'node:crypto';
+
+import request from 'supertest';
+import { beforeAll, describe, expect, it } from 'vitest';
+
+import { generateLogoutToken, OAuthClient, OAuthUser } from '@immich/e2e-auth-server';
 import {
-  LoginResponseDto,
-  SystemConfigOAuthDto,
   getConfigDefaults,
   getMyUser,
   getSessions,
+  LoginResponseDto,
   startOAuth,
+  SystemConfigOAuthDto,
   updateConfig,
 } from '@immich/sdk';
-import { createHash, randomBytes } from 'node:crypto';
+
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, baseUrl, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, describe, expect, it } from 'vitest';
 
 const authServer = {
   internal: 'http://e2e-auth-server:2286',

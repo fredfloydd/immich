@@ -1,6 +1,8 @@
 import { faker } from '@faker-js/faker';
-import type { AssetResponseDto } from '@immich/sdk';
 import { BrowserContext, Page, test } from '@playwright/test';
+
+import type { AssetResponseDto } from '@immich/sdk';
+
 import {
   Changes,
   createDefaultTimelineConfig,

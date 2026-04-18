@@ -1,19 +1,21 @@
+import request from 'supertest';
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+
 import {
   ActivityCreateDto,
   AlbumResponseDto,
   AlbumUserRole,
   AssetMediaResponseDto,
-  LoginResponseDto,
-  ReactionType,
   createActivity as create,
   createAlbum,
+  LoginResponseDto,
+  ReactionType,
   removeAssetFromAlbum,
 } from '@immich/sdk';
+
 import { createUserDto, uuidDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 describe('/activities', () => {
   let admin: LoginResponseDto;

@@ -1,8 +1,10 @@
-import { LoginResponseDto, ManualJobName } from '@immich/sdk';
-import { errorDto } from 'src/responses';
-import { app, utils } from 'src/utils';
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
+import { LoginResponseDto, ManualJobName } from '@immich/sdk';
+
+import { errorDto } from 'src/responses';
+import { app, utils } from 'src/utils';
 
 describe('/admin/database-backups', () => {
   let cookie: string | undefined;

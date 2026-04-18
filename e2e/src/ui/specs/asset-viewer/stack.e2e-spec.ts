@@ -1,6 +1,8 @@
 import { faker } from '@faker-js/faker';
-import type { AssetResponseDto } from '@immich/sdk';
 import { expect, test } from '@playwright/test';
+
+import type { AssetResponseDto } from '@immich/sdk';
+
 import { toAssetResponseDto } from 'src/ui/generators/timeline';
 import {
   createMockStack,
@@ -8,6 +10,7 @@ import {
   MockStack,
   setupBrokenAssetMockApiRoutes,
 } from 'src/ui/mock-network/broken-asset-network';
+
 import { assetViewerUtils } from '../timeline/utils';
 import { enableTagsPreference, ensureDetailPanelVisible, setupAssetViewerFixture } from './utils';
 

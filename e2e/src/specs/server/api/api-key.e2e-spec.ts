@@ -1,9 +1,11 @@
-import { LoginResponseDto, Permission, createApiKey } from '@immich/sdk';
+import request from 'supertest';
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+
+import { createApiKey, LoginResponseDto, Permission } from '@immich/sdk';
+
 import { createUserDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 const create = (accessToken: string, permissions: Permission[]) =>
   createApiKey({ apiKeyCreateDto: { name: 'api key', permissions } }, { headers: asBearerAuth(accessToken) });

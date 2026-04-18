@@ -1,16 +1,18 @@
+import request from 'supertest';
+import { beforeAll, describe, expect, it } from 'vitest';
+
 import {
   AssetMediaResponseDto,
+  createMemory,
+  getMemory,
   LoginResponseDto,
   MemoryResponseDto,
   MemoryType,
-  createMemory,
-  getMemory,
 } from '@immich/sdk';
+
 import { createUserDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, describe, expect, it } from 'vitest';
 
 describe('/memories', () => {
   let admin: LoginResponseDto;

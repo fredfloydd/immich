@@ -1,10 +1,13 @@
-import { LoginResponseDto, getAssetInfo, getAssetStatistics } from '@immich/sdk';
 import { existsSync } from 'node:fs';
+
 import { Socket } from 'socket.io-client';
-import { errorDto } from 'src/responses';
-import { app, asBearerAuth, testAssetDir, testAssetDirInternal, utils } from 'src/utils';
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
+import { getAssetInfo, getAssetStatistics, LoginResponseDto } from '@immich/sdk';
+
+import { errorDto } from 'src/responses';
+import { app, asBearerAuth, testAssetDir, testAssetDirInternal, utils } from 'src/utils';
 
 describe('/trash', () => {
   let admin: LoginResponseDto;

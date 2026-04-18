@@ -1,19 +1,21 @@
+import { Socket } from 'socket.io-client';
+import request from 'supertest';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
 import {
-  LoginResponseDto,
-  QueueName,
   createStack,
   deleteUserAdmin,
   getMyUser,
   getUserAdmin,
   getUserPreferencesAdmin,
   login,
+  LoginResponseDto,
+  QueueName,
 } from '@immich/sdk';
-import { Socket } from 'socket.io-client';
+
 import { createUserDto, uuidDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 describe('/admin/users', () => {
   let websocket: Socket;

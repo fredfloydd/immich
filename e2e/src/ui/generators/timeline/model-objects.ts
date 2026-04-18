@@ -2,11 +2,15 @@
  * Generator functions for timeline model objects
  */
 
-import { faker } from '@faker-js/faker';
-import { AssetVisibility } from '@immich/sdk';
-import { DateTime } from 'luxon';
 import { writeFileSync } from 'node:fs';
+
+import { faker } from '@faker-js/faker';
+import { DateTime } from 'luxon';
+
+import { AssetVisibility } from '@immich/sdk';
+
 import { SeededRandom } from 'src/ui/generators/timeline/utils';
+
 import type { DayPattern, MonthDistribution } from './distribution-patterns';
 import { ASSET_DISTRIBUTION, DAY_DISTRIBUTION } from './distribution-patterns';
 import type { MockTimelineAsset, MockTimelineData, SerializedTimelineData, TimelineConfig } from './timeline-config';

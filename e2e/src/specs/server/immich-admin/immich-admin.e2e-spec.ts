@@ -1,5 +1,6 @@
-import { immichAdmin, utils } from 'src/utils';
 import { beforeAll, describe, expect, it } from 'vitest';
+
+import { immichAdmin, utils } from 'src/utils';
 
 describe(`immich-admin`, () => {
   beforeAll(async () => {

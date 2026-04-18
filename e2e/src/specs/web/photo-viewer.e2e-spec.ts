@@ -1,6 +1,8 @@
-import { AssetMediaResponseDto, LoginResponseDto } from '@immich/sdk';
 import { expect, test } from '@playwright/test';
 import type { Socket } from 'socket.io-client';
+
+import { AssetMediaResponseDto, LoginResponseDto } from '@immich/sdk';
+
 import { utils } from 'src/utils';
 
 test.describe('Photo Viewer', () => {

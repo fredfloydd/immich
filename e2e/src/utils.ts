@@ -1,58 +1,3 @@
-import {
-  AssetMediaCreateDto,
-  AssetMediaResponseDto,
-  AssetResponseDto,
-  AssetVisibility,
-  CreateAlbumDto,
-  CreateLibraryDto,
-  JobCreateDto,
-  MaintenanceAction,
-  ManualJobName,
-  MetadataSearchDto,
-  Permission,
-  PersonCreateDto,
-  QueueCommandDto,
-  QueueName,
-  QueuesResponseLegacyDto,
-  SharedLinkCreateDto,
-  UpdateLibraryDto,
-  UserAdminCreateDto,
-  UserPreferencesUpdateDto,
-  ValidateLibraryDto,
-  createAlbum,
-  createApiKey,
-  createJob,
-  createLibrary,
-  createPartner,
-  createPerson,
-  createSharedLink,
-  createStack,
-  createUserAdmin,
-  deleteAssets,
-  deleteDatabaseBackup,
-  getAssetInfo,
-  getConfig,
-  getConfigDefaults,
-  getQueuesLegacy,
-  listDatabaseBackups,
-  login,
-  runQueueCommandLegacy,
-  scanLibrary,
-  searchAssets,
-  setBaseUrl,
-  setMaintenanceMode,
-  signUpAdmin,
-  tagAssets,
-  updateAdminOnboarding,
-  updateAlbumUser,
-  updateAssets,
-  updateConfig,
-  updateLibrary,
-  updateMyPreferences,
-  upsertTags,
-  validate,
-} from '@immich/sdk';
-import { BrowserContext } from '@playwright/test';
 import { exec, spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { createWriteStream, existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';
@@ -64,11 +9,70 @@ import { pipeline } from 'node:stream/promises';
 import { setTimeout as setAsyncTimeout } from 'node:timers/promises';
 import { promisify } from 'node:util';
 import { createGzip } from 'node:zlib';
+
+import { BrowserContext } from '@playwright/test';
 import pg from 'pg';
 import { io, type Socket } from 'socket.io-client';
+import request from 'supertest';
+
+import {
+  AssetMediaCreateDto,
+  AssetMediaResponseDto,
+  AssetResponseDto,
+  AssetVisibility,
+  createAlbum,
+  CreateAlbumDto,
+  createApiKey,
+  createJob,
+  createLibrary,
+  CreateLibraryDto,
+  createPartner,
+  createPerson,
+  createSharedLink,
+  createStack,
+  createUserAdmin,
+  deleteAssets,
+  deleteDatabaseBackup,
+  getAssetInfo,
+  getConfig,
+  getConfigDefaults,
+  getQueuesLegacy,
+  JobCreateDto,
+  listDatabaseBackups,
+  login,
+  MaintenanceAction,
+  ManualJobName,
+  MetadataSearchDto,
+  Permission,
+  PersonCreateDto,
+  QueueCommandDto,
+  QueueName,
+  QueuesResponseLegacyDto,
+  runQueueCommandLegacy,
+  scanLibrary,
+  searchAssets,
+  setBaseUrl,
+  setMaintenanceMode,
+  SharedLinkCreateDto,
+  signUpAdmin,
+  tagAssets,
+  updateAdminOnboarding,
+  updateAlbumUser,
+  updateAssets,
+  updateConfig,
+  updateLibrary,
+  UpdateLibraryDto,
+  updateMyPreferences,
+  upsertTags,
+  UserAdminCreateDto,
+  UserPreferencesUpdateDto,
+  validate,
+  ValidateLibraryDto,
+} from '@immich/sdk';
+
 import { loginDto, signupDto } from 'src/fixtures';
 import { makeRandomImage } from 'src/generators';
-import request from 'supertest';
+
 import { playwrightDbHost, playwrightHost, playwriteBaseUrl } from '../playwright.config';
 
 export type { Emitter } from '@socket.io/component-emitter';

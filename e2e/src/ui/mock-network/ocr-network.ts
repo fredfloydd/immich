@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
-import type { AssetOcrResponseDto } from '@immich/sdk';
 import { BrowserContext } from '@playwright/test';
+
+import type { AssetOcrResponseDto } from '@immich/sdk';
 
 export type MockOcrBox = {
   text: string;

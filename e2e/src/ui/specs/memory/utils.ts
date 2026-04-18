@@ -1,5 +1,6 @@
-import type { AssetResponseDto } from '@immich/sdk';
 import { expect, Page } from '@playwright/test';
+
+import type { AssetResponseDto } from '@immich/sdk';
 
 function getAssetIdFromUrl(url: URL): string | null {
   const pathMatch = url.pathname.match(/\/memory\/photos\/([^/]+)/);

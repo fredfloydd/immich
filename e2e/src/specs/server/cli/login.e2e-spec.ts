@@ -1,7 +1,10 @@
-import { Permission } from '@immich/sdk';
 import { stat } from 'node:fs/promises';
-import { app, immichCli, utils } from 'src/utils';
+
 import { beforeEach, describe, expect, it } from 'vitest';
+
+import { Permission } from '@immich/sdk';
+
+import { app, immichCli, utils } from 'src/utils';
 
 describe(`immich login`, () => {
   beforeEach(async () => {

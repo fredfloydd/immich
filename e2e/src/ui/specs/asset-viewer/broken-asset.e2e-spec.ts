@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+
 import { toAssetResponseDto } from 'src/ui/generators/timeline';
 import {
   createMockStack,
@@ -6,6 +7,7 @@ import {
   MockStack,
   setupBrokenAssetMockApiRoutes,
 } from 'src/ui/mock-network/broken-asset-network';
+
 import { assetViewerUtils } from '../timeline/utils';
 import { setupAssetViewerFixture } from './utils';
 

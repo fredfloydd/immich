@@ -1,9 +1,11 @@
+import request from 'supertest';
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+
 import { getPerson, LoginResponseDto, PersonResponseDto } from '@immich/sdk';
+
 import { uuidDto } from 'src/fixtures';
 import { errorDto } from 'src/responses';
 import { app, asBearerAuth, utils } from 'src/utils';
-import request from 'supertest';
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 describe('/people', () => {
   let admin: LoginResponseDto;

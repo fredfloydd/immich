@@ -1,5 +1,6 @@
 import { generateConsecutiveDays, generateDayAssets } from 'src/ui/generators/timeline/model-objects';
 import { SeededRandom, selectRandomDays } from 'src/ui/generators/timeline/utils';
+
 import type { MockTimelineAsset } from './timeline-config';
 import { GENERATION_CONSTANTS } from './timeline-config';
 

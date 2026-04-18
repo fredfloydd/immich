@@ -1,8 +1,10 @@
-import { LoginResponseDto, getConfig } from '@immich/sdk';
-import { errorDto } from 'src/responses';
-import { app, asBearerAuth, utils } from 'src/utils';
 import request from 'supertest';
 import { beforeAll, describe, expect, it } from 'vitest';
+
+import { getConfig, LoginResponseDto } from '@immich/sdk';
+
+import { errorDto } from 'src/responses';
+import { app, asBearerAuth, utils } from 'src/utils';
 
 const getSystemConfig = (accessToken: string) => getConfig({ headers: asBearerAuth(accessToken) });
 

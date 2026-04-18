@@ -1,6 +1,9 @@
-import { AssetResponseDto } from '@immich/sdk';
-import { BrowserContext, Page, Request, Route } from '@playwright/test';
 import { basename } from 'node:path';
+
+import { BrowserContext, Page, Request, Route } from '@playwright/test';
+
+import { AssetResponseDto } from '@immich/sdk';
+
 import {
   Changes,
   getAlbum,
@@ -12,6 +15,7 @@ import {
   TimelineData,
 } from 'src/ui/generators/timeline';
 import { sleep } from 'src/ui/specs/timeline/utils';
+
 import { MINIMAL_MP4_BUFFER } from './face-editor-network';
 
 export class TimelineTestContext {

@@ -1,5 +1,7 @@
+import { expect, test, type Page } from '@playwright/test';
+
 import { AssetMediaResponseDto, LoginResponseDto } from '@immich/sdk';
-import { expect, type Page, test } from '@playwright/test';
+
 import { utils } from 'src/utils';
 
 test.describe('Slideshow', () => {

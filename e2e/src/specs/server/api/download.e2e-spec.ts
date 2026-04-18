@@ -1,8 +1,11 @@
-import { AssetMediaResponseDto, LoginResponseDto } from '@immich/sdk';
 import { readFile, writeFile } from 'node:fs/promises';
-import { app, tempDir, utils } from 'src/utils';
+
 import request from 'supertest';
 import { beforeAll, describe, expect, it } from 'vitest';
+
+import { AssetMediaResponseDto, LoginResponseDto } from '@immich/sdk';
+
+import { app, tempDir, utils } from 'src/utils';
 
 describe('/download', () => {
   let admin: LoginResponseDto;

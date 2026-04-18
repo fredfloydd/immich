@@ -1,5 +1,7 @@
-import { getUserAdmin } from '@immich/sdk';
 import { expect, test } from '@playwright/test';
+
+import { getUserAdmin } from '@immich/sdk';
+
 import { asBearerAuth, utils } from 'src/utils';
 
 test.describe('User Administration', () => {

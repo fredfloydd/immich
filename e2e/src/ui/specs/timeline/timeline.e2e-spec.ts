@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from '@playwright/test';
 import { DateTime } from 'luxon';
+
 import {
   Changes,
   createDefaultTimelineConfig,
@@ -20,6 +21,7 @@ import {
   TimelineTestContext,
 } from 'src/ui/mock-network/timeline-network';
 import { utils } from 'src/utils';
+
 import { assetViewerUtils, padYearMonth, pageUtils, poll, thumbnailUtils, timelineUtils } from './utils';
 
 test.describe.configure({ mode: 'parallel' });

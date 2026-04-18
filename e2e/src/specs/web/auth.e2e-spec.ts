@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+
 import { utils } from 'src/utils';
 
 test.describe('Registration', () => {

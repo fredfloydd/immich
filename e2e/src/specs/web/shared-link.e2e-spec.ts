@@ -1,12 +1,14 @@
+import { expect, test } from '@playwright/test';
+
 import {
   AlbumResponseDto,
   AssetMediaResponseDto,
+  createAlbum,
   LoginResponseDto,
   SharedLinkResponseDto,
   SharedLinkType,
-  createAlbum,
 } from '@immich/sdk';
-import { expect, test } from '@playwright/test';
+
 import { asBearerAuth, utils } from 'src/utils';
 
 test.describe('Shared Links', () => {
